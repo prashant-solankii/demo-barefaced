@@ -1,0 +1,73 @@
+<article class="article" role="article">
+
+  {% render 'article-banner', article: article %}
+
+  <section class="article__body article-body {% if article.metafields.content['product'] == blank %}article-body--no-product{% endif %} rte">
+    <div class="article-body__inner ">
+      {% if article.metafields.content['product'] != blank %}
+        <div class="article-body__product">
+          <div class="article-body__product-inner offset-from-header offset-from-header--extra">
+            <h4 class="article-body__product-title">{{ 'blog.article.featured_product' | t }}</h4>
+            {% assign product = all_products[article.metafields.content['product']] %}
+            {% render 'collection-product' with
+              classes: 'article-body__product-product',
+              product: product,
+              hideForm: true
+            %}
+          </div>
+        </div>
+      {% endif %}
+      <div class="article-body__content">
+        {{ article.content }}
+
+        {% if article.tags.size > 0 %}
+          {% render 'article-tags' classes: 'article-body__content-tags', tags: article.tags %}
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+</article>
+
+{% render 'related-articles', article: article, blog: blog %}
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "articleBody": {{ article.content | strip_html | json }},
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": {{ shop.url | append: page.url | json }}
+    },
+    "headline": {{ article.title | json }},
+    {% if article.excerpt != blank %}
+      "description": {{ article.excerpt | strip_html | json }},
+    {% endif %}
+    {% if article.image %}
+      {% assign image_size = article.image.width | append: 'x' %}
+      "image": [
+        {{ article | img_url: image_size | prepend: "https:" | json }}
+      ],
+    {% endif %}
+    "datePublished": {{ article.published_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+    "dateCreated": {{ article.created_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+    "author": {
+      "@type": "Person",
+      "name": {{ article.author | json }}
+    },
+    "publisher": {
+      "@type": "Organization",
+      {% if page_image %}
+        {% assign image_size = page_image.width | append: 'x' %}
+        "logo": {
+          "@type": "ImageObject",
+          "height": {{ page_image.height | json }},
+          "url": {{ page_image | img_url: image_size | prepend: "https:" | json }},
+          "width": {{ page_image.width | json }}
+        },
+      {% endif %}
+      "name": {{ shop.name | json }}
+    }
+  }
+</script>

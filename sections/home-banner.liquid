@@ -1,0 +1,114 @@
+{% if section.blocks != blank %}
+  <section class="home-banner">
+    <div class="home-banner__slideshow slideshow slideshow--trans-opacity">
+      <div class="slideshow__slides">
+        {% for block in section.blocks %}
+          <div class="slideshow__slide home-banner-slide">
+            {% if block.settings.image_mobile != blank %}
+              {% render 'image-component' with
+                image: block.settings.image,
+                sizes: '100vw objFit',
+                classes: 'home-banner-slide__image hide-on-mobile objFit'
+              %}
+              {% render 'image-component' with
+                image: block.settings.image_mobile,
+                sizes: '100vw objFit',
+                classes: 'home-banner-slide__image hide-on-desktop objFit'
+              %}
+            {% else %}
+              {% render 'image-component' with
+                image: block.settings.image,
+                sizes: '100vw objFit',
+                classes: 'home-banner-slide__image objFit'
+              %}
+            {% endif %}
+            <div class="home-banner-slide__content">
+              {% if block.settings.title != blank %}
+                {% assign title = block.settings.title | newline_to_br | split: '<br />' %}
+                <h1 class="home-banner-slide__content-title">
+                  {% for t in title %}
+                    <div>
+                      <span>{{ t }}</span>
+                    </div>
+                  {% endfor %}
+                </h1>
+              {% endif %}
+              <div class="home-banner-slide__content-buttons">
+                {% if block.settings.link_url != blank and block.settings.link_text != blank %}
+                  {% render 'button', classes: 'home-banner-slide__content-button', url: block.settings.link_url, text: block.settings.link_text, style: 'primary' %}
+                {% endif %}
+                {% if block.settings.link_2_url != blank and block.settings.link_2_text != blank %}
+                  {% render 'text-link', classes: 'home-banner-slide__content-link', url: block.settings.link_2_url, text: block.settings.link_2_text, style: 'white' %}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="home-banner__pagination home-banner-pagination">
+      {% for block in section.blocks %}
+        <button class="home-banner-pagination__item" data-slide="{{ forloop.index }}">
+          <div class="home-banner-pagination__item-timer"></div>
+          <h6 class="home-banner-pagination__item-title">{{ block.settings.pagination_title }}</h6>
+        </button>
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Home Banner",
+    "settings": [],
+    "max_blocks": 3,
+    "blocks": [
+      {
+        "type": "block",
+        "name": "Banner",
+        "settings": [
+          {
+            "id": "image",
+            "label": "Desktop Image",
+            "type": "image_picker"
+          },
+          {
+            "id": "image_mobile",
+            "label": "Mobile Image",
+            "type": "image_picker"
+          },
+          {
+            "type": "textarea",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "text",
+            "id": "link_text",
+            "label": "Button 1 text"
+          },
+          {
+            "type": "url",
+            "id": "link_url",
+            "label": "Button 1 url"
+          },
+          {
+            "type": "text",
+            "id": "link_2_text",
+            "label": "Button 2 text"
+          },
+          {
+            "type": "url",
+            "id": "link_2_url",
+            "label": "Button 2 url"
+          },
+          {
+            "type": "text",
+            "id": "pagination_title",
+            "label": "Pagination title"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

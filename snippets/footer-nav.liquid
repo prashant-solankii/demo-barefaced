@@ -1,0 +1,22 @@
+{% if menu != blank  %}
+  {% assign navLinks = linklists[menu].links %}
+
+  {% if classes == blank %}
+    {% assign classes = '' %}
+  {% endif %}
+
+  <nav class="footer-nav {{ classes | join: ' ' }}" role="contentinfo">
+    <h5 class="footer-nav__title">{{ linklists[menu].title }} {% render 'icon-chevron' %}</h5>
+    <ul class="footer-nav__list">
+      {% for link in navLinks %}
+        {%- comment %}<locksmith:629f>{% endcomment -%}
+          {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+        {%- comment %}</locksmith:629f>{% endcomment -%}
+        <li class="footer-nav__list-item">
+          <a href="{{ link.url }}" class="footer-nav__list-link"
+          {% if link.current %} aria-current="page"{% endif %}><span>{{ link.title }}</span></a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+{% endif %}

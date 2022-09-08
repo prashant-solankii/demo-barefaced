@@ -1,0 +1,43 @@
+<section class="blog-banner">
+  <div class="blog-banner__content">
+    {% if section.settings.subtitle != blank %}
+      <h6 class="blog-banner__content-subtitle">{{ section.settings.subtitle }}</h6>
+    {% endif %}
+    {% if section.settings.title != blank %}
+      {% render 'title', classes: 'blog-banner__content-title', element: 'h1', title: section.settings.title %}
+    {% endif %}
+  </div>
+  {% if section.settings.image != blank %}
+    {% render 'image-component' with
+      image: section.settings.image,
+      sizes: '40vw',
+      classes: 'blog-banner__image objFit'
+    %}
+  {% endif %}
+</section>
+
+{% schema %}
+  {
+    "name": "Blog banner",
+    "settings": [
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle",
+        "default": "Blog"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "A home for ~shared~ experiences that connect us all"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      }
+    ]
+  }
+{% endschema %}
+

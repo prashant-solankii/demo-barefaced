@@ -1,0 +1,71 @@
+{% if classes == blank %}
+  {% assign classes = '' %}
+{% endif %}
+
+<div class="complex-col-block {{ classes | join: ' ' }}">
+  <div class="complex-col-block__content animate-on-scroll">
+    {% if subtitle != blank %}
+      <h6 class="complex-col-block__content-subtitle">{{ subtitle }}</h6>
+    {% endif %}
+    {% if title != blank %}
+      {% render 'title', classes: 'complex-col-block__content-title', title: title %}
+    {% endif %}
+    {% if content != blank %}
+      <div class="complex-col-block__content-content">{{ content }}</div>
+    {% endif %}
+    {% if list != blank %}
+      <ul class="complex-col-block__content-list">
+        {% assign listItems = list | newline_to_br | split: '<br />' %}
+        {% for i in listItems %}
+          <li>{% render 'icon-asterix' %} {{ i }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    {% if linkText != blank and linkUrl != blank %}
+      {% render 'button', classes: 'complex-col-block__content-button', text: linkText, url: linkUrl, style: 'secondary' %}
+    {% endif %}
+  </div>
+  <div class="complex-col-block__images">
+    {% if blocks != blank %}
+      {% for block in section.blocks %}
+        <div class="complex-col-block__images-image">
+          {% if roundal != blank %}
+            {% if forloop.index == roundal %}
+              {% render 'icon-roundal' %}
+            {% endif %}
+          {% endif %}
+
+          {% if block.settings.image != blank %}
+            {% render 'image-component' with
+              image: block.settings.image,
+              sizes: '(min-width: 63.75em) 45vw',
+              classes: 'complex-col-block__images-figure animate-on-scroll'
+            %}
+          {% endif %}
+          {% if block.settings.video_url != blank %}
+            <button class="complex-col-block__images-video video-link" data-id="{{block.id}}">
+              <div class="video-link__icon"></div>
+              <span class="screenreader-text">{{ 'general.accessibility.play_video' | t }}</span>
+            </button>
+          {% endif %}
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>
+
+{% if blocks != blank %}
+  {% for block in section.blocks %}
+    {% if block.settings.video_url != blank %}
+      {% capture modalHtml %}
+        <div class="modal__video">
+          <video data-lazy-load-src="{{ block.settings.video_url }}" controls></video>
+        </div>
+      {% endcapture %}
+      {% capture modalAttributes %}
+        data-id="{{ block.id }}"
+      {% endcapture %}
+      {% render 'modal', classes: 'modal--video', html: modalHtml, attributes: modalAttributes %}
+    {% endif %}
+  {% endfor %}
+{% endif %}

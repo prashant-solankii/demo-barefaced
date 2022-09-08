@@ -1,0 +1,14 @@
+<nav class="search-filter">
+  <ul class="search-filter__list">
+    <li class="search-filter__list-item {% if search.types contains 'product' %}active{% endif %}">
+      {% capture linkUrl %}/search?type=product&q={{search.terms}}{% endcapture %}
+      {% capture linkText %}{{ 'search.filters.products'|t }}{% endcapture %}
+      {% render 'text-link', classes: 'search-filter__list-link', url: linkUrl, text: linkText %}
+    </li>
+    <li class="search-filter__list-item {% if search.types contains 'article' %}active{% endif %}">
+      {% capture linkUrl %}/search?type=article&q={{search.terms}}{% endcapture %}
+      {% capture linkText %}{{ 'search.filters.posts'|t }}{% endcapture %}
+      {% render 'text-link', classes: 'search-filter__list-link', url: linkUrl, text: linkText %}
+    </li>
+  </ul>
+</nav>

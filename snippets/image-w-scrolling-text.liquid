@@ -1,0 +1,15 @@
+{% assign textLength = text | split: '' | size %}
+{% assign animationSpeed = textLength | divided_by: 3 %}
+{% capture animationStyle %}style="animation-duration: {{ animationSpeed }}s"{% endcapture %}
+
+<section class="image-w-scrolling-text">
+  {% render 'image-component' with
+    image: section.settings.image,
+    sizes: '100vw',
+    classes: 'image-w-scrolling-text__image objFit'
+  %}
+  <div class="image-w-scrolling-text__text">
+    <span {{ animationStyle }}>{{ text }}</span>
+    <span {{ animationStyle }}>{{ text }}</span>
+  </div>
+</section>

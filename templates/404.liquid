@@ -1,0 +1,15 @@
+<section class="error">
+  {% render 'image-component' with
+    image: '404-cover.jpg',
+    asset: true
+    sizes: '100vw',
+    classes: 'error__image objFit'
+  %}
+  <div class="error__inner">
+    <h6 class="error__subtitle">{{ '404.subtitle' | t }}</h6>
+    <h1 class="error__title">{{ '404.title' | t }}</h1>
+    <div class="error__down">{% render 'icon-arrow' %}</div>
+    {%- assign buttonText = '404.home' | t -%}
+    {% render 'button', classes: 'error__button', url: routes.root_url, text: buttonText, style: 'primary' %}
+  </div>
+</section>

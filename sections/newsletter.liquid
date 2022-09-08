@@ -1,0 +1,45 @@
+<section class="newsletter-section">
+  <div class="newsletter-section__image">
+    {% if section.settings.image != blank %}
+      {% render 'image-component' with
+        image: section.settings.image,
+        sizes: '50vw',
+        classes: 'newsletter-section__image-figure objFit'
+      %}
+    {% endif %}
+  </div>
+  <div class="newsletter-section__content">
+    <div class="newsletter-section__content-inner">
+      {% if section.settings.title != blank %}
+        <h3 class="newsletter-section__content-title">{{ section.settings.title }}</h3>
+      {% endif %}
+      {% if section.settings.intro != blank %}
+        <div class="newsletter-section__content-intro">{{ section.settings.intro }}</div>
+      {% endif %}
+      {% render 'newsletter-form', classes: 'newsletter-section__content-form', termsCheckbox: true, fullButton: true, id: 'newsletter-section-signup' %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Newsletter",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "richtext",
+        "id": "intro",
+        "label": "Intro"
+      }
+    ]
+  }
+{% endschema %}

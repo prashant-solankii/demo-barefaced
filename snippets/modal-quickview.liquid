@@ -1,0 +1,325 @@
+<modal-dialog id="subscriptionModal" class="subscriptionModal" data-quick-view>
+    <div class="modalRecharge common-box" data-common-box>
+        <div class="modal-dialog modal-dialog-centered" data-modal-dialog>
+            <div class="modal-content" data-add-mysubscription-modal>
+                <div class="modal-head position-relative">
+                    <div class="d-flex align-items-center mx-0">
+                        <div class="col-12 text-center">
+                            <h5 class="mb-0 text-capitalize"></h5>
+                        </div>
+                        <div class="close-quickshop">
+                            <a href="javascript:void(0);"  tabindex="0" data-close-modal><i class="close-icon"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-scroll pb-8">
+                    <div class="modal-body">
+                        <div class="add-subscription d-md-flex align-items-center">
+                            <div class="subscription-img mb-md-0 mb-5">
+                                <img src="" data-addon-product-img>
+                            </div>
+                            <div class="w-100 ps-md-6 pb-md-6">
+                                <form method="post" action="/cart/add" accept-charset="UTF-8" enctype="multipart/form-data" novalidate="novalidate" data-product-form data-enable-history-state="true" novalidate="novalidate">
+                                    <input type="hidden" name="form_type" value="product" class="field--filled">
+                                    <input type="hidden" name="utf8" value="✓" class="field--filled">
+                                    <input type="hidden" name="id" value="" data-product-variant-id />
+                                    <p class="subscription-title lh-sm fw-bold" data-addon-product-title></p>
+                                    <div data-addon-product-variants-div></div>
+                                    <div class="product-content-form__quantity product-quantity">
+                                        <div class="quantity-incrementor">
+                                            <label for="Quantity" class="quantity-incrementor__label">Quantity:</label>
+                                            <button class="quantity-incrementor__minus" data-addon-qty-btn data-addon-qty-minus-btn type="button"><span class="screenreader-text">{{ 'incrementor.minus' | t }}</span></button>
+                                            <input class="quantity-incrementor__input" type="number" id="Quantity" name="quantity" value="1" min="1" data-addon-product-qty>
+                                            <button class="quantity-incrementor__plus" data-addon-qty-btn data-addon-qty-plus-btn type="button"><span class="screenreader-text">{{ 'incrementor.plus' | t }}</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="template_legacy-radio">
+                                        <div class="option_onetime" data-onetime-selector>
+                                            <div class="option_selector">
+                                                <input id="onetime" type="radio" data-type="onetime" name="selling_plan" class="radio-input" checked data-addon-onetime-input>
+                                                <label for="onetime" class="radio-label">
+                                                    <span class="option-text">One-time purchase</span>
+                                                    <span class="option-text ps-2" data-addon-onetime-price data-price></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="option_onetime d-none" data-subscription-div>
+                                            <div class="option_selector">
+                                                <input id="subscription" type="radio" data-type="subscription" name="selling_plan" class="radio-input" data-addon-subscription-input>
+                                                <label for="subscription" class="radio-label d-flex justify-content-between">
+                                                    <div>
+                                                        <span class="option-text" data-addon-subscription-discount></span>
+                                                        <!-- <span class="option-text" data-addon-subscription-discount>Subscribe & Save 10%</span> -->
+                                                        <span class="option-text ps-1" data-addon-subscription-price data-price></span>
+                                                    </div>
+                                                    <div>
+                                                        <img src="https://cdn.shopify.com/s/files/1/0567/1868/8418/files/subscribe-icon.svg?v=1655971041" alt="ReCharge Subscription services icon" style="width: 15px;">
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            <div class="option_plans d-none" data-addon-subscription-frequencys-div>
+                                                <label class="selling-plans_label visually-hidden" for="selling_plan">Delivery</label>
+                                                <select id="selling_plan" class="selling-plans_dropdown" name="" data-addon-subscription-frequency></select>
+                                            </div>
+                                        </div>
+                                        <button type="submit" data-submit-button data-add-checkout-btn class="btn btn-fill product-form-btn d-flex align-items-center justify-content-between w-100">
+                                            <span class="add-text">Add To Cart</span>
+                                            <span data-addon-onetime-price></span>
+                                        </button>                                        
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</modal-dialog>
+
+<script>
+    document.querySelector('[data-close-modal]').addEventListener('click', () => {
+        document.body.style.overflowY = "auto";
+        document.body.classList.remove("remove-scroll");
+        document.querySelector("[data-quick-view] [data-common-box]").classList.remove("open");
+        document.querySelector("[data-quick-view] [data-add-mysubscription-modal]").classList.add("d-none");
+    });
+
+    const serializeForm = form => {
+        const obj = {};
+        const formData = new FormData(form);
+
+        for (const key of formData.keys()) {
+            const regex = /(?:^(properties\[))(.*?)(?:\]$)/;
+            if (regex.test(key)) {
+            obj.properties = obj.properties || {};
+            obj.properties[regex.exec(key)[2]] = formData.get(key);
+            } else {
+            obj[key] = formData.get(key);
+            }
+        }
+
+        return JSON.stringify(obj);
+    };
+
+    function fetchConfig(type = 'json') {
+        return {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': `application/${type}` }
+        };
+    }
+
+    var addonProductJSON = "";
+    var addonCurrentVariant = [];
+    var addonProductOptions = [];
+    var producVariantsArray = [];
+    var addonProductDataJSON = "";
+    var addonProductDefaultVariant = "";
+    var selling_plan_discount = 0;
+
+    document.addEventListener('click', (e)=> {        
+          const currentTarget = e.target;       
+         if(currentTarget.hasAttribute('data-addon-qty-minus-btn')){
+            e.preventDefault();            
+            if(document.querySelector('[data-quick-view] [data-addon-product-qty]').value == 0){
+                document.querySelector('[data-quick-view] [data-addon-product-qty]').value = "1";
+                document.querySelector('[data-quick-view] [data-addon-qty-minus-btn]').classList.add('btn-disabled');
+            }   
+         } else if(currentTarget.hasAttribute('data-addon-qty-plus-btn')){
+            e.preventDefault();            
+            if(document.querySelector('[data-quick-view] [data-addon-product-qty]').value > 1 ){
+                document.querySelector('[data-quick-view] [data-addon-qty-minus-btn]').classList.remove('btn-disabled');
+            }   
+         } else if(currentTarget.closest('[data-quick-button]') != null){
+            e.preventDefault();
+            var $el = currentTarget.closest('[data-quick-button]');              
+            let t = $el.getAttribute("data-handle");
+            fetch(`/products/${t}?view=json`, { method: "GET" })
+                .then(function (data) {
+                    return data.json();
+                })
+                .then(function (data) {
+                    if (data) {
+                        addonProductDataJSON = data;
+                        addonProductJSON = addonProductDataJSON.product;
+                        producVariantsArray = addonProductDataJSON.product.variants;
+                        addonProductDefaultVariant = addonProductDataJSON.product_default_variant;
+                        addonCurrentVariant = producVariantsArray[0];
+
+                        document.querySelector('[data-quick-view] [data-addon-product-qty]').value = "1";
+                        document.querySelector('[data-quick-view] [data-addon-onetime-input]').checked = true;
+                        document.querySelector('[data-quick-view] [data-add-checkout-btn').classList.remove('d-none');
+                        document.querySelector('[data-quick-view] [data-addon-product-img]').src = addonProductJSON.featured_image == null ? window.globalVariables.no_image_replacement : addonProductJSON.featured_image;
+                        document.querySelector('[data-quick-view] [data-addon-product-title]').innerHTML = addonProductJSON.title;
+
+                        var sellingOptionHTML = "";
+                        var selling_plan_index = 0;
+                        selling_plan_discount = 0;
+                        
+                        if(addonProductJSON.selling_plan_groups.length > 0){
+                            addonProductJSON.selling_plan_groups.forEach((plan_groups) => {
+                                plan_groups.selling_plans.forEach((selling_plan) => {
+                                    if(selling_plan.name.includes("Month")) {
+                                        selling_plan_index = selling_plan_index + 1;
+                                        sellingOptionHTML += `<option value="${selling_plan.id}">${selling_plan.name}</option>`;
+                                        if(selling_plan_index == 1){ selling_plan_discount = selling_plan.price_adjustments[0].value; }
+                                    }
+                                });
+                            });
+                            document.querySelectorAll('[data-quick-view] .option_onetime').forEach((element)=>{
+                                element.classList.remove('d-none');
+                            });
+                        } else {
+                            document.querySelector('[data-quick-view] [data-addon-subscription-frequency]').innerHTML = '';
+                            document.querySelectorAll('[data-quick-view] .option_onetime').forEach((element)=>{
+                                element.classList.add('d-none');
+                            });
+                        }
+                        
+                        if( sellingOptionHTML != "") { 
+                            document.querySelector('[data-quick-view] [data-subscription-div]').classList.remove('d-none');
+                            document.querySelector('[data-quick-view] [data-addon-subscription-frequency]').innerHTML = sellingOptionHTML;
+                        } else { document.querySelector('[data-quick-view] [data-subscription-div]').classList.add('d-none'); }
+
+                        if( selling_plan_discount != 0 ) { document.querySelector('[data-quick-view] [data-addon-subscription-discount]').innerHTML = `Subscribe & Save ${selling_plan_discount}%`;
+                        } else { document.querySelector('[data-quick-view] [data-addon-subscription-discount]').innerHTML = `Subscribe`; }
+
+                        document.querySelectorAll('[data-quick-view] [data-addon-onetime-price]').forEach((element) => {
+                            element.innerHTML = Shopify.formatMoney(producVariantsArray[0].price, window.globalVariables.money_format);
+                            element.setAttribute('data-addon-onetime-price', Shopify.formatMoney(producVariantsArray[0].price, window.globalVariables.money_format))
+                            element.setAttribute('data-price', Shopify.formatMoney(producVariantsArray[0].price, window.globalVariables.money_format))
+                        });
+                        document.querySelectorAll('[data-quick-view] [data-addon-subscription-price]').forEach((element) => {
+                            element.innerHTML = Shopify.formatMoney((producVariantsArray[0].price - (producVariantsArray[0].price * (selling_plan_discount / 100))), window.globalVariables.money_format);
+                            element.setAttribute('data-addon-subscription-price', Shopify.formatMoney((producVariantsArray[0].price - (producVariantsArray[0].price * (selling_plan_discount / 100))), window.globalVariables.money_format));
+                            element.setAttribute('data-price', Shopify.formatMoney((producVariantsArray[0].price - (producVariantsArray[0].price * (selling_plan_discount / 100))), window.globalVariables.money_format));
+                        });
+
+                        var optionFlag = false;
+                        var productOptionsHTML = "";
+                        for (const option of addonProductDataJSON.options_with_values) {
+                            var optionsHTML = "";
+                            if (option.name != 'Title') {
+                                for (const value of option.values) {
+                                    if(value.includes('% off)') == false){
+                                        optionsHTML += `<option value="${value}">${value}</option>`;  
+                                    }                                                  
+                                }
+                                productOptionsHTML += `<div class="d-flex align-items-center mb-4 pb-md-0 pb-1">
+                                                        <p class="font-size-md fw-medium mb-0 pe-3 w-auto">${option.name}:</p>
+                                                        <select aria-label="${option.name}" id="${option.name}" class="form-control" data-addon-product-variant-select>${optionsHTML}</select>
+                                                    </div>`;
+                                document.querySelector('[data-quick-view] [data-addon-product-variants-div]').setAttribute('style', 'display: block !important;');
+                                optionFlag = true;
+                            }
+                            if (optionFlag == false) { document.querySelector('[data-quick-view] [data-addon-product-variants-div]').setAttribute('style', 'display: none !important;'); }
+                        }
+                        document.querySelector('[data-quick-view] [data-addon-product-variants-div]').innerHTML = productOptionsHTML;
+
+                        // Check Current Variant Availability
+                        if(producVariantsArray.length > 1){
+                            _getAddonCurrentVariant();
+                        }
+
+                        document.querySelector('[data-quick-view] [data-product-variant-id]').value = addonCurrentVariant.id;
+                        
+                        if (addonCurrentVariant) {
+                            if (!addonCurrentVariant.available) {
+                                document.querySelector('[data-quick-view] [data-add-checkout-btn').classList.add('btn-disabled');
+                            } else {
+                                document.querySelector('[data-quick-view] [data-add-checkout-btn').classList.remove('btn-disabled');
+                            }
+                        }
+
+                        document.querySelector('[data-quick-view] [data-modal-dialog]').classList.remove("modal-dialog-full");
+                        document.querySelector('[data-quick-view] [data-add-mysubscription-modal]').classList.remove("d-none");                        
+
+
+                        // Get Addon Product Current Variant
+                        document.querySelectorAll('[data-quick-view] [data-addon-product-variant-select]').forEach((element) => {
+                            element.addEventListener('change', () => {
+                                _onAddonProductVariantChange();
+                                document.querySelector('[data-quick-view] [data-product-variant-id]').value = addonCurrentVariant.id;
+                                document.querySelector('[data-quick-view] [data-add-checkout-btn] [data-addon-onetime-price]').innerHTML = document.querySelector('.option_onetime input:checked').closest('.option_selector').querySelector('[data-price]').getAttribute('data-price');
+                            });
+                        });    
+
+                        document.querySelectorAll('[data-quick-view] .option_onetime').forEach((element) => {
+                            element.querySelector('input').setAttribute('name',`selling_plan_${addonProductJSON.id}`);
+                            
+                            element.querySelector('input').addEventListener('change', (n) => {
+                               let price = n.target.closest('.option_selector').querySelector('[data-price]').getAttribute('data-price');
+                                document.querySelector('[data-quick-view] [data-add-checkout-btn] [data-addon-onetime-price]').innerHTML = price;
+
+                                if (n.target.hasAttribute('data-addon-onetime-input')) {
+                                    document.querySelector('[data-quick-view] [data-addon-subscription-frequencys-div]').classList.add('d-none');
+                                    document.querySelector('[data-quick-view] [data-addon-subscription-frequency]').setAttribute('name','');                                    
+                                } else {
+                                    document.querySelector('[data-quick-view] [data-addon-subscription-frequencys-div]').classList.remove('d-none');
+                                    document.querySelector('[data-quick-view] [data-addon-subscription-frequency]').setAttribute('name','selling_plan');                                    
+                                }     
+                            });
+                        });
+
+                        document.body.style.overflowY = "hidden";
+                        document.body.classList.add("remove-scroll");
+                        document.querySelector("[data-quick-view] [data-common-box]").classList.add("open");
+                        document.querySelector("[data-quick-view] [data-add-mysubscription-modal]").classList.remove("d-none");
+                        if(addonProductJSON.requires_selling_plan == true){
+                            document.querySelector('[data-quick-view] [data-onetime-selector]').classList.add('d-none');
+                            const e = new Event("change");                                                        
+                            document.querySelector('[data-quick-view] [data-subscription-div] input[type="radio"]').dispatchEvent(e);
+                            document.querySelector('[data-quick-view] [data-subscription-div] input[type="radio"]').checked = true;
+                        }
+                    }
+                })
+                .catch(function (er) {
+                    console.error("Request failed", er);
+                });
+          }
+    });
+
+
+    function _onAddonProductVariantChange() {
+        this._getAddonCurrentVariant();
+        if (addonCurrentVariant) {
+            if (!addonCurrentVariant.available) {
+                document.querySelector('[data-quick-view] [data-add-checkout-btn').classList.add('btn-disabled');
+            } else {
+                document.querySelector('[data-quick-view] [data-add-checkout-btn').classList.remove('btn-disabled');
+            }
+
+            document.querySelectorAll('[data-quick-view] [data-addon-onetime-price]').forEach((element) => {
+                element.innerHTML = Shopify.formatMoney(addonCurrentVariant.price, window.globalVariables.money_format);
+                element.setAttribute('data-addon-onetime-price', Shopify.formatMoney(addonCurrentVariant.price, window.globalVariables.money_format))
+                element.setAttribute('data-price', Shopify.formatMoney(addonCurrentVariant.price, window.globalVariables.money_format))
+            });
+            document.querySelectorAll('[data-quick-view] [data-addon-subscription-price]').forEach((element) => {
+                element.innerHTML = Shopify.formatMoney((addonCurrentVariant.price - (addonCurrentVariant.price * (selling_plan_discount / 100))), window.globalVariables.money_format);
+                element.setAttribute('data-addon-subscription-price', Shopify.formatMoney((addonCurrentVariant.price - (addonCurrentVariant.price * (selling_plan_discount / 100))), window.globalVariables.money_format));
+                element.setAttribute('data-price', Shopify.formatMoney((addonCurrentVariant.price - (addonCurrentVariant.price * (selling_plan_discount / 100))), window.globalVariables.money_format));
+            });
+        }
+    }
+
+    function _getAddonCurrentVariant() {
+        addonProductOptions = [];
+        addonCurrentVariant = false;
+        if (document.querySelectorAll('[data-quick-view] [data-addon-product-variant-select]')) {
+            document.querySelectorAll('[data-quick-view] [data-addon-product-variant-select]').forEach((selector) => {
+                addonProductOptions.push(selector.value);
+            });
+        }
+
+        producVariantsArray.find((variant) => {
+            let mappedValues = variant.options.map((option, index) => {
+                return addonProductOptions[index] === option;
+            });
+            if (!mappedValues.includes(false)) {
+                addonCurrentVariant = variant;
+                return;
+            }
+        });
+    }
+</script>

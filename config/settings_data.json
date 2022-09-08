@@ -1,0 +1,2229 @@
+{
+  "current": {
+    "address_street": "",
+    "address_city": "",
+    "address_county": "",
+    "address_postcode": "",
+    "address_country": "US",
+    "company_email": "",
+    "company_phone": "",
+    "social_facebook_link": "https:\/\/www.facebook.com\/Barefaced-108773867413876",
+    "social_instagram_link": "https:\/\/www.instagram.com\/barefaced\/",
+    "social_twitter_link": "",
+    "social_linkedin_link": "",
+    "social_pinterest_link": "https:\/\/www.pinterest.co.uk\/barefaced\/_saved\/",
+    "social_youtube_link": "https:\/\/www.youtube.com\/channel\/UCDQVcjzHNcfLbpR1Jcn1wvQ",
+    "social_vimeo_link": "",
+    "search_terms": "Cleanse\nExfoliate\nTone\nHydrate\nBrighten\nLips\nHand\nBody\nSerums\nVitamin C\nSPF\nSkincare Consult",
+    "search_products": "overachiever\nbrightening-duo\nretinal-therapy\nglow-peel-pads",
+    "addon_products_collection": "acne-control",
+    "checkout_logo_image": "shopify:\/\/shop_images\/logo-spaced-2.png",
+    "checkout_logo_size": "small",
+    "checkout_body_background_color": "#fbf5ed",
+    "checkout_sidebar_background_color": "#ffffff",
+    "checkout_accent_color": "#2e2828",
+    "checkout_button_color": "#2e2828",
+    "checkout_error_color": "#e10100",
+    "sections": {
+      "promo-bar": {
+        "type": "promo-bar",
+        "settings": {
+          "enabled": true,
+          "text": "Free shipping on product orders $99+",
+          "link": "shopify:\/\/collections\/all-products"
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+        }
+      },
+      "mini-cart": {
+        "type": "mini-cart",
+        "settings": {
+        }
+      },
+      "cookies": {
+        "type": "cookies",
+        "settings": {
+          "text": "<p>Cookies and this site go together like SPF and Vitamin C. We use cookies on our website to make sure you only see things that are relevant to you. <a href=\"\/pages\/cookies-policy\" title=\"Cookies Policy\">Learn more.<\/a><\/p>"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "aded4431-dc5a-4437-9842-0ac5640c66c1": {
+            "type": "usp",
+            "settings": {
+              "title": "Free shipping on orders over $99"
+            }
+          },
+          "68c748f5-e417-466a-a51b-5aeb0003e184": {
+            "type": "usp",
+            "settings": {
+              "title": "Clinically-proven ingredients"
+            }
+          },
+          "abd90be4-32a6-4bee-9804-0a184cde7907": {
+            "type": "usp",
+            "settings": {
+              "title": "Developed by a nurse practitioner"
+            }
+          }
+        },
+        "block_order": [
+          "aded4431-dc5a-4437-9842-0ac5640c66c1",
+          "68c748f5-e417-466a-a51b-5aeb0003e184",
+          "abd90be4-32a6-4bee-9804-0a184cde7907"
+        ],
+        "settings": {
+        }
+      },
+      "product": {
+        "type": "product",
+        "settings": {
+        }
+      },
+      "product-usps": {
+        "type": "product-usps",
+        "blocks": {
+          "7d744fe5-ac27-4ed0-8de8-ee288922638c": {
+            "type": "usp",
+            "disabled": true,
+            "settings": {
+              "icon": "box",
+              "title": "Free shipping on all skincare product orders over $99"
+            }
+          },
+          "251f2196-2b61-4aaf-8da0-cdddf79148a3": {
+            "type": "usp",
+            "disabled": true,
+            "settings": {
+              "icon": "recycle",
+              "title": "High-quality, medically backed products"
+            }
+          },
+          "935b5839-7659-4468-bb04-d3493d4920c4": {
+            "type": "usp",
+            "disabled": true,
+            "settings": {
+              "icon": "heart",
+              "title": "Simplified Skincare. Amplified Results."
+            }
+          }
+        },
+        "block_order": [
+          "7d744fe5-ac27-4ed0-8de8-ee288922638c",
+          "251f2196-2b61-4aaf-8da0-cdddf79148a3",
+          "935b5839-7659-4468-bb04-d3493d4920c4"
+        ],
+        "settings": {
+        }
+      },
+      "product-recommendations": {
+        "type": "product-recommendations",
+        "settings": {
+          "subtitle": "Recommended Products",
+          "title": "Essentials for the ~cold months~",
+          "link_text": "Shop Routines",
+          "link_url": "shopify:\/\/collections\/best-sellers"
+        }
+      },
+      "product-benefits": {
+        "type": "product-benefits",
+        "settings": {
+          "subtitle": "Your best skin ever",
+          "title": "Products and routines that ~inspire confidence.~",
+          "intro": "<p>There’s no such thing as one-size-fits-all, especially when it comes to skincare. With simple, effective, and personalized routines that amplify results, we’re all about helping everyone feel confident in the skin they’re in. <\/p>",
+          "benefits": "Education\nIngredients\nResults",
+          "image": "shopify:\/\/shop_images\/NH-Barefaced-Day-Two4239.jpg"
+        }
+      },
+      "product-video": {
+        "type": "product-video",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/NH-Barefaced-Day-Two5049.jpg",
+          "video_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0567\/1868\/8418\/files\/Barefaced_Home_Page_Video.mp4?v=1622216424",
+          "caption": "<p>Skin so good you could go <strong>Barefaced.<\/strong><\/p>"
+        }
+      },
+      "product-two-col-block": {
+        "type": "product-two-col-block",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/NH-Barefaced-Day-One1647.jpg",
+          "subtitle": "Expert skincare",
+          "title": "Product ~perfection~",
+          "content": "<p>When you use the right products for your skin type, you’ll see long-term benefits and a lifetime of healthy skin. You just need a plan that makes sense for your skincare needs. That’s where we come in. Every clinically proven product we create is formulated with active ingredients that help you simplify your routine and amplify your results, so your skin can feel its brightest and healthiest yet. <\/p>"
+        }
+      },
+      "product-faqs": {
+        "type": "product-faqs",
+        "blocks": {
+          "03561b36-691f-423e-a7c4-d80bff3af726": {
+            "type": "faq",
+            "settings": {
+              "question": "How do I know which products are best for my skin type?",
+              "answer": "<p>We can help with that! To get started, we recommend taking our <a href=\"\/pages\/skincare-quiz\" target=\"_blank\" title=\"Skincare Quiz\">skin quiz<\/a>, which you can find here. The skin care quiz will guide you to the best products for your skin type.<\/p>"
+            }
+          },
+          "d20c9faa-0327-442d-933e-5fe194e8ee00": {
+            "type": "faq",
+            "settings": {
+              "question": "Are these products considered medical grade?",
+              "answer": "<p>Barefaced, and all of the other lines we carry, are considered “medical-grade” skincare (although that’s not a regulated term). Our products are formulated to be results-driven, and they’re developed by medical professionals, master formulators and expert chemists to induce change in the skin at the cellular level.<\/p>"
+            }
+          },
+          "40612783-5e8a-43c6-a04e-90775a86716f": {
+            "type": "faq",
+            "settings": {
+              "question": "Are your products cruelty-free?",
+              "answer": "<p>Yes, all of the products we stock are cruelty-free.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "03561b36-691f-423e-a7c4-d80bff3af726",
+          "d20c9faa-0327-442d-933e-5fe194e8ee00",
+          "40612783-5e8a-43c6-a04e-90775a86716f"
+        ],
+        "settings": {
+          "subtitle": "FAQ's",
+          "title": "We're so glad you asked.",
+          "cta_title": "Can’t find the answer you’re looking for?",
+          "cta_button_url": "shopify:\/\/pages\/contact",
+          "cta_button_text": "Contact us"
+        }
+      },
+      "blog-banner": {
+        "type": "blog-banner",
+        "settings": {
+          "subtitle": "Welcome to Barefaced",
+          "title": "~Skincare School~",
+          "image": "shopify:\/\/shop_images\/wNH-Barefaced-Day-Two4029.jpg"
+        }
+      },
+      "blog-cta": {
+        "type": "blog-cta",
+        "settings": {
+          "enable": false,
+          "subtitle": "Feeling overwhelmed?",
+          "title": "We'll be your ~guide.~",
+          "link_text": "Start Here",
+          "link_url": "shopify:\/\/blogs\/blog\/the-core-four"
+        }
+      },
+      "page-banner": {
+        "type": "page-banner",
+        "blocks": {
+          "a8766bbc-3b48-46fe-aa83-19cade0b0622": {
+            "type": "block",
+            "settings": {
+              "page": "faqs",
+              "image": "shopify:\/\/shop_images\/Barefaced_Skin_Pads.jpg",
+              "title": "Frequently Asked Questions",
+              "content": "We’re here to answer your most pressing questions, always.",
+              "link_text": "",
+              "link_url": "",
+              "height": "shallow",
+              "align": "center",
+              "capped_width": false
+            }
+          },
+          "38ea9a26-e4fa-44d1-8849-f40cb7e44d8c": {
+            "type": "block",
+            "settings": {
+              "page": "about",
+              "image": "shopify:\/\/shop_images\/NH-Barefaced-Day-One0478.jpg",
+              "title": "Bringing ~confidence and calm~ to your skincare routine.",
+              "content": "",
+              "link_text": "",
+              "link_url": "",
+              "height": "deep",
+              "align": "center",
+              "capped_width": false
+            }
+          },
+          "9f4732d6-943d-4a38-a6bc-91ca27777082": {
+            "type": "block",
+            "settings": {
+              "page": "team",
+              "image": "shopify:\/\/shop_images\/NH-Barefaced-Day-One1657.jpg",
+              "title": "Inspired by a passion for nurturing vibrant, ~healthy skin~",
+              "content": "",
+              "link_text": "",
+              "link_url": "",
+              "height": "deep",
+              "align": "center",
+              "capped_width": false
+            }
+          },
+          "82ff34f5-97fe-4d5a-9ad5-14d66fecb079": {
+            "type": "block",
+            "settings": {
+              "page": "ethos",
+              "image": "shopify:\/\/shop_images\/NH-Barefaced-Day-One1372_websize.jpg",
+              "title": "Nourishing skin, ~nurturing compassion.~",
+              "content": "",
+              "link_text": "",
+              "link_url": "",
+              "height": "deep",
+              "align": "center",
+              "capped_width": false
+            }
+          },
+          "b66cf53a-0912-4090-a9e1-ce8fcc13e2b3": {
+            "type": "block",
+            "settings": {
+              "page": "subscribe-save",
+              "image": "shopify:\/\/shop_images\/Troop-Barefaced_Subscriptions_Page-Banner.jpg",
+              "title": "Subscribe + Save",
+              "content": "It’s the ultimate way to simplify your skincare!  When you sign up for  subscriptions, your products get replenished automatically + you save money. What’s not to love?!",
+              "link_text": "Join Troop Barefaced",
+              "link_url": "shopify:\/\/pages\/about",
+              "height": "deep",
+              "align": "left",
+              "capped_width": true
+            }
+          }
+        },
+        "block_order": [
+          "a8766bbc-3b48-46fe-aa83-19cade0b0622",
+          "38ea9a26-e4fa-44d1-8849-f40cb7e44d8c",
+          "9f4732d6-943d-4a38-a6bc-91ca27777082",
+          "82ff34f5-97fe-4d5a-9ad5-14d66fecb079",
+          "b66cf53a-0912-4090-a9e1-ce8fcc13e2b3"
+        ],
+        "settings": {
+        }
+      },
+      "faqs": {
+        "type": "faqs",
+        "blocks": {
+          "199759a0-89e5-478f-ac39-e1d15beb6e7f": {
+            "type": "faq",
+            "settings": {
+              "question": "Are these products safe if I’m pregnant or nursing?",
+              "answer": "<p>All of our products are considered pregnancy safe except for the Glow Peel Pads and RetinAL Skin Therapy. <\/p><p>Retinoids (found in RetinAL Skin Therapy) and glycolic acid (found in Glow Peel Pads) are poorly absorbed after topical application, and therefore considered a low risk to the nursing infant. We always recommend consulting with your OB prior to use!<\/p>",
+              "category": "all-about-your-regimen"
+            }
+          },
+          "fa439fe5-27e6-4dd2-a187-0a8a86711283": {
+            "type": "faq",
+            "settings": {
+              "question": "I just started my routine and I’m noticing increased breakouts. Is this normal?",
+              "answer": "<p>Totally! Increased breakouts can happen when you start a new product with active ingredients like salicylic acid, glycolic acid and retinoids. These breakouts generally last 6-8 weeks.<\/p>",
+              "category": "all-about-your-regimen"
+            }
+          },
+          "6c6a2dec-86a9-4b5c-a82e-c0f52800d53c": {
+            "type": "faq",
+            "settings": {
+              "question": "My skin is having a reaction to the products. Is this normal?",
+              "answer": "<p>When changing your routine or incorporating clinical grade products, there is an expected adjustment period when using them because of the high level of active ingredients in the product. It’s not uncommon for them to sting, tingle, induce redness or cause higher sensitivity initially. <br\/><br\/>An allergic reaction would look like more of a hives type reaction, where the product caused a rash to the areas it was applied. If you have any concerns about your skin or the products you’re using, please <a href=\"mailto:hello@barefaced.com\" target=\"_blank\" title=\"mailto:hello@barefaced.com\"><span style=\"text-decoration:underline\">send us an email<\/span><\/a> so we can help guide you through this transition.<\/p>",
+              "category": "all-about-your-regimen"
+            }
+          },
+          "83debda7-40c8-4fd2-a406-9cf3d577f382": {
+            "type": "faq",
+            "settings": {
+              "question": "How often should I use each product?",
+              "answer": "<p>Every product has their own specific usage tips on their page in the shop. When you start incorporating products with active ingredients such as glycolic acid, salicylic acid or retinoids, it’s best to introduce each product gradually. Start by using the product three times a week on alternating days and gradually increase to once or twice daily (as tolerated) depending on the recommended use of the product.<\/p>",
+              "category": "product-usage-tips"
+            }
+          },
+          "c82b38fe-b96f-4556-99e9-e8bf63a20e08": {
+            "type": "faq",
+            "settings": {
+              "question": "How do I apply my products?",
+              "answer": "<p>We wrote you a blog post all about it! Check out <a href=\"\/blogs\/blog\" target=\"_blank\" title=\"Blog\"><span style=\"text-decoration:underline\">How to Layer Your Skincare Products<\/span><\/a> for more info.<\/p>",
+              "category": "product-usage-tips"
+            }
+          },
+          "6aa56ef4-7db0-4654-9a75-51274311affa": {
+            "type": "faq",
+            "settings": {
+              "question": "How long do I wait between each product before applying the next?",
+              "answer": "<p>We always recommend applying each product to damp skin for maximum absorption. <\/p>",
+              "category": "product-usage-tips"
+            }
+          },
+          "446695a3-7a5e-4dd9-bac3-136b3d12b421": {
+            "type": "faq",
+            "settings": {
+              "question": "How do I know which products are best for my skin type?",
+              "answer": "<p>We can help with that! To get started, we recommend taking our Skincare Quiz, which you can find <a href=\"https:\/\/www.barefaced.com\/pages\/skincare-quiz\" title=\"https:\/\/www.barefaced.com\/pages\/skincare-quiz\">here<\/a>. The quiz will guide you to the best products for your skin type.<\/p>",
+              "category": "product-usage-tips"
+            }
+          },
+          "16c3d478-4448-4a9c-9ab2-502db1b8b9fc": {
+            "type": "faq",
+            "settings": {
+              "question": "How should I start using a retinoid?",
+              "answer": "<p>We wrote you a blog post all about it! Check it out <a href=\"\/blogs\/blog\" target=\"_blank\" title=\"Blog\">here<\/a>.<\/p>",
+              "category": "product-usage-tips"
+            }
+          },
+          "0c65dc9f-4e4f-4572-8d6c-76ce06949380": {
+            "type": "faq",
+            "settings": {
+              "question": "What if I have questions about the products I ordered?",
+              "answer": "<p>We’re here for you! Send us an email at <a href=\"mailto:hello@barefaced.com\" target=\"_blank\" title=\"mailto:hello@barefaced.com\">hello@barefaced.com<\/a> so we can help you be the expert of your routine.<\/p>",
+              "category": "product-usage-tips"
+            }
+          },
+          "3d8e1b25-8dec-4f2d-9bf2-d5d31cdc6011": {
+            "type": "faq",
+            "settings": {
+              "question": "Which face wash is right for me?",
+              "answer": "<p>Take the <a href=\"\/pages\/skincare-quiz\" target=\"_blank\" title=\"Skincare Quiz\">Cleanser Quiz<\/a>!<\/p>",
+              "category": "product-usage-tips"
+            }
+          },
+          "da9ca925-c791-4522-9b11-baf58dad2f22": {
+            "type": "faq",
+            "settings": {
+              "question": "Which Toning Pads are best for me?",
+              "answer": "<p>We recommend starting with regular <a href=\"\/products\/toning-pads-i\" target=\"_blank\" title=\"Toning Pads\">Toning Pads<\/a> and then increasing to <a href=\"\/products\/toning-pads-ii\" target=\"_blank\" title=\"Toning Pads II\">Toning Pads II<\/a> as tolerated.<\/p>",
+              "category": "product-usage-tips"
+            }
+          },
+          "e03a536b-8275-4a5b-b402-f332118d7528": {
+            "type": "faq",
+            "settings": {
+              "question": "The Barefaced Hydrating Lotion stings with application. Is this normal?",
+              "answer": "<p>The Hydrating Lotion enhances the efficacy of retinoids, glycolic, and salicylic acid. It has niacinamide in it so a slight burning sensation isn’t uncommon with initial usage, especially if you are starting a brand new routine or introducing other active ingredients like the Toning Pads or Vitamin C serum. The goal with clinical-grade products is to induce change in the skin at the cellular level, which means we want to see a bit of a “reaction” from the skin with application — as long as it’s not an allergic reaction.<\/p>",
+              "category": "product-usage-tips"
+            }
+          },
+          "ca429b23-6102-465b-9283-787e7d4d201d": {
+            "type": "faq",
+            "settings": {
+              "question": "I've been having breakouts since I started using my products. Is this normal?",
+              "answer": "<p>You might see more breakouts when you first start using a new routine that includes ingredients like retinoids, glycolic, salicylic acid, or l-ascorbic acid. It’s so normal that one-in-four people experience this. Essentially, it is making everything that was going to come out eventually come out much quicker. It can take between 6-8 weeks for your skin to adjust, but usually it only takes 2-4 weeks.<\/p>",
+              "category": "product-usage-tips"
+            }
+          },
+          "45a68c05-1d04-4004-998c-72a899cf6e90": {
+            "type": "faq",
+            "settings": {
+              "question": "I’m on Accutane or have been off Accutane for less than 6 months. Which Barefaced Pads can I use?",
+              "answer": "<p>We don't recommend using the <a href=\"\/products\/toning-pads-i\" target=\"_blank\" title=\"Toning Pads\">Toning Pads<\/a> or <a href=\"\/products\/glow-peel-pads\" target=\"_blank\" title=\"Glow Peel Pads\">Glow Peel Pads<\/a>  until you’ve been off Accutane for 6 months. The Brightening Serum and a <a href=\"\/products\/c-correcting-complex-30\" target=\"_blank\" title=\"C+ Correcting Complex 30%\">C+ Correcting Complex<\/a> would be great options for your skin until you have been off Accutane for at least 6 months. For even more glow, pair the Vitamin C and Brightening Serum together to reduce hyperpigmentation and calm your skin. <br\/><\/p><p>*Everyone's skin is different, so we always recommend testing the product on your forearm or behind your ear to see if a reaction occurs prior to using it on your face. Make sure you check in with your prescribing derm before use too.<\/p>",
+              "category": "product-usage-tips"
+            }
+          },
+          "7a3ebafc-f56f-4d36-ac6d-9d651f2ab424": {
+            "type": "faq",
+            "settings": {
+              "question": "Can I use retinoids and Toning Pads together?",
+              "answer": "<p>Yes and no. Retinoids are totally fine to use together with Toning Pads but they can be irritating at first! If you’re new to the combo, we recommend using the <a href=\"\/products\/toning-pads-i\" target=\"_blank\" title=\"Toning Pads\">Toning Pads<\/a> in the AM and your retinoid at night. You can start using Toning Pads in the PM once you know your skin is tolerating them without dryness or sensitivity in the morning.<\/p>",
+              "category": "product-usage-tips"
+            }
+          },
+          "db3980a1-39ca-4fca-bcef-354136780eba": {
+            "type": "faq",
+            "settings": {
+              "question": "How should I start using the Brightening Facial Wash and Toning Pads together for the first time?",
+              "answer": "<p>If you’re incorporating <a href=\"\/products\/brightening-facial-wash\" target=\"_blank\" title=\"Brightening Facial Wash\">Brightening Facial Wash<\/a> and <a href=\"\/products\/toning-pads-i\" target=\"_blank\" title=\"Toning Pads\">Toning Pads<\/a> into your regimen for the first time, we recommend switching them every other day. So, on Monday you’d use a gentle cleanser before the Toning Pads and on Tuesday you’d apply the Brightening Facial Wash. Then repeat!<br\/><\/p><p><\/p><p>If your skin starts to feel irritated, we recommend stopping the Brightening Facial Wash and using a gentle cleanser with the Toning Pads. Only re-introduce the BFW when your skin feels normal from the regular use of Toning Pads.<\/p>",
+              "category": "product-usage-tips"
+            }
+          },
+          "cc75bd8b-68ba-46f1-b7bb-de9a3cdb53d5": {
+            "type": "faq",
+            "settings": {
+              "question": "How do I incorporate multiple Barefaced Skin Pads?",
+              "answer": "<p>Toning Pads with Glow Peel Pads:<br\/><\/p><p>Use the <a href=\"\/products\/toning-pads-i\" target=\"_blank\" title=\"Toning Pads\">Toning Pads<\/a> in the morning and evening (optional) after applying cleanser.<br\/><\/p><p>Use <a href=\"\/products\/glow-peel-pads\" target=\"_blank\" title=\"Glow Peel Pads\">Glow Peel Pads<\/a> in the morning 1-3 times a week in place of Toning Pads.<br\/><\/p><p>If you prefer to use the <a href=\"\/products\/glow-peel-pads\" target=\"_blank\" title=\"Glow Peel Pads\">Glow Peel Pads<\/a> at night, use 1-3 times a week at night (and skip retinoid that night).<\/p>",
+              "category": "product-usage-tips"
+            }
+          },
+          "154fe770-e27c-4d5d-b64a-738fc93e1ff5": {
+            "type": "faq",
+            "settings": {
+              "question": "Are these products considered medical grade?",
+              "answer": "<p>Barefaced, and all of the other lines we stock in the shop, are considered “medical-grade” skincare (although that’s not a regulated term). Our products are formulated to be results-driven, and they’re developed by medical professionals, master formulators, and expert chemists. Our products are backed by scientific research, clinical vetting and trials to ensure the products actually work and induce change in the skin.<\/p>",
+              "category": "science-ingredients"
+            }
+          },
+          "38cda08e-6405-4929-910d-20c562b4dafb": {
+            "type": "faq",
+            "settings": {
+              "question": "Are your products cruelty-free?",
+              "answer": "<p>Yes, all of the products we stock are cruelty-free.<\/p>",
+              "category": "science-ingredients"
+            }
+          },
+          "e3c183bb-8b32-4e8b-8881-071f8eec841a": {
+            "type": "faq",
+            "settings": {
+              "question": "Do your products contain parabens?",
+              "answer": "<p>Every Barefaced product is formulated without parabens, fragrance, phthalates, sulphates, artificial dyes, mineral oil, or formaldehyde donors. <\/p>",
+              "category": "science-ingredients"
+            }
+          },
+          "1fd76bdd-f670-4cb6-a2d8-95a7b52e2c47": {
+            "type": "faq",
+            "settings": {
+              "question": "What is Shop Pay Installments?",
+              "answer": "<p>Shop Pay Installments is a buy now, pay later option. Paying in installments on Shop Pay allows you to split your purchase amount into 4 equal, biweekly installment payments—with 0% interest, no hidden or late fees, and no impact on your credit score.<\/p>",
+              "category": "online-orders-shipping-returns"
+            }
+          },
+          "9e16418c-3cb8-4bae-aa1b-67be0909a989": {
+            "type": "faq",
+            "settings": {
+              "question": "How does Shop Pay Installments Work?",
+              "answer": "<p>Shop and checkout as normal. At checkout, choose the Shop Pay Installments option as your payment method. After clicking \"Complete Order,\" you will be redirected to Shop Pay to complete your purchase securely. Orders placed using Shop Pay Installments will be processed and delivered like all other orders.<\/p><p>Your first payment will either be due at checkout or 2 weeks after your purchase. The next 3 remaining installments will be automatically charged to your card saved on Shop Pay every 2 weeks. And don't worry, you'll get an email reminder before each payment to keep you in the know.<\/p><p><\/p><p>Shop Pay Installments cannot be applied towards subscription\/recurring purchases.<\/p><p><\/p><p>For more questions about Shop Pay Installments, please email us at <a href=\"mailto:hello@barefaced.com\" title=\"mailto:hello@barefaced.com\">hello@barefaced.com<\/a><\/p><p><\/p><p>For additional information on Shop Pay Installments, you can also visit the <a href=\"https:\/\/shoppay.affirm.com\/help\/s\/\" target=\"_blank\" title=\"https:\/\/shoppay.affirm.com\/help\/s\/\">Shop Pay Help Center<\/a>.<\/p>",
+              "category": "online-orders-shipping-returns"
+            }
+          },
+          "eee17dc3-5e84-494c-9fe6-480e459ad7d6": {
+            "type": "faq",
+            "settings": {
+              "question": "Can I use Shop Pay Installments for subscriptions?",
+              "answer": "<p>No, Shop Pay Installments can not be applied towards subscription purchases.<\/p>",
+              "category": "online-orders-shipping-returns"
+            }
+          },
+          "94750d5f-c9a6-43cf-aa2f-2280e7b52176": {
+            "type": "faq",
+            "settings": {
+              "question": "Can I make changes to my order once it’s placed?",
+              "answer": "<p>Please let us know as soon as possible if you need to make any changes to your order, including changing the shipping address or cancelling the order. We’ll do our best, but we cannot guarantee that order modifications can be made as orders are processed within 12-48 hours of receipt.<\/p>",
+              "category": "online-orders-shipping-returns"
+            }
+          },
+          "6b3e67d3-40b1-4735-bcc6-4ee25bb737a4": {
+            "type": "faq",
+            "settings": {
+              "question": "My package is lost, what do I do?",
+              "answer": "<p>We are so sorry that your products have not made it to your doorstep yet. If you haven’t received your package within 10 business days, please email us at <a href=\"mailto:hello@barefaced.com\" target=\"_blank\" title=\"mailto:hello@barefaced.com\">hello@barefaced.com<\/a>.<\/p>",
+              "category": "online-orders-shipping-returns"
+            }
+          },
+          "d0ccad9e-80eb-4f11-b058-c7518d1805fc": {
+            "type": "faq",
+            "settings": {
+              "question": "What is the status of my order?",
+              "answer": "<p>When your order has shipped, you’ll receive an email with a tracking number. If you didn’t get this email, please check your spam folder or email us at <a href=\"mailto:hello@barefaced.com\" title=\"mailto:hello@barefaced.com\">hello@barefaced.com<\/a> and we’ll gladly resend it to you.<\/p>",
+              "category": "online-orders-shipping-returns"
+            }
+          },
+          "20d705d4-5acd-4846-8931-58b4dc5d018b": {
+            "type": "faq",
+            "settings": {
+              "question": "My product arrived defective or leaking. What do I do?",
+              "answer": "<p>Oh no! Please contact us at <a href=\"mailto:hello@barefaced.com\" target=\"_blank\" title=\"mailto:hello@barefaced.com\">hello@barefaced.com<\/a> within 48 hours of receiving your order with an image of the product(s) and your order number, and we’ll make sure you’re taken care of. <\/p>",
+              "category": "online-orders-shipping-returns"
+            }
+          },
+          "e07a5dd6-1a24-48c2-a8d7-af69a88e9d95": {
+            "type": "faq",
+            "settings": {
+              "question": "What if I want to return my purchase?",
+              "answer": "<p>If you are unsatisfied with your purchase, you can return any item in new or gently used condition for store credit within 30 days of delivery. Please email us at <a href=\"mailto:hello@barefaced.com\" target=\"_blank\" title=\"mailto:hello@barefaced.com\">hello@barefaced.com<\/a> with your order number to begin your return. Psst: gift cards are final sale.<\/p>",
+              "category": "online-orders-shipping-returns"
+            }
+          },
+          "6347bfc8-6a46-4305-b9ba-3b87d1d1c7ce": {
+            "type": "faq",
+            "settings": {
+              "question": "Do you ship internationally?",
+              "answer": "<p>We only ship within the contiguous 48 United States (which excludes Hawaii and Alaska) right now, but we hope to ship internationally soon!<\/p>",
+              "category": "online-orders-shipping-returns"
+            }
+          },
+          "288bf691-b118-42bd-90da-73f82e6dfddf": {
+            "type": "faq",
+            "settings": {
+              "question": "What if I have questions about my products?",
+              "answer": "<p>We’re here for you! Please email us at <a href=\"mailto:hello@barefaced.com\" target=\"_blank\" title=\"mailto:hello@barefaced.com\">hello@barefaced.com<\/a>, or send us a text to +1 (833) 251-5791!<\/p>",
+              "category": "online-orders-shipping-returns"
+            }
+          },
+          "ab5cb107-07fa-4d2f-b354-b0189e9156c6": {
+            "type": "faq",
+            "settings": {
+              "question": "The tracking says that my package was delivered but I haven’t received it. What should I do?",
+              "answer": "<p>We are so sorry that your package was lost or incorrectly delivered by the shipping carrier. First, we recommend contacting your local post office to check on the shipment. Please allow up to 5 business days for the package to arrive once you’ve reported the missing package to the shipping carrier. For more information about recovering your lost package, contact us at <a href=\"mailto:hello@barefaced.com\" target=\"_blank\" title=\"mailto:hello@barefaced.com\">hello@barefaced.com<\/a> and we’ll make sure you’re taken care of.<\/p>",
+              "category": "online-orders-shipping-returns"
+            }
+          },
+          "2400e1bf-7245-4dab-9dce-7c212327bb45": {
+            "type": "faq",
+            "settings": {
+              "question": "Do you offer gift cards?",
+              "answer": "<p>Yes! You can purchase a gift card <a href=\"https:\/\/www.barefaced.com\/products\/gift-card\" title=\"https:\/\/www.barefaced.com\/products\/gift-card\">here<\/a>. We offer a variety of denominations to choose from. Gift cards are non-refundable and are final sale. <\/p>",
+              "category": "online-orders-shipping-returns"
+            }
+          },
+          "a22730c5-cba1-44ff-8c9a-b0edb097c65a": {
+            "type": "faq",
+            "settings": {
+              "question": "How do I buy a gift card for someone else?",
+              "answer": "<p>If purchasing a gift card for someone else, select the gift card amount you wish to purchase and follow through with the checkout process like normal. Once the order is submitted, the gift card will be emailed to you with instructions on how to redeem it. Simply forward this email to the intended recipient!<\/p><p>You may also email us at <a href=\"mailto:hello@barefaced.com\" title=\"mailto:hello@barefaced.com\">hello@barefaced.com<\/a> with the gift card code and recipient's email address and we can resend the email for you.<\/p>",
+              "category": "online-orders-shipping-returns"
+            }
+          },
+          "03d67024-0612-4753-a6e4-1ad7cd451c65": {
+            "type": "faq",
+            "settings": {
+              "question": "Do gift cards expire?",
+              "answer": "<p>Gift cards expire one year after purchase.<\/p>",
+              "category": "online-orders-shipping-returns"
+            }
+          },
+          "f78fa89f-5d9f-4e28-b041-171048fe7e66": {
+            "type": "faq",
+            "settings": {
+              "question": "How does the subscription work?",
+              "answer": "<p>We make it super easy to subscribe to your favorite products! Simply select any of your favorite products that you’d like to receive on subscription and choose the ‘Subscribe + Save’ option before adding your products to cart. Select how often you'd like to receive them and proceed to checkout. <\/p><p>Don’t worry, you can swap or add products whenever you like! You can also skip or edit your delivery at any time to suit your schedule. <\/p>",
+              "category": "subscriptions"
+            }
+          },
+          "4c97c477-6ee7-4f95-9415-90f3545ab78c": {
+            "type": "faq",
+            "settings": {
+              "question": "Are there any perks to subscribe?",
+              "answer": "<p>Of course! You’ll receive rewards points with every purchase you make and every order renewal. Points can be redeemed for discounts on certain one-time purchases and certain subscription products.<\/p><p><\/p><p>Plus, enjoy 10% off select products - you can subscribe and save!<\/p><p><\/p><p>We also set aside inventory each month for our product subscriptions so you never have to worry about your must-haves going out of stock.<\/p>",
+              "category": "subscriptions"
+            }
+          },
+          "e8118b80-8c91-4e58-aa29-ceab7a453449": {
+            "type": "faq",
+            "settings": {
+              "question": "Do I get more Barefaced Rewards points if I subscribe?",
+              "answer": "<p>Yes! When you make 6 subscription purchases or complete 6 subscription renewals, you’ll earn 100 bonus points and be even closer to redeeming your next reward. <\/p>",
+              "category": "subscriptions"
+            }
+          },
+          "ab8778bc-8c72-4d48-8123-4e256016f107": {
+            "type": "faq",
+            "settings": {
+              "question": "Can I edit or cancel my subscription anytime?",
+              "answer": "<p>Yes, you can cancel or make changes to your subscription at any time by logging into your account and clicking Manage Subscriptions.<\/p>",
+              "category": "subscriptions"
+            }
+          },
+          "df75e498-47b2-4a1e-81cb-9c7c9f7c5b9f": {
+            "type": "faq",
+            "settings": {
+              "question": "When will I be charged for my subscription?",
+              "answer": "<p>You will be charged at the point of purchase and all subsequent charges will follow the frequency that you selected when choosing your subscription.<\/p><p>You can make changes to your order frequency or next charge date at any time.<\/p>",
+              "category": "subscriptions"
+            }
+          },
+          "0e0bfa7e-feeb-4182-9814-056cb4d444f4": {
+            "type": "faq",
+            "settings": {
+              "question": "How do I change where my subscription gets shipped to?",
+              "answer": "<p>You can update your delivery address by logging into your account and clicking on the Manage Subscriptions tab. From here, click \"Edit Shipping Address\" to make any changes. <\/p>",
+              "category": "subscriptions"
+            }
+          },
+          "979b2395-091f-40ca-837b-6782e5b060f2": {
+            "type": "faq",
+            "settings": {
+              "question": "Can I change the delivery date of my subscription?",
+              "answer": "<p>Yes you can! After logging into your account, select the Manage Subscriptions tab and click on the \"Manage\" button next to the product you wish to edit. From here, you can change the order date, or you can also skip an upcoming order or change the frequency or quantity.<\/p>",
+              "category": "subscriptions"
+            }
+          },
+          "574da0c5-ed2b-4393-8b84-a585ff550d3d": {
+            "type": "faq",
+            "disabled": true,
+            "settings": {
+              "question": "I was subscribed to a product on the previous site. Will that transfer over?",
+              "answer": "<p>Yes! If you had been subscribed to products through our previous website, your subscription has rolled over and you are on the same plan, pricing and frequency. The only step you will need to take is to create a new account through the <a href=\"https:\/\/www.barefaced.com\/account\/login\" target=\"_blank\" title=\"https:\/\/www.barefaced.com\/account\/login\">My Account<\/a> page using the same email you were previously signed up under. Please contact us at <a href=\"mailto:hello@barefaced.com\" target=\"_blank\" title=\"mailto:hello@barefaced.com\">hello@barefaced.com<\/a> if you are having trouble seeing your existing subscription. <\/p>",
+              "category": "subscriptions"
+            }
+          },
+          "fd28124e-9dc1-419c-868c-9d43180543e9": {
+            "type": "faq",
+            "settings": {
+              "question": "How do I change my billing information for my subscription?",
+              "answer": "<p>To update your billing information on existing subscriptions, simply log in to your account, go to Manage Subscriptions and select the \"Update Billing\" button. From here, you will be sent an email to securely update your billing information.<\/p><p><\/p><p>For questions or help with billing, please reach out to <a href=\"mailto:hello@barefaced.com\" title=\"mailto:hello@barefaced.com\">hello@barefaced.com<\/a>.<\/p>",
+              "category": "subscriptions"
+            }
+          },
+          "98b3cb5d-4e02-4420-9225-e5bb33f4fb47": {
+            "type": "faq",
+            "settings": {
+              "question": "Will I get free shipping on my subscription order?",
+              "answer": "<p>Subscription orders will be shipped Standard Shipping and will incur a flat rate of $9.95 on each renewal. Free Shipping is offered for subscription orders over $99. <\/p><p>If you have multiple subscription products and want them to ship together to receive the Free Shipping rate, make sure the products have the same upcoming order dates and are combined under one address and payment method. If you want to add products to your subscription to reach the $99 Free Shipping minimum, we recommend adding products to upcoming subscription orders through the customer portal versus purchasing a new subscription order altogether. You can even add one-time purchases to your order through the customer portal!<\/p><p>Please note, Free Shipping is determined by the subtotal of the products after discounts have been applied.<\/p><p>For questions about merging product subscriptions to receive free shipping, please reach out to <a href=\"mailto:hello@barefaced.com\" title=\"mailto:hello@barefaced.com\">hello@barefaced.com<\/a> - we're here to help!<\/p>",
+              "category": "subscriptions"
+            }
+          },
+          "97ea2276-711b-422a-aee9-959efa2dc841": {
+            "type": "faq",
+            "settings": {
+              "question": "How can I sign up for the Barefaced Rewards Program?",
+              "answer": "<p>Signing up is super easy! Simply create an account by <a href=\"\/pages\/loyalty\" target=\"_blank\" title=\"Loyalty\"><span style=\"text-decoration:underline\">clicking here<\/span><\/a> and enter your name, email, and password. It’s free to join and you’ll automatically be signed up to receive emails with insider access to special offers and all of our newest drops. <\/p>",
+              "category": "barefaced-loyalty-program"
+            }
+          },
+          "6ade340f-3cf2-4446-b733-c1d59a198c26": {
+            "type": "faq",
+            "settings": {
+              "question": "What are the advantages to joining the rewards program?",
+              "answer": "<p>Our rewards program is a tiered program that allows members to earn more perks the more they engage with us. Members receive points for each purchase, and those points can be redeemed  towards the cost of future purchases. Check out all of the benefits <a href=\"\/pages\/loyalty\" target=\"_blank\" title=\"Loyalty\">here<\/a>.<\/p>",
+              "category": "barefaced-loyalty-program"
+            }
+          },
+          "32352e94-27b0-46e9-9651-aed8727cb9b9": {
+            "type": "faq",
+            "settings": {
+              "question": "Is it free to join the rewards program?",
+              "answer": "<p>Yep! Just click <a href=\"https:\/\/www.barefaced.com\/account\" title=\"https:\/\/www.barefaced.com\/account\">here<\/a> to sign up using your name and email address and you start earning points today!<\/p>",
+              "category": "barefaced-loyalty-program"
+            }
+          },
+          "56987dad-c3cf-4088-b613-2252c9b5e040": {
+            "type": "faq",
+            "settings": {
+              "question": "Will I receive points for purchases I made before I joined the rewards program?",
+              "answer": "<p>If you made a purchase between January 2021 and May 2021, you've already earned points associated with the email address you used to purchase - just follow the steps to create an account with that email address and, <em>voila<\/em>! <\/p><p>You’ll continue to receive points for purchases made after creating your rewards account, so make sure to create an account before placing an order so you can receive points!<\/p><p>Unfortunately, you will not receive points for purchases made prior to January 2021.<\/p>",
+              "category": "barefaced-loyalty-program"
+            }
+          },
+          "ab5724fd-dc72-4e96-b5c1-86b9074a4396": {
+            "type": "faq",
+            "settings": {
+              "question": "What are the different tiers?",
+              "answer": "<p>Your Barefaced Rewards tier is determined by the amount you spend in a 12-month period, starting when you reach a certain tier.<br\/><br\/>To reach:<br\/><\/p><p><strong>Vibrant Tier<\/strong>, you must spend $750<br\/><\/p><p><strong>Barefaced Tier<\/strong>, you must spend $2,750<br\/><\/p><p><br\/>Once your spend hits the next tier, you will instantly move up and have access to that tier’s perks for 12 months. <\/p>",
+              "category": "barefaced-loyalty-program"
+            }
+          },
+          "57fd721c-f722-44f8-8eba-4e18350348e4": {
+            "type": "faq",
+            "settings": {
+              "question": "How will I know when I reached a new tier?",
+              "answer": "<p>You’ll get an extra special email that welcomes you into the new tier once your spend hits that level!  When you are logged in, you can also check your tier status at any time on the <a href=\"\/pages\/loyalty\" title=\"Loyalty\">Rewards<\/a> page.<\/p>",
+              "category": "barefaced-loyalty-program"
+            }
+          },
+          "0d4a6f73-c23b-44b4-b0c8-f734dbb8b466": {
+            "type": "faq",
+            "settings": {
+              "question": "How do points convert to dollars?",
+              "answer": "<p>200 points = $10 Barefaced dollars<br\/><\/p><p>Higher tiers earn more points at a faster rate, but 200 points always = $10. <\/p><p>Here’s how it works: as the Fresh tier, you earn <strong>1x<\/strong> point for every dollar you spend. So, if you spend $200, you’ll earn 200 points = $10.<br\/><\/p><p>When you join the Vibrant tier, you earn points <strong>1.25x<\/strong> faster, so that $200 spend earns 250 points and becomes $12.50 in Barefaced dollars.<br\/><\/p><p>The Barefaced tier earns points <strong>1.5x<\/strong> as fast, earning $15 Barefaced dollars on every $200 purchase.<\/p>",
+              "category": "barefaced-loyalty-program"
+            }
+          },
+          "fb9701ff-d0d1-450a-aaf1-d7c597b9851a": {
+            "type": "faq",
+            "settings": {
+              "question": "How do I redeem my points\/rewards?",
+              "answer": "<p>There are two ways you can redeem points for rewards on new purchases. <\/p><p><\/p><p><strong>We recommend following this method! <\/strong>Once you have enough points, you will be shown the option to redeem them for a reward at checkout. Please make sure you are signed in to you account! Select the reward you wish to use from the drop down menu and it will automatically apply to your order. Your points will be deducted once the order is submitted. This is the simplest way to use your rewards! <\/p><p><\/p><p>You also have the option to redeem points directly from the Rewards page by signing in and scrolling down to the section on how to use points. Click \"redeem\" on the reward you wish to add to your order. It will ask \"Are you sure?\" - if you select \"yes,\" points are <em>immediately<\/em> deducted from your account and a discount code is displayed. Copy this code and paste it at checkout.<\/p><p><\/p><p>Please note, two rewards <em>cannot<\/em> be redeemed on one purchase - you cannot redeem a reward using the copied code and by selecting a reward from the drop down menu. If you have already copied a code from the Rewards page, we suggest continuing with this method at checkout (versus choosing a reward from the drop down menu) since the points have already been deducted from your account.<strong> Only a maximum of $20 in rewards can be redeemed on one order. <\/strong><\/p><p>To redeem points for rewards on existing subscription orders, please see the next question!<\/p>",
+              "category": "barefaced-loyalty-program"
+            }
+          },
+          "6e6cd3f6-f284-4c2e-abf0-1b94303e7aee": {
+            "type": "faq",
+            "settings": {
+              "question": "How do I apply points\/rewards to my upcoming subscription order?",
+              "answer": "<p>If you have an existing subscription, points can be redeemed for rewards and applied to upcoming orders.<\/p><p><\/p><p>Sign into your account and go to the Manage Subscriptions tab. Your points balance is displayed with the option to \"Redeem\" a reward if you have enough points. Select the reward you want to redeem. It will ask \"Are you sure?\" - when you select \"yes,\" your points are <em>immediately<\/em> deducted and a code is displayed. Copy the code and paste it under the \"Apply My Rewards\" link next to the subscription you wish to apply it to.<\/p><p><\/p><p>Once saved, the page will refresh showing that the code has been added and it will automatically apply on the date the subscription renews.<\/p><p><\/p><p>You may also find the redemption codes on the Rewards page in the section on \"Using Points on Existing Subscriptions\" - copy the code from here and navigate back to the Manage Subscriptions tab within your account to paste it under the \"Apply My Rewards\" link.<\/p>",
+              "category": "barefaced-loyalty-program"
+            }
+          },
+          "a8a519e5-a9a6-49ed-8f0d-6053eef2a3b2": {
+            "type": "faq",
+            "settings": {
+              "question": "How do I apply points\/rewards while using Shop Pay?",
+              "answer": "<p>If checking out with Shop Pay, when you first go to checkout and are directed to Shop Pay, go to “checkout as guest” within Shop Pay. This will direct you back to the Barefaced checkout where you can select to use rewards points\/discounts\/Barefaced gift cards. Once you submit that, you should be able to get back into Shop Pay to complete the order.<\/p><p>(Alternate method): If you usually redeem your rewards points prior to checkout, you can also add your reward code to the “Add a discount code or gift card” section in Shop Pay. First, you will want to go to the Barefaced Rewards page and click Redeem My Points. Make sure to copy the reward code. Then you will paste that reward code in the “Add a discount code or gift card” box in Shop Pay.<\/p>",
+              "category": "barefaced-loyalty-program"
+            }
+          },
+          "19c60ec9-5aae-4536-8455-caaea65b896a": {
+            "type": "faq",
+            "settings": {
+              "question": "Do my points expire?",
+              "answer": "<p>Your points will expire after one year of inactivity. Inactivity includes not interacting with our program, making purchases, or redeeming points.<\/p>",
+              "category": "barefaced-loyalty-program"
+            }
+          },
+          "63d37da0-937a-4edd-855b-a789402be593": {
+            "type": "faq",
+            "settings": {
+              "question": "How do I check my points balance?",
+              "answer": "<p>The rewards page is your roadmap to all your points and perks! You can access your account info by clicking <a href=\"\/pages\/loyalty\" target=\"_blank\" title=\"Loyalty\">here<\/a>.<\/p>",
+              "category": "barefaced-loyalty-program"
+            }
+          },
+          "09770b69-f912-436d-9e6b-4aad2e6da412": {
+            "type": "faq",
+            "settings": {
+              "question": "How can I refer a friend?",
+              "answer": "<p>Click <a href=\"\/pages\/referrals\" target=\"_blank\" title=\"Referrals\">here<\/a> to share the love! Give your friends $20 off their first order of $200 or more, and get $20 in points added to your account for every friend who makes a purchase.  <\/p>",
+              "category": "barefaced-loyalty-program"
+            }
+          },
+          "26cf9711-8400-4898-97fc-23e54d4d62ff": {
+            "type": "faq",
+            "settings": {
+              "question": "If I return my order, will the points I earned on that purchase be deducted from my account? Can I return my order if I redeemed rewards points for a discount?",
+              "answer": "<p>If you’re making a return, you will receive store credit for your purchase, so the points will not be deducted from your account. <\/p><p>If you're returning an item from an order you redeemed points on, the points you used to redeem a reward will be added back into your rewards account so you can use them for your next purchase.<\/p>",
+              "category": "barefaced-loyalty-program"
+            }
+          },
+          "58e82ddc-6bd6-425d-bd05-c33862c20089": {
+            "type": "faq",
+            "settings": {
+              "question": "How do I change my password?",
+              "answer": "<p>You can change your password by clicking <a href=\"https:\/\/www.barefaced.com\/account\/login#recover\" target=\"_blank\" title=\"https:\/\/www.barefaced.com\/account\/login#recover\">here<\/a>.<\/p>",
+              "category": "barefaced-loyalty-program"
+            }
+          },
+          "e6af5415-06cf-4cf2-aaa1-3e2cfb6de28a": {
+            "type": "faq",
+            "settings": {
+              "question": "I can’t log into my account! What do I do?",
+              "answer": "<p>That’s okay! Click <a href=\"https:\/\/www.barefaced.com\/account\/login#recover\" target=\"_blank\" title=\"https:\/\/www.barefaced.com\/account\/login#recover\">here<\/a> and we’ll help you recover your password and username. <\/p>",
+              "category": "barefaced-loyalty-program"
+            }
+          },
+          "65304eb5-a7f1-400a-a858-9602628165fb": {
+            "type": "faq",
+            "settings": {
+              "question": "How do I gradually introduce products into my routine?",
+              "answer": "<p><strong>Applies to products with these active ingredients: All acids (except HA) + Retinoids.<\/strong><br\/>Toning Pads (II), Liquid Gold, Glow Peel Pads, Brightening Facial Wash, Clenziderm, Retivance<\/p><p>To minimize sensitivity (dryness, redness, irritation), we recommend gradually introducing new products with actives mentioned above. Start with using ANY new product 3 days\/week on alternating days. If adding in more than one new product, start each product the same way, but on different days. Follow that schedule for 2 weeks. If the product usage allows for more frequent use and your skin feels normal (balanced, healthy, hydrated) with no sensitivity, then increase usage frequency by one day (so up to 4 days\/week). Continue that introduction method as tolerated. If you are happy with the way your skin looks and feels with a few times\/week of usage, then you do not HAVE to keep increasing frequency of use.<\/p>",
+              "category": "product-usage-tips"
+            }
+          },
+          "686217ef-75ac-4d47-aef8-d11e754b080c": {
+            "type": "faq",
+            "settings": {
+              "question": "What’s included in a skincare consult?",
+              "answer": "<p>Every <a href=\"\/products\/skincare-consult\" target=\"_blank\" title=\"Skincare Consult\">skincare consult<\/a> includes a skin-typing questionnaire and consultation through email correspondence with a member of our Barefaced team (RN), a customized skincare routine that’s tailored for your skin type with detailed usage instructions and tips, and $100 off your first (post-consult) skincare purchase over $150!<\/p>",
+              "category": "company"
+            }
+          },
+          "793cfdaa-7b7d-48a0-b863-fb38a6c63883": {
+            "type": "faq",
+            "settings": {
+              "question": "Can I purchase a skincare consult as a gift?",
+              "answer": "<p>Absolutely! You can either put the recipient's name and email in during check out, or you can forward the email containing the order number and consultation PDF link to the lucky recipient.<\/p>",
+              "category": "company"
+            }
+          },
+          "b28f7f99-97c0-4edc-9fe7-f67463be09e7": {
+            "type": "faq",
+            "settings": {
+              "question": "How long does it take to receive my customized routine?",
+              "answer": "<p>Once you’ve submitted your information, you’ll receive your customized routine within 4 business days.<\/p>",
+              "category": "company"
+            }
+          }
+        },
+        "block_order": [
+          "199759a0-89e5-478f-ac39-e1d15beb6e7f",
+          "fa439fe5-27e6-4dd2-a187-0a8a86711283",
+          "6c6a2dec-86a9-4b5c-a82e-c0f52800d53c",
+          "83debda7-40c8-4fd2-a406-9cf3d577f382",
+          "c82b38fe-b96f-4556-99e9-e8bf63a20e08",
+          "6aa56ef4-7db0-4654-9a75-51274311affa",
+          "446695a3-7a5e-4dd9-bac3-136b3d12b421",
+          "16c3d478-4448-4a9c-9ab2-502db1b8b9fc",
+          "0c65dc9f-4e4f-4572-8d6c-76ce06949380",
+          "3d8e1b25-8dec-4f2d-9bf2-d5d31cdc6011",
+          "da9ca925-c791-4522-9b11-baf58dad2f22",
+          "e03a536b-8275-4a5b-b402-f332118d7528",
+          "ca429b23-6102-465b-9283-787e7d4d201d",
+          "45a68c05-1d04-4004-998c-72a899cf6e90",
+          "7a3ebafc-f56f-4d36-ac6d-9d651f2ab424",
+          "db3980a1-39ca-4fca-bcef-354136780eba",
+          "cc75bd8b-68ba-46f1-b7bb-de9a3cdb53d5",
+          "154fe770-e27c-4d5d-b64a-738fc93e1ff5",
+          "38cda08e-6405-4929-910d-20c562b4dafb",
+          "e3c183bb-8b32-4e8b-8881-071f8eec841a",
+          "1fd76bdd-f670-4cb6-a2d8-95a7b52e2c47",
+          "9e16418c-3cb8-4bae-aa1b-67be0909a989",
+          "eee17dc3-5e84-494c-9fe6-480e459ad7d6",
+          "94750d5f-c9a6-43cf-aa2f-2280e7b52176",
+          "6b3e67d3-40b1-4735-bcc6-4ee25bb737a4",
+          "d0ccad9e-80eb-4f11-b058-c7518d1805fc",
+          "20d705d4-5acd-4846-8931-58b4dc5d018b",
+          "e07a5dd6-1a24-48c2-a8d7-af69a88e9d95",
+          "6347bfc8-6a46-4305-b9ba-3b87d1d1c7ce",
+          "288bf691-b118-42bd-90da-73f82e6dfddf",
+          "ab5cb107-07fa-4d2f-b354-b0189e9156c6",
+          "2400e1bf-7245-4dab-9dce-7c212327bb45",
+          "a22730c5-cba1-44ff-8c9a-b0edb097c65a",
+          "03d67024-0612-4753-a6e4-1ad7cd451c65",
+          "f78fa89f-5d9f-4e28-b041-171048fe7e66",
+          "4c97c477-6ee7-4f95-9415-90f3545ab78c",
+          "e8118b80-8c91-4e58-aa29-ceab7a453449",
+          "ab8778bc-8c72-4d48-8123-4e256016f107",
+          "df75e498-47b2-4a1e-81cb-9c7c9f7c5b9f",
+          "0e0bfa7e-feeb-4182-9814-056cb4d444f4",
+          "979b2395-091f-40ca-837b-6782e5b060f2",
+          "574da0c5-ed2b-4393-8b84-a585ff550d3d",
+          "fd28124e-9dc1-419c-868c-9d43180543e9",
+          "98b3cb5d-4e02-4420-9225-e5bb33f4fb47",
+          "97ea2276-711b-422a-aee9-959efa2dc841",
+          "6ade340f-3cf2-4446-b733-c1d59a198c26",
+          "32352e94-27b0-46e9-9651-aed8727cb9b9",
+          "56987dad-c3cf-4088-b613-2252c9b5e040",
+          "ab5724fd-dc72-4e96-b5c1-86b9074a4396",
+          "57fd721c-f722-44f8-8eba-4e18350348e4",
+          "0d4a6f73-c23b-44b4-b0c8-f734dbb8b466",
+          "fb9701ff-d0d1-450a-aaf1-d7c597b9851a",
+          "6e6cd3f6-f284-4c2e-abf0-1b94303e7aee",
+          "a8a519e5-a9a6-49ed-8f0d-6053eef2a3b2",
+          "19c60ec9-5aae-4536-8455-caaea65b896a",
+          "63d37da0-937a-4edd-855b-a789402be593",
+          "09770b69-f912-436d-9e6b-4aad2e6da412",
+          "26cf9711-8400-4898-97fc-23e54d4d62ff",
+          "58e82ddc-6bd6-425d-bd05-c33862c20089",
+          "e6af5415-06cf-4cf2-aaa1-3e2cfb6de28a",
+          "65304eb5-a7f1-400a-a858-9602628165fb",
+          "686217ef-75ac-4d47-aef8-d11e754b080c",
+          "793cfdaa-7b7d-48a0-b863-fb38a6c63883",
+          "b28f7f99-97c0-4edc-9fe7-f67463be09e7"
+        ],
+        "settings": {
+          "cta_title": "Can’t find the answer you’re looking for?",
+          "cta_button_url": "shopify:\/\/pages\/contact",
+          "cta_button_text": "Contact us"
+        }
+      },
+      "about-complex-col-block": {
+        "type": "about-complex-col-block",
+        "blocks": {
+          "95d34ac7-373a-42f2-9d5e-38db6e52e8e3": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/NH-Barefaced-Day-Two4537.jpg"
+            }
+          },
+          "1ad424e4-9bc0-4fca-9ef1-1d6ae4fe6bc9": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/NH-Barefaced-Day-Two4433.jpg"
+            }
+          },
+          "6c5a9544-32d6-43f1-a256-df8041f2a01c": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/NH-Barefaced-Day-One2723_websize.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "95d34ac7-373a-42f2-9d5e-38db6e52e8e3",
+          "1ad424e4-9bc0-4fca-9ef1-1d6ae4fe6bc9",
+          "6c5a9544-32d6-43f1-a256-df8041f2a01c"
+        ],
+        "settings": {
+          "subtitle": "We are",
+          "title": "~Your~ skin’s biggest fan.",
+          "content": "<p>You deserve to feel confident about what goes onto your skin — without having to Google everything first. That’s why we customize routines based on your unique skin type and only recommend what you need for clear, healthy skin. And we’ll make sure you know exactly when and how to use it. <\/p>"
+        }
+      },
+      "about-two-col-block": {
+        "type": "about-two-col-block",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/NH-Barefaced-Day-Two3525_websize.jpg",
+          "subtitle": "We’re here for",
+          "title": "Stress-free, uncomplicated ~skincare.~",
+          "link_text": "Read more",
+          "link_url": "shopify:\/\/pages\/ethos"
+        }
+      },
+      "about-quote-col-block": {
+        "type": "about-quote-col-block",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/w8NH-Barefaced-Day-One0866.jpg",
+          "quote": "\"No matter what stage of life you're in, I believe that you deserve to feel confident in your skin. I created Barefaced as a place to bring the best advice, clinical research, and products together to help you find a long-term skincare routine you can trust, so you can go on living life.\"",
+          "cite": "Jordan Harper, NP",
+          "cite_role": "Founder & CEO",
+          "link_text": "Find out more",
+          "link_url": "shopify:\/\/pages\/team"
+        }
+      },
+      "approach": {
+        "type": "approach",
+        "blocks": {
+          "f5a95704-ac9e-48a8-aa50-9945a3533594": {
+            "type": "point",
+            "settings": {
+              "title": "Personal",
+              "content": "Skincare is personal, and so are our custom routines."
+            }
+          },
+          "c4df83c1-ea4f-4684-85f1-b714a7eb163f": {
+            "type": "point",
+            "settings": {
+              "title": "Trusted",
+              "content": "Evidence-based, clinically vetted skincare guidance you can trust."
+            }
+          },
+          "98c64758-cc0c-4b23-ae89-04eff6d24367": {
+            "type": "point",
+            "settings": {
+              "title": "Compassionate",
+              "content": "No matter where you are in your skincare journey, our medically trained Skincare Experts are here to guide you along the way."
+            }
+          },
+          "1b5fa39c-2ef1-45ba-8d45-a558bf0d30bb": {
+            "type": "point",
+            "settings": {
+              "title": "Genuine",
+              "content": "We keep it real, only recommending what you need, when you need it."
+            }
+          }
+        },
+        "block_order": [
+          "f5a95704-ac9e-48a8-aa50-9945a3533594",
+          "c4df83c1-ea4f-4684-85f1-b714a7eb163f",
+          "98c64758-cc0c-4b23-ae89-04eff6d24367",
+          "1b5fa39c-2ef1-45ba-8d45-a558bf0d30bb"
+        ],
+        "settings": {
+          "subtitle": "we make it personal, The way skincare should be",
+          "title": "A routine made ~just for you.~",
+          "intro": "<p>The secret to long-term skin health is consistently using a routine that’s created for your skin type. Starting with our skin quiz, we’ll create a routine with products that work for your skin. You'll be the expert of your skin in no time.<\/p>",
+          "link_text": "Start the Quiz",
+          "link_url": "shopify:\/\/pages\/skincare-quiz"
+        }
+      },
+      "instagram": {
+        "type": "instagram",
+        "settings": {
+          "title": "<p>Go Barefaced, we know you want to. <strong>#MyBarefacedSkin<\/strong><\/p>",
+          "display_picture": "shopify:\/\/shop_images\/Barefaced-Instagram-Icon.jpg"
+        }
+      },
+      "team-complex-col-block": {
+        "type": "team-complex-col-block",
+        "blocks": {
+          "dc9f9e36-4fd5-4300-94d9-fe585d10bc1c": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/NH-Barefaced-Day-One1035_websize.jpg"
+            }
+          },
+          "cdeee5fd-a966-4e10-8cde-8864282195fc": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/NH-Barefaced-Day-One0501_websize_a05f4f58-099a-471b-82ad-97121b51f684.jpg"
+            }
+          },
+          "61c83244-5d51-4579-9c1b-044f8bc7defb": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/NH-Barefaced-Day-Two3474_websize.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "dc9f9e36-4fd5-4300-94d9-fe585d10bc1c",
+          "cdeee5fd-a966-4e10-8cde-8864282195fc",
+          "61c83244-5d51-4579-9c1b-044f8bc7defb"
+        ],
+        "settings": {
+          "subtitle": "Who we are",
+          "title": "Your personal, ~skincare-obsessed~ cheer squad.",
+          "content": "<p>We’re here to meet everyone with true kindness, which we believe is a beauty all its own. Everything we do, from listening deeply and offering practical tips to creating the highest quality skincare products and personalized routines, is inspired by that spirit — and a passion for helping you heal, nourish, and protect your skin.<\/p><p><br\/><br\/><\/p>"
+        }
+      },
+      "team": {
+        "type": "team",
+        "blocks": {
+          "e57aebc8-74e3-4484-b451-a54c300d0170": {
+            "type": "member",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Team_Jordan_Harper_39f4d108-401d-4997-b959-6edf2ef2bed9.jpg",
+              "name": "Jordan Harper, NP",
+              "role": "Founder + CEO"
+            }
+          },
+          "29e6f422-d829-488d-8c8e-0b676c0f3b0d": {
+            "type": "member",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Team_Grace_Pratt.jpg",
+              "name": "Grace Pratt, RN",
+              "role": "Product + Education Director"
+            }
+          },
+          "c54dc461-13cb-420a-b270-0c40e6a22cca": {
+            "type": "member",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Team_Ashley_Buckler.jpg",
+              "name": "Ashley Buckler",
+              "role": "Brand Director"
+            }
+          },
+          "5eced1d0-994f-4301-bf86-964d4c75bde0": {
+            "type": "member",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Team_Callie_Tivnan_ee72b91c-edf9-4462-bd88-49e2ded13da6.jpg",
+              "name": "Callie Tivnan",
+              "role": "E-Commerce Manager"
+            }
+          },
+          "3689a419-addf-4676-b129-40cf2ea2e747": {
+            "type": "member",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Team_Kaitlyn_Ford.jpg",
+              "name": "Kaitlyn Ford",
+              "role": "Brand Communications + Partnership Coordinator"
+            }
+          },
+          "95c734f6-27e1-4f16-a4c9-6085cf47ddc8": {
+            "type": "member",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Image_from_iOS_copy.jpg",
+              "name": "Heather Mullin, RN",
+              "role": "Barefaced Nurse Consultant + Skincare Expert"
+            }
+          },
+          "f06a98b7-d729-4d3a-b24d-32df8c5b14dc": {
+            "type": "member",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Team_Kelsey_Watson.jpg",
+              "name": "Kelsey Watson",
+              "role": "Community Manager"
+            }
+          },
+          "82ba01d3-f9b9-4c71-b5b9-fa8a7a4d43f4": {
+            "type": "member",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Team_Christina_Williams.jpg",
+              "name": "Christina Williams",
+              "role": "Barefaced Skincare Specialist"
+            }
+          },
+          "5f835dd9-b0a6-4236-aa71-1f7affae8677": {
+            "type": "member",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Team_Katie-Boyd.jpg",
+              "name": "Katie Boyd",
+              "role": "Barefaced Skincare Specialist"
+            }
+          }
+        },
+        "block_order": [
+          "e57aebc8-74e3-4484-b451-a54c300d0170",
+          "29e6f422-d829-488d-8c8e-0b676c0f3b0d",
+          "c54dc461-13cb-420a-b270-0c40e6a22cca",
+          "5eced1d0-994f-4301-bf86-964d4c75bde0",
+          "3689a419-addf-4676-b129-40cf2ea2e747",
+          "95c734f6-27e1-4f16-a4c9-6085cf47ddc8",
+          "f06a98b7-d729-4d3a-b24d-32df8c5b14dc",
+          "82ba01d3-f9b9-4c71-b5b9-fa8a7a4d43f4",
+          "5f835dd9-b0a6-4236-aa71-1f7affae8677"
+        ],
+        "settings": {
+          "subtitle": "MEET THE BAREFACED TEAM",
+          "title": "Dedicated to guiding you towards ~your best skin yet.~"
+        }
+      },
+      "team-complex-col-block-2": {
+        "type": "team-complex-col-block-2",
+        "blocks": {
+          "d0c0521f-68fe-43f9-bd40-c048b7d9d0ae": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/NH-Barefaced-Day-One1493_websize.jpg"
+            }
+          },
+          "f1335e45-5c17-46d8-8ca3-8f83f769d35d": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/NH-Barefaced-Day-One2234_websize.jpg"
+            }
+          },
+          "043bf5f9-dc04-491d-92ba-6df56cd49975": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/NH-Barefaced-Day-One1827.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "d0c0521f-68fe-43f9-bd40-c048b7d9d0ae",
+          "f1335e45-5c17-46d8-8ca3-8f83f769d35d",
+          "043bf5f9-dc04-491d-92ba-6df56cd49975"
+        ],
+        "settings": {
+          "subtitle": "Life at Barefaced",
+          "title": "We create simple, custom routines based on ~your unique~ skin type.",
+          "content": "<p>We’re a dynamic team of skincare enthusiasts who all have two things in common: the best product recommendations (like, better than TikTok) and a commitment to offering you new ways to bring confidence and calm back into your skincare. Our goal, in everything we do, is to help you reveal your healthiest skin yet. All it takes is a personalized routine, a little consistency, and an under-eye mask for fun on a Monday. Or Friday, if that’s your thing. We’re here for all of it.<\/p>"
+        }
+      },
+      "team-image-w-scrolling-text": {
+        "type": "team-image-w-scrolling-text",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/NH-Barefaced-Day-Two3558_websize.jpg",
+          "text": "Skin so good you could go Barefaced."
+        }
+      },
+      "team-two-col-block": {
+        "type": "team-two-col-block",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/NH-Barefaced-Day-One0725_websize.jpg",
+          "align": "right",
+          "subtitle": "Join the team",
+          "title": "Go ~Barefaced~ with us.",
+          "content": "<p>Want to help others find confidence in their skincare routine and experience a life of good skin days? You’ll fit in <em>perfectly<\/em>.<\/p>",
+          "link_text": "Find out more",
+          "link_url": "shopify:\/\/pages\/contact"
+        }
+      },
+      "ethos-complex-col-block": {
+        "type": "ethos-complex-col-block",
+        "blocks": {
+          "6abaee9a-e94c-41f7-91f3-2608752d5ef3": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/NH-Barefaced-Day-Two3389.jpg"
+            }
+          },
+          "11aab6a8-ea99-4db6-bf6c-c947c99e404f": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/NH-Barefaced-Day-Two5049.jpg"
+            }
+          },
+          "cedd919e-08fc-406d-adf4-70ea3518bf7d": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/w4NH-Barefaced-Day-One1958.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "6abaee9a-e94c-41f7-91f3-2608752d5ef3",
+          "11aab6a8-ea99-4db6-bf6c-c947c99e404f",
+          "cedd919e-08fc-406d-adf4-70ea3518bf7d"
+        ],
+        "settings": {
+          "subtitle": "Your best skin yet",
+          "title": "Products and routines that ~inspire confidence.~",
+          "content": "<p>There’s no such thing as one-size-fits-all, especially when it comes to skincare. With simple, effective and personalized routines, we’re on a mission to help everyone feel confident in the skin they’re in.<\/p>"
+        }
+      },
+      "ethos-two-col-block": {
+        "type": "ethos-two-col-block",
+        "blocks": {
+          "5bbd9c80-24f9-483d-a209-bf7a0e4d802f": {
+            "type": "logo",
+            "settings": {
+            }
+          },
+          "1b59ec5f-a454-419c-8cbc-396ce650db9b": {
+            "type": "logo",
+            "settings": {
+            }
+          },
+          "87ec6479-12be-4a71-a7b6-bffae4616ed0": {
+            "type": "logo",
+            "settings": {
+            }
+          }
+        },
+        "block_order": [
+          "5bbd9c80-24f9-483d-a209-bf7a0e4d802f",
+          "1b59ec5f-a454-419c-8cbc-396ce650db9b",
+          "87ec6479-12be-4a71-a7b6-bffae4616ed0"
+        ],
+        "settings": {
+          "image": "shopify:\/\/shop_images\/NH-Barefaced-Day-One0689.jpg",
+          "subtitle": "Evidence-based, clinically vetted",
+          "title": "Built on a ~foundation of experience.",
+          "content": "<p>We prefer a simple approach to skincare because, honestly, nobody needs hundreds of products on their bathroom shelf. Consistently using a few products that are customized to your unique skin type is enough to transform your skin. That’s why we make it our mission to be your trusted source of information and only recommend what actually works for you, when you actually need to use it.<\/p>",
+          "link_text": ""
+        }
+      },
+      "ethos-featured-products": {
+        "type": "ethos-featured-products",
+        "blocks": {
+          "a09a0d67-045c-497b-bc24-15fa8e19bfce": {
+            "type": "product",
+            "settings": {
+              "product": "hydrating-lotion"
+            }
+          },
+          "28b0dffe-b109-4900-98cf-1d7e2993f785": {
+            "type": "product",
+            "settings": {
+              "product": "toning-pads"
+            }
+          },
+          "a6ecc66f-bd9d-4a4a-9079-6fc87861661b": {
+            "type": "product",
+            "settings": {
+              "product": "brightening-serum"
+            }
+          },
+          "25600b7e-1c5a-4d92-8013-6ccf10f019cc": {
+            "type": "product",
+            "settings": {
+              "product": "glow-peel-pads"
+            }
+          }
+        },
+        "block_order": [
+          "a09a0d67-045c-497b-bc24-15fa8e19bfce",
+          "28b0dffe-b109-4900-98cf-1d7e2993f785",
+          "a6ecc66f-bd9d-4a4a-9079-6fc87861661b",
+          "25600b7e-1c5a-4d92-8013-6ccf10f019cc"
+        ],
+        "settings": {
+          "subtitle": "Our products",
+          "title": "Skincare confidence  ~starts here.~",
+          "link_text": "Shop now",
+          "link_url": "shopify:\/\/collections\/best-sellers"
+        }
+      },
+      "ethos-slider": {
+        "type": "ethos-slider",
+        "blocks": {
+          "0f41298f-beae-4efd-ad14-f256cd6c3f9c": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/NH-Barefaced-Day-One2503_websize.jpg",
+              "subtitle": "Education",
+              "title": "Simplifying skincare.",
+              "content": "<p>Think of us like your guide to becoming the expert of <em>your<\/em> skin. We believe you should feel confident in your skincare routine — especially when it comes to the products you’re using, why, and the right ways to use them.<br\/><br\/><\/p>"
+            }
+          },
+          "6fd82dc9-852d-43cd-ad2d-abefb94bf2b7": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/NH-Barefaced-Day-Two4003_websize_1.jpg",
+              "subtitle": "Ingredients",
+              "title": "It’s not magic, it’s science.",
+              "content": "<p>Each of our products are formulated by medical professionals who are experts in skincare and the active ingredients that go into creating routines that work best for your unique skin type. <\/p>"
+            }
+          },
+          "2e94b3cd-d991-424c-b9a1-c5932f1019f0": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/NH-Barefaced-Day-One2317_websize.jpg",
+              "subtitle": "Results",
+              "title": "For skin so good.",
+              "content": "<p>Our products are formulated to work better together so you can optimize your results. You don’t need 100 products to treat your skin. Just the right ones for you, used consistently.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "0f41298f-beae-4efd-ad14-f256cd6c3f9c",
+          "6fd82dc9-852d-43cd-ad2d-abefb94bf2b7",
+          "2e94b3cd-d991-424c-b9a1-c5932f1019f0"
+        ],
+        "settings": {
+        }
+      },
+      "newsletter": {
+        "type": "newsletter",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/Jordan-Harper-Mother-38.jpg",
+          "title": "Our skin might be bare but our emails are full of the good stuff.",
+          "intro": "<p>Sign up now and be the first to hear about our best skincare tips, special offers, and new product launches. It’s an inbox boost that’s almost better than a Glow Peel Pad.<\/p>"
+        }
+      },
+      "contact-page-intro": {
+        "type": "contact-page-intro",
+        "settings": {
+          "subtitle": "Send us a love note",
+          "title": "We love hearing from you.",
+          "intro": "<p>For customer service, product recommendations, and anything else you need (including, but not limited to life advice and TikTok suggestions): <a href=\"mailto:hello@barefaced.com\" title=\"mailto:hello@barefaced.com\">hello@barefaced.com<\/a><\/p><p><\/p><p><strong>Want to talk to a Skincare Specialist? Text us here: <\/strong>251-69<\/p><p><\/p><p>For press and collabs: <a href=\"mailto:hello@barefaced.com\" target=\"_blank\" title=\"mailto:hello@barefaced.com\">hello@barefaced.com<\/a><\/p>"
+        }
+      },
+      "contact-faqs": {
+        "type": "contact-faqs",
+        "blocks": {
+          "0e01d820-d21b-4b48-b2d4-1a3c4537a8d7": {
+            "type": "faq",
+            "settings": {
+              "question": "How often should I use each product?",
+              "answer": "<p>Every product has their own specific usage tips on their page in the shop. When you start incorporating products with active ingredients such as glycolic acid, salicylic acid, or retinoids, it’s best to introduce each product gradually. Start by using the product three times a week on alternating days and gradually increase to once or twice daily (as tolerated) depending on the recommended use of the product.<\/p>"
+            }
+          },
+          "6e17dcc7-d235-4b1c-a729-ecf114e02c6f": {
+            "type": "faq",
+            "settings": {
+              "question": "How do I know which products are best for my skin type?",
+              "answer": "<p>We can help with that! To get started, we recommend taking our <a href=\"\/pages\/skincare-quiz\" target=\"_blank\" title=\"Skincare Quiz\">skin quiz<\/a>, which you can find here. The skin care quiz will guide you to the best products for your skin type.<\/p>"
+            }
+          },
+          "f64d6092-6efe-4145-b860-d8cfc72f9c97": {
+            "type": "faq",
+            "settings": {
+              "question": "Are these products considered medical grade?",
+              "answer": "<p>Barefaced, and all of the other lines we stock in the shop, are considered “medical-grade” skincare (although that’s not a regulated term). Our products are formulated to be results-driven, and they’re developed by medical professionals, master formulators, and expert chemists. Our products are backed by scientific research, clinical vetting and trials to ensure the products actually work and induce change in the skin.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "0e01d820-d21b-4b48-b2d4-1a3c4537a8d7",
+          "6e17dcc7-d235-4b1c-a729-ecf114e02c6f",
+          "f64d6092-6efe-4145-b860-d8cfc72f9c97"
+        ],
+        "settings": {
+          "subtitle": "FAQ's",
+          "title": "Have any questions?",
+          "cta_title": "Can’t find the answer you’re looking for?",
+          "cta_button_url": "shopify:\/\/pages\/faqs",
+          "cta_button_text": "See all FAQs"
+        }
+      },
+      "1618239699f9018ddd": {
+        "type": "featured-products",
+        "blocks": {
+          "8365f3d8-dae5-46fb-b39c-3b3996864029": {
+            "type": "product",
+            "settings": {
+              "product": "retinal-therapy"
+            }
+          },
+          "c771ca21-e8f8-415a-bef9-ccf591d0ce6a": {
+            "type": "product",
+            "settings": {
+              "product": "overachiever"
+            }
+          },
+          "ec12d4b6-7bc9-4d62-bf55-be63116f4711": {
+            "type": "product",
+            "settings": {
+              "product": "toning-pads"
+            }
+          },
+          "5c4ee80c-24f3-430b-a9de-ed15bb08e90f": {
+            "type": "product",
+            "settings": {
+              "product": "toning-pads-ii"
+            }
+          },
+          "3eff22e1-d315-4b88-9940-f83b6ac1d644": {
+            "type": "product",
+            "settings": {
+              "product": "liquid-gold"
+            }
+          },
+          "da674d17-bbc7-4607-b7ef-8fa1ae52bfbb": {
+            "type": "product",
+            "settings": {
+              "product": "brightening-serum"
+            }
+          },
+          "059f03e3-3959-4a3d-9f0a-b1323f081159": {
+            "type": "product",
+            "settings": {
+              "product": "glow-peel-pads"
+            }
+          },
+          "0b5a377a-7b60-41c6-80a4-b4dd2546ee77": {
+            "type": "product",
+            "settings": {
+              "product": "hydrating-lotion"
+            }
+          }
+        },
+        "block_order": [
+          "8365f3d8-dae5-46fb-b39c-3b3996864029",
+          "c771ca21-e8f8-415a-bef9-ccf591d0ce6a",
+          "ec12d4b6-7bc9-4d62-bf55-be63116f4711",
+          "5c4ee80c-24f3-430b-a9de-ed15bb08e90f",
+          "3eff22e1-d315-4b88-9940-f83b6ac1d644",
+          "da674d17-bbc7-4607-b7ef-8fa1ae52bfbb",
+          "059f03e3-3959-4a3d-9f0a-b1323f081159",
+          "0b5a377a-7b60-41c6-80a4-b4dd2546ee77"
+        ],
+        "settings": {
+          "subtitle": "",
+          "title": "Skincare Simplified. ~Results Amplified.~",
+          "link_text": "Shop Now",
+          "link_url": "shopify:\/\/collections\/all-products"
+        }
+      },
+      "1618239777fa719fe1": {
+        "type": "latest-articles",
+        "settings": {
+          "subtitle": "the blog",
+          "title": "Become the expert of your skin.",
+          "link_text": "Read More",
+          "link_url": "shopify:\/\/blogs\/blog"
+        }
+      },
+      "1618240078e17cefd0": {
+        "type": "two-col-block",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/Block_Jordan_Harper_94fcfa20-b4c5-4ab8-a269-dd6d6b472f8b.jpg",
+          "subtitle": "We are here to guide you towards",
+          "title": "Long-term skin health with ~custom routines~ that are based on your unique skin type.",
+          "content": "",
+          "link_text": "Our Approach to Skincare",
+          "link_url": "shopify:\/\/pages\/about"
+        }
+      },
+      "1618240342322a53f1": {
+        "type": "image-w-scrolling-text",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/Scrolling_Block_Laticia_Model.jpg",
+          "text": "Your best skin yet • Skin so good you could go Barefaced •"
+        }
+      },
+      "161830523515b9553e": {
+        "type": "social-slider",
+        "blocks": {
+          "a9df4e87-226c-48e3-9050-f99c204f2c92": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Barefaced_Personal_Testimony_Daelynn.jpg",
+              "caption": "Daelynn @daelynn_marie_ - Your products are AMAZING! I've been a skin obsessed woman (medical grade even!) for the last two decades and what your products (and regimen) have done for me in only a matter of weeks is insane. Never have used anything with these results."
+            }
+          },
+          "7269741a-1c96-40ad-a858-aaf5fc71536c": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Barefaced_Personal_Testimony_Lindsey_B.jpg",
+              "caption": "Lindsey @lindseybronikowski - 38 year old mom of three boys here sending out a huge THANK YOU! I've never been as happy with my skin as I am right now. All this gal needs is a little brow filler, mascara, blush and chapstick and I'm ready. Never in my life would I think I would say that! I love all of your product recommendations and am so thankful for the work you all do."
+            }
+          },
+          "43ee970a-1043-430c-84f8-161cb46988fa": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Barefaced_Personal_Testimony_Andrea.jpg",
+              "caption": "Andrea @strathmonster - Today is my 40th birthday and I was completely freaking out about it. And then I took this selfie and realized my skin is naked except for moisturizer and I feel a little better now! I've never gone naked faced in my life, and it wouldn't have happened without your magic, so thank you!!!"
+            }
+          },
+          "a025ebd3-7ad8-4add-97b2-76644bc581d4": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Barefaced_Personal_Testimony_Cait.jpg",
+              "caption": "Cait @caitmclancy - I don't wear makeup (never learned how to do it), so that's why I came to Barefaced. I cannot speak more highly of it. My skin has helped boost my self confidence when I need it and don't feel it!! These products and healthy glowing skin does just as much for physical beauty as it does for confidence and inner beauty."
+            }
+          },
+          "8780371d-a5d5-4991-b1ac-df9ad3a39b9c": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Barefaced_Personal_Testimony_Megan.jpg",
+              "caption": "Megan @mrsgardner12 - I've struggled FOREVER with my chin\/neck. Like majorly bad–even pre-maskne... Skin quiz regimen + your tips\/education + recent addition of Glow Peel Pads... This has changed my skin!!! 🙏🏻❤️"
+            }
+          },
+          "8f6865e9-1af0-4165-a502-72033bb7cac7": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Barefaced_Personal_Testimony_Dana.jpg",
+              "caption": "Dana @danabrantleynp - I am 48 and have been using Barefaced products for the past 2 years, but my skin feels amazing. I have seen a real difference in my skin and love all the products. ❤️"
+            }
+          },
+          "4e035783-dfd5-4a22-b36f-82fa16d2eece": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Barefaced_Personal_Testimony_Helen.jpg",
+              "caption": "Helen @wumarksthespots - I absolutely LOVE my Barefaced routine! When I decided to just commit to the routine and stick with the process, I've been seeing tremendous changes in my skin! I feel VERY comfortable not wearing any makeup, and I'm just so happy with the results! The Barefaced team assisted me the whole way with how to implement the products so that my skin was able to adapt to it! Thank you thank you for a much needed simple skincare routine! 😊"
+            }
+          },
+          "926b315c-95bb-4351-93e4-2e625acc6a18": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Barefaced_Personal_Testimony_Joanna_2.jpg",
+              "caption": "Joanna @joanna_b_carroll - Shouting from the rooftops! Nothing but Barefaced Tinted SPF and a spot concealer for a red mark on my cheek! I'm also a toddler mom so don't know if the dark circles will ever go away but omg!!! Thank you!!!!!"
+            }
+          },
+          "d3062dcf-c7d2-4604-a499-71a27f1992af": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Barefaced_Personal_Testimony_Mallory.jpg",
+              "caption": "Mallory @hairmagicmal - It's the products! And I have sensitive skin, so for all of this to work and not have major side effects (but a little dryness here and there) has been amazing!"
+            }
+          },
+          "52727ac2-d97a-4fc7-b3e9-2c49241da751": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Barefaced_Personal_Testimony_Marina.png",
+              "caption": "Marina @marinaapreston - 2022. The year I turn 30. In pursuit of aging like fine wine, this year's theme will be all things skincare and sleepwear. Prioritizing preventive care for our largest organ (because clear skin makes me happy + feel good) and prioritizing rest over anything (because burnout is real and 2021 taught me I can't pour from an empty cup)."
+            }
+          },
+          "c2ab11a6-9db1-4bc2-8e53-2efc94f95588": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Barefaced-Personal-Testimony_Kate.jpg",
+              "caption": "Kate @avrynco - I can't believe how far my skin has come in the past few months. Used to wear foundation most days and now I feel 💯 with just some Barefaced tinted SPF."
+            }
+          },
+          "87554bbc-1f8c-416f-9abf-62e1126c1b08": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Barefaced-Personal-Testimony_Carson.jpg",
+              "caption": "Carson @carsonrburns - Hi! I just wanted to reach out and say THANK YOU to Jordan and the Barefaced team for all of their help, information and products! They truly saved my skin. I've been using the Barefaced products and following the regimen provided in my skincare consult consistently for the last 8 months, and I never felt more comfortable to spend a week on the beach for my wedding without anything but SPF and mascara! I had makeup on for my wedding day, but my skin looked flawless underneath and I was so so so happy to not have to worry about hiding anything with more makeup. ❤️❤️❤️❤️❤️ Forever in love with Barefaced!"
+            }
+          },
+          "10018e85-f5b6-4927-a636-26826f691569": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Barefaced-Personal-Testimony_Trish.jpg",
+              "caption": "Trish - Girls look at my face! I'm almost 45...never ever had anything done or injected in my face...just a skincare routine! All I have on is a little mascara and bronzer...I LOVE BAREFACED! NEVER EVER EVER STOP EVER! 💜"
+            }
+          },
+          "7843fd8b-ed7d-4f5f-ad3e-31688ff6cfdb": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Barefaced_Personal_Testimony_2.jpg",
+              "caption": "Adrienne @adrienneboud - Just have to say how much I love your products!! Discovered y'all in January and have been using Toning Pads, Glow Peel Pads, Brightening Face Wash, etc! Love them all. My face is better than ever!!!"
+            }
+          },
+          "1ae65d7e-2fdf-44e5-b8fd-5ddece1eb0ab": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Barefaced_Personal_Testimony_1_8b2ec7ca-03a1-4953-9fd7-8295defe3220.jpg",
+              "caption": "Laura @_laurawyrick - I literally never wear makeup anymore. Only tinted moisturizer, and I haven't felt this comfortable in my skin EVER! So thank YOU so much!!!!!! I'm also a nurse, currently in the FNP program in hopes of getting into dermatology and\/or aesthetics in order to help others get in control of their skin\/life like you have helped me."
+            }
+          },
+          "50951071-8016-460f-826d-e4b0e1c04cfd": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Barefaced_Personal_Testimony_3.jpg",
+              "caption": "Cassidy @chaostocleanbycass - Wait your Toning Pads are the best!!!!!! My skin is rocking right now if I do say so myself!!!!!! No makeup just sunscreen woohooo. I never take selfies lol but I'm so pumped!"
+            }
+          },
+          "cdeffa80-064c-416d-a4ba-17e5975f112a": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/cropped_ugc_3.jpg",
+              "caption": "Taylor @taybano – I am sooo thankful for all of your products!! This is completely barefaced!! Thank you so much for simplifying skincare and for everything you do!!"
+            }
+          },
+          "a72f8349-42f1-430d-b7fa-dfa47cdf87c2": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/juliannarysz.jpg",
+              "caption": "Julia @juliannarysz - I can't believe how much my skin has changed over the last few months! I went from wearing a full face of foundation every time I left the house to just a little concealer and lip gloss! Thank you so much for all the tips, tricks, and awesome Barefaced products. It feels good to finally have a regimen that works!"
+            }
+          },
+          "a61dcd37-654f-4799-a8d1-656e07ec26bb": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/cropped_ugc.jpg",
+              "caption": "@tpatel86 – Omg omg omg! My skin! I know I've said it before but my skin is amazing thanks to you!! This is no foundation, just your SPF sheer protection and blush! Oh, and no filter!!"
+            }
+          },
+          "d53cdc1e-934f-4a60-b09d-70521ae43494": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/IMG_0851.jpg",
+              "caption": "Crystal @savoringhealth - Just want to tell you how amazing my skin has looked since starting your regimen. I have NEVER had a time in my life where my chin was clear until now. I never could've imagined this type of skin, not having to constantly be worried people are staring at my blemishes. Thank you so much!"
+            }
+          },
+          "2088ef91-26cf-4322-a47e-37126988f7f9": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/cropped_ugc_2.jpg",
+              "caption": "Shaila @shaliabrivera – I've been using your products my entire pregnancy and now PP and I'm obsessed! No makeup, no filter, and no sleep with my one month old. Never thought I could keep my skin this good. Thank you, thank you, thank you!"
+            }
+          },
+          "91cff771-1188-4038-abc8-2736cdb7252b": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/IMG_1905-preview_adad06b8-872a-4051-967c-4d570cced0de.jpg",
+              "caption": "Jessica @jessimariecarter - My skin is looking great thanks to @jordanharper_np! I left my Toning Pads in NC and bought 2 more at 1:00AM last night because they are essential."
+            }
+          },
+          "0d998bea-c274-4df0-b287-46dd294f3b82": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/20C741F4-713C-48A9-A470-70C2A8C2F8BC.jpg",
+              "caption": "Allie @allie_gold - Did someone take a magic eraser to my face?! Seriously waking up each day to beautiful glowing skin has never felt so good. Thank you for your daily post, your amazing products, and your desire to help other's heal their skin!!"
+            }
+          },
+          "b95ad49e-66b3-4a7d-b147-b66ee9a95e66": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/B1C205D6-4839-4470-A7EC-9F7053888413.jpg",
+              "caption": "Morgan @morgantroyer - I am mind blown at my progress so far! This is only a week after following your guidance!"
+            }
+          },
+          "bcb89620-2273-4792-b7a6-37a11bd76132": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/missy_h17-_1.jpg",
+              "caption": "Melissa @Missy_h17 - My hormones were so out of whack and my confidence was so low. I had been stashing money aside thinking I'd need a rigorous chemical peel or something help [my pigment and scarring]. Instead... GLOW PEEL PADS!!!"
+            }
+          }
+        },
+        "block_order": [
+          "a9df4e87-226c-48e3-9050-f99c204f2c92",
+          "7269741a-1c96-40ad-a858-aaf5fc71536c",
+          "43ee970a-1043-430c-84f8-161cb46988fa",
+          "a025ebd3-7ad8-4add-97b2-76644bc581d4",
+          "8780371d-a5d5-4991-b1ac-df9ad3a39b9c",
+          "8f6865e9-1af0-4165-a502-72033bb7cac7",
+          "4e035783-dfd5-4a22-b36f-82fa16d2eece",
+          "926b315c-95bb-4351-93e4-2e625acc6a18",
+          "d3062dcf-c7d2-4604-a499-71a27f1992af",
+          "52727ac2-d97a-4fc7-b3e9-2c49241da751",
+          "c2ab11a6-9db1-4bc2-8e53-2efc94f95588",
+          "87554bbc-1f8c-416f-9abf-62e1126c1b08",
+          "10018e85-f5b6-4927-a636-26826f691569",
+          "7843fd8b-ed7d-4f5f-ad3e-31688ff6cfdb",
+          "1ae65d7e-2fdf-44e5-b8fd-5ddece1eb0ab",
+          "50951071-8016-460f-826d-e4b0e1c04cfd",
+          "cdeffa80-064c-416d-a4ba-17e5975f112a",
+          "a72f8349-42f1-430d-b7fa-dfa47cdf87c2",
+          "a61dcd37-654f-4799-a8d1-656e07ec26bb",
+          "d53cdc1e-934f-4a60-b09d-70521ae43494",
+          "2088ef91-26cf-4322-a47e-37126988f7f9",
+          "91cff771-1188-4038-abc8-2736cdb7252b",
+          "0d998bea-c274-4df0-b287-46dd294f3b82",
+          "b95ad49e-66b3-4a7d-b147-b66ee9a95e66",
+          "bcb89620-2273-4792-b7a6-37a11bd76132"
+        ],
+        "settings": {
+          "subtitle": "",
+          "title": "The kind of pop quiz  you’re going to ~love.~",
+          "content": "Simple, effective skincare routines are our thing. And once you ace this pop quiz, they’re going to be your thing, too. Hello, bare skin.",
+          "link_text": "Take the Quiz",
+          "link_url": "shopify:\/\/pages\/skincare-quiz"
+        }
+      },
+      "home-banner": {
+        "type": "home-banner",
+        "blocks": {
+          "6773e623-555f-4ea0-8131-2cf04e3ecafb": {
+            "type": "block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Bare-Necessities_Desktop-Banner_September.jpg",
+              "image_mobile": "shopify:\/\/shop_images\/Bare-Necessities_Mobile-Banner_September.jpg",
+              "title": "Meet the Bare Necessities.\nThe foundation for every skin type.",
+              "link_text": "Subscribe Now",
+              "link_url": "shopify:\/\/collections\/bare-necessities",
+              "link_2_text": "",
+              "link_2_url": "",
+              "pagination_title": ""
+            }
+          },
+          "81d2a669-3c7b-439f-be71-b337add183b5": {
+            "type": "block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Free_Cleanser_Bare_Necessities_Desktop_Banner-September.jpg",
+              "image_mobile": "shopify:\/\/shop_images\/Bare_Necessities_Free_Cleanser_optimized_for_web__Mobile_Banner-September.gif",
+              "title": "Get a FREE cleanser when you subscribe to the Bare Necessities!",
+              "link_text": "Choose My Free Cleanser",
+              "link_url": "shopify:\/\/collections\/bare-necessities",
+              "link_2_text": "",
+              "link_2_url": "",
+              "pagination_title": ""
+            }
+          },
+          "926ad81c-e101-454e-811a-91c3c161eb05": {
+            "type": "block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Skin-Quiz_Desktop-Banner_September.jpg",
+              "image_mobile": "shopify:\/\/shop_images\/Skin-Quiz_Mobile-Banner_September.jpg",
+              "title": "A quiz that everyone aces.",
+              "link_text": "Take the Skin Quiz",
+              "link_url": "shopify:\/\/pages\/skincare-quiz",
+              "link_2_text": "Talk to a Skincare Specialist",
+              "link_2_url": "shopify:\/\/pages\/contact",
+              "pagination_title": ""
+            }
+          }
+        },
+        "block_order": [
+          "6773e623-555f-4ea0-8131-2cf04e3ecafb",
+          "81d2a669-3c7b-439f-be71-b337add183b5",
+          "926ad81c-e101-454e-811a-91c3c161eb05"
+        ],
+        "settings": {
+        }
+      },
+      "161832484167f41b8e": {
+        "type": "complex-col-block",
+        "blocks": {
+          "c0fe88bd-ef09-4544-ac76-9790620e04d9": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Content_Block_Barefaced_Products_zoomed.jpg",
+              "video_url": ""
+            }
+          },
+          "0eee1ba8-1a34-4000-aa92-be7cdf4c682a": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Content_Block_Liquid_Gold.jpg",
+              "video_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0567\/1868\/8418\/files\/Barefaced_Liquid_Gold.mp4?v=1622240696"
+            }
+          },
+          "48a65852-4480-41cc-9ab2-f281e87f22e0": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Blog_How_to_Layer_Skincare_Products_models.jpg",
+              "video_url": ""
+            }
+          }
+        },
+        "block_order": [
+          "c0fe88bd-ef09-4544-ac76-9790620e04d9",
+          "0eee1ba8-1a34-4000-aa92-be7cdf4c682a",
+          "48a65852-4480-41cc-9ab2-f281e87f22e0"
+        ],
+        "settings": {
+          "subtitle": "Top shelf skincare",
+          "title": "Products you can ~feel confident~ about.",
+          "content": "",
+          "list": "Ingredients are at the level that the products are ACTUALLY doing something\nSafe and efficacious products\nIngredients backed by data\nBased in research and science\nMedical-grade, high ingredient skincare",
+          "link_text": "Shop now",
+          "link_url": "shopify:\/\/collections\/all-products"
+        }
+      },
+      "product-image-w-scrolling-text": {
+        "type": "product-image-w-scrolling-text",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/NH-Barefaced-Day-One2337.jpg",
+          "text": "Your home for fresh, vibrant, healthy skin •"
+        }
+      },
+      "about-two-col-block-2": {
+        "type": "about-two-col-block-2",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/NH-Barefaced-Day-Two5147_websize.jpg",
+          "subtitle": "Blog",
+          "title": "~Baring~ it all.",
+          "content": "<p>The tips, stories, and product recommendations <br\/>that’ll inspire you to show off #MyBarefacedSkin<\/p>",
+          "link_text": "Read more",
+          "link_url": "shopify:\/\/blogs\/blog"
+        }
+      },
+      "account-cta": {
+        "type": "account-cta",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/Refer-a-Friend_Banner.jpg",
+          "subtitle": "Refer a Friend",
+          "title": "Give $20, Get $20. Refer a friend and get $20 off your ~best skin yet.~",
+          "link_text": "Find out more",
+          "link_url": "shopify:\/\/pages\/referrals",
+          "discount": ""
+        }
+      },
+      "social-slider": {
+        "type": "social-slider",
+        "blocks": {
+          "20ef7a71-88d9-4bfc-b24a-bd0b114edde5": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Barefaced_Personal_Testimony_Daelynn.jpg",
+              "caption": "Daelynn @daelynn_marie_ - Your products are AMAZING! I've been a skin obsessed woman (medical grade even!) for the last two decades and what your products (and regimen) have done for me in only a matter of weeks is insane. Never have used anything with these results."
+            }
+          },
+          "a8dda101-6e25-4eb6-b6e7-106a5d12d1a3": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Barefaced_Personal_Testimony_Lindsey_B.jpg",
+              "caption": "Lindsey @lindseybronikowski - 38 year old mom of three boys here sending out a huge THANK YOU! I've never been as happy with my skin as I am right now. All this gal needs is a little brow filler, mascara, blush and chapstick and I'm ready. Never in my life would I think I would say that! I love all of your product recommendations and am so thankful for the work you all do."
+            }
+          },
+          "2bde86ef-27e6-4281-bf17-693098f5417e": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Barefaced_Personal_Testimony_Andrea.jpg",
+              "caption": "Andrea @strathmonster - Today is my 40th birthday and I was completely freaking out about it. And then I took this selfie and realized my skin is naked except for moisturizer and I feel a little better now! I've never gone naked faced in my life, and it wouldn't have happened without your magic, so thank you!!!"
+            }
+          },
+          "a7598557-cfca-43df-ab75-648443094c1d": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Barefaced_Personal_Testimony_Cait.jpg",
+              "caption": "Cait @caitmclancy - I don't wear makeup (never learned how to do it), so that's why I came to Barefaced. I cannot speak more highly of it. My skin has helped boost my self confidence when I need it and don't feel it!! These products and healthy glowing skin does just as much for physical beauty as it does for confidence and inner beauty."
+            }
+          },
+          "099a76f8-e506-421f-a3b6-086578082b32": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Barefaced_Personal_Testimony_Megan.jpg",
+              "caption": "Megan @mrsgardner12 - I've struggled FOREVER with my chin\/neck. Like majorly bad–even pre-maskne... Skin quiz regimen + your tips\/education + recent addition of Glow Peel Pads... This has changed my skin!!! 🙏🏻❤️"
+            }
+          },
+          "2ff5f998-49fb-41ee-b496-50f9538857ad": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Barefaced_Personal_Testimony_Dana.jpg",
+              "caption": "Dana @danabrantleynp - I am 48 and have been using Barefaced products for the past 2 years, but my skin feels amazing. I have seen a real difference in my skin and love all the products. ❤️"
+            }
+          },
+          "5ee237f3-e28e-4249-b083-a182b87cbc85": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Barefaced_Personal_Testimony_Helen.jpg",
+              "caption": "Helen @wumarksthespots - I absolutely LOVE my Barefaced routine! When I decided to just commit to the routine and stick with the process, I've been seeing tremendous changes in my skin! I feel VERY comfortable not wearing any makeup, and I'm just so happy with the results! The Barefaced team assisted me the whole way with how to implement the products so that my skin was able to adapt to it! Thank you thank you for a much needed simple skincare routine! 😊"
+            }
+          },
+          "cd8c2bf3-3154-46f8-9713-5191dbd3918c": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Barefaced_Personal_Testimony_Joanna_2.jpg",
+              "caption": "Joanna @joanna_b_carroll - Shouting from the rooftops! Nothing but Barefaced Tinted SPF and a spot concealer for a red mark on my cheek! I'm also a toddler mom so don't know if the dark circles will ever go away but omg!!! Thank you!!!!!"
+            }
+          },
+          "3dc50bcf-e775-4f3a-a7f2-3c93b2415e8b": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Barefaced_Personal_Testimony_Mallory.jpg",
+              "caption": "Mallory @hairmagicmal - It's the products! And I have sensitive skin, so for all of this to work and not have major side effects (but a little dryness here and there) has been amazing!"
+            }
+          },
+          "7066327f-209b-49cf-89a0-fd76c4369bb1": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Barefaced_Personal_Testimony_Marina.png",
+              "caption": "Marina @marinaapreston - 2022. The year I turn 30. In pursuit of aging like fine wine, this year's theme will be all things skincare and sleepwear. Prioritizing preventive care for our largest organ (because clear skin makes me happy + feel good) and prioritizing rest over anything (because burnout is real and 2021 taught me I can't pour from an empty cup)."
+            }
+          },
+          "ba1b4685-c503-48a3-8eaa-49ef392591a7": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Barefaced-Personal-Testimony_Kate.jpg",
+              "caption": "Kate @avrynco - I can’t believe how far my skin has come in the past few months. Used to wear foundation most days and now I feel 💯 with just some Barefaced tinted SPF."
+            }
+          },
+          "20e7885d-8dfd-4024-90d1-46c4643aaa68": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Barefaced-Personal-Testimony_Carson.jpg",
+              "caption": "Carson @carsonrburns - Hi! I just wanted to reach out and say THANK YOU to Jordan and the Barefaced team for all of their help, information and products! They truly saved my skin. I've been using the Barefaced products and following the regimen provided in my skincare consult consistently for the last 8 months, and I never felt more comfortable to spend a week on the beach for my wedding without anything but SPF and mascara! I had makeup on for my wedding day, but my skin looked flawless underneath and I was so so so happy to not have to worry about hiding anything with more makeup. ❤️❤️❤️❤️❤️ Forever in love with Barefaced!"
+            }
+          },
+          "8dd0eb24-ea43-4ccc-9629-3e2a56fa805b": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Barefaced-Personal-Testimony_Trish.jpg",
+              "caption": "Trish - Girls look at my face! I'm almost 45...never ever had anything done or injected in my face...just a skincare routine! All I have on is a little mascara and bronzer...I LOVE BAREFACED! NEVER EVER EVER STOP EVER! 💜"
+            }
+          },
+          "5c28f671-bef2-45c5-881f-689b6c7b1348": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Barefaced_Personal_Testimony_2.jpg",
+              "caption": "Adrienne @adrienneboud - Just have to say how much I love your products!! Discovered y'all in January and have been using Toning Pads, Glow Peel Pads, Brightening Face Wash, etc! Love them all. My face is better than ever!!!"
+            }
+          },
+          "f2179b26-0f53-48bc-b28e-b33be3141f05": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Barefaced_Personal_Testimony_1_8b2ec7ca-03a1-4953-9fd7-8295defe3220.jpg",
+              "caption": "Laura @_laurawyrick - I literally never wear makeup anymore. Only tinted moisturizer, and I haven't felt this comfortable in my skin EVER! So thank YOU so much!!!!!! I'm also a nurse, currently in the FNP program in hopes of getting into dermatology and\/or aesthetics in order to help others get in control of their skin\/life like you have helped me."
+            }
+          },
+          "6b20fcc8-e7ac-4860-9977-2947bf7ee75a": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Barefaced_Personal_Testimony_3.jpg",
+              "caption": "Cassidy @chaostocleanbycass - Wait your Toning Pads are the best!!!!!! My skin is rocking right now if I do say so myself!!!!!! No makeup just sunscreen woohooo. I never take selfies lol but I'm so pumped!"
+            }
+          },
+          "c4427274-9bcf-4dcd-ae18-59cf437466fa": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/cropped_ugc_3.jpg",
+              "caption": "Taylor @taybano – I am sooo thankful for all of your products!! This is completely barefaced!! Thank you so much for simplifying skincare and for everything you do!!"
+            }
+          },
+          "ece795db-4b02-4214-9048-b5115b69ce2a": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/cropped_ugc.jpg",
+              "caption": "@tpatel86 – Omg omg omg! My skin! I know I've said it before but my skin is amazing thanks to you!! This is no foundation, just your SPF sheer protection and blush! Oh, and no filter!!"
+            }
+          },
+          "591a9437-51d8-4c81-953c-e286d975bead": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/IMG_0851.jpg",
+              "caption": "Crystal @savoringhealth - Just want to tell you how amazing my skin has looked since starting your regimen. I have NEVER had a time in my life where my chin was clear until now. I never could've imagined this type of skin, not having to constantly be worried people are staring at my blemishes. Thank you so much!"
+            }
+          },
+          "a736a1e0-d8a2-4ec7-8a41-2f2872911cba": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/juliannarysz.jpg",
+              "caption": "Julia @juliannarysz - I can't believe how much my skin has changed over the last few months! I went from wearing a full face of foundation every time I left the house to just a little concealer and lip gloss! Thank you so much for all the tips, tricks, and awesome Barefaced products. It feels good to finally have a regimen that works!"
+            }
+          },
+          "0e3353b1-e1ea-4e5e-9e86-3b129fdb4d70": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/cropped_ugc_2.jpg",
+              "caption": "Shaila @shaliabrivera – I've been using your products my entire pregnancy and now PP and I'm obsessed! No makeup, no filter, and no sleep with my one month old. Never thought I could keep my skin this good. Thank you, thank you, thank you!"
+            }
+          },
+          "80de3e0e-0ea4-4fb4-8142-05b8696f2a71": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/IMG_1905-preview_adad06b8-872a-4051-967c-4d570cced0de.jpg",
+              "caption": "Jessica @jessimariecarter - My skin is looking great thanks to @jordanharper_np! I left my Toning Pads in NC and bought 2 more at 1:00AM last night because they are essential."
+            }
+          },
+          "33731cdb-34c1-4f79-b629-979e4fb8aacd": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/B1C205D6-4839-4470-A7EC-9F7053888413.jpg",
+              "caption": "Morgan @morgantroyer - I am mind blown at my progress so far! This is only a week after following your guidance!"
+            }
+          },
+          "d09deac9-8089-489c-a644-ed3320ef20da": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/20C741F4-713C-48A9-A470-70C2A8C2F8BC.jpg",
+              "caption": "Allie @allie_gold - Did someone take a magic eraser to my face?! Seriously waking up each day to beautiful glowing skin has never felt so good. Thank you for your daily post, your amazing products, and your desire to help other's heal their skin!!"
+            }
+          },
+          "ce230fa3-568e-4d9a-b981-6f6db59bca32": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/missy_h17-_1.jpg",
+              "caption": "Melissa @Missy_h17 - My hormones were so out of whack and my confidence was so low. I had been stashing money aside thinking I'd need a rigorous chemical peel or something help [my pigment and scarring]. Instead... GLOW PEEL PADS!!!"
+            }
+          }
+        },
+        "block_order": [
+          "20ef7a71-88d9-4bfc-b24a-bd0b114edde5",
+          "a8dda101-6e25-4eb6-b6e7-106a5d12d1a3",
+          "2bde86ef-27e6-4281-bf17-693098f5417e",
+          "a7598557-cfca-43df-ab75-648443094c1d",
+          "099a76f8-e506-421f-a3b6-086578082b32",
+          "2ff5f998-49fb-41ee-b496-50f9538857ad",
+          "5ee237f3-e28e-4249-b083-a182b87cbc85",
+          "cd8c2bf3-3154-46f8-9713-5191dbd3918c",
+          "3dc50bcf-e775-4f3a-a7f2-3c93b2415e8b",
+          "7066327f-209b-49cf-89a0-fd76c4369bb1",
+          "ba1b4685-c503-48a3-8eaa-49ef392591a7",
+          "20e7885d-8dfd-4024-90d1-46c4643aaa68",
+          "8dd0eb24-ea43-4ccc-9629-3e2a56fa805b",
+          "5c28f671-bef2-45c5-881f-689b6c7b1348",
+          "f2179b26-0f53-48bc-b28e-b33be3141f05",
+          "6b20fcc8-e7ac-4860-9977-2947bf7ee75a",
+          "c4427274-9bcf-4dcd-ae18-59cf437466fa",
+          "ece795db-4b02-4214-9048-b5115b69ce2a",
+          "591a9437-51d8-4c81-953c-e286d975bead",
+          "a736a1e0-d8a2-4ec7-8a41-2f2872911cba",
+          "0e3353b1-e1ea-4e5e-9e86-3b129fdb4d70",
+          "80de3e0e-0ea4-4fb4-8142-05b8696f2a71",
+          "33731cdb-34c1-4f79-b629-979e4fb8aacd",
+          "d09deac9-8089-489c-a644-ed3320ef20da",
+          "ce230fa3-568e-4d9a-b981-6f6db59bca32"
+        ],
+        "settings": {
+          "subtitle": "say goodbye to skincare overwhelm & confusion.",
+          "title": "The kind of pop quiz  you’re going to ~love.~",
+          "content": "Easy, effective skincare routines are our thing. And once you ace this pop quiz, they’re going to be your thing too. Hello, bare skin.",
+          "link_text": "Take the quiz",
+          "link_url": "shopify:\/\/pages\/skincare-quiz"
+        }
+      },
+      "product-reviews": {
+        "type": "product-reviews",
+        "settings": {
+          "subtitle": "Barefaced reviews",
+          "title": "What people are ~saying~"
+        }
+      },
+      "1619621062f9fc0654": {
+        "type": "reviews",
+        "settings": {
+          "subtitle": "Barefaced Reviews",
+          "title": "What people are ~saying.~"
+        }
+      },
+      "account-products": {
+        "type": "account-products",
+        "blocks": {
+          "0bbc82b4-e6b2-4b93-aeaf-c4926f1bd0d9": {
+            "type": "product",
+            "settings": {
+              "product": "hydrating-lotion"
+            }
+          },
+          "696bea54-9ef2-4b09-88a2-6fc05f98c499": {
+            "type": "product",
+            "settings": {
+              "product": "glow-peel-pads"
+            }
+          },
+          "1d931175-2a40-4545-a8ca-c8c337470284": {
+            "type": "product",
+            "settings": {
+              "product": "brightening-serum"
+            }
+          }
+        },
+        "block_order": [
+          "0bbc82b4-e6b2-4b93-aeaf-c4926f1bd0d9",
+          "696bea54-9ef2-4b09-88a2-6fc05f98c499",
+          "1d931175-2a40-4545-a8ca-c8c337470284"
+        ],
+        "settings": {
+          "title": "Some of our favorites"
+        }
+      },
+      "recharge-dashboard": {
+        "type": "recharge-dashboard",
+        "settings": {
+        }
+      },
+      "subscriptions-two-col-block": {
+        "type": "subscriptions-two-col-block",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/Blog_Myth-or-Fact-Hat.jpg",
+          "subtitle": "The Perks",
+          "title": "Why Subscribe?",
+          "list": "Never run our of your favorite products again: let auto-renew take care of it. We also always save inventory for our subscribers, so you never have to worry about out-of-stock products.\nYou’re in charge: move order dates up, back, or skip based on your needs, or cancel anytime.\nSave on your routine: receive up to 10% off all products.\nSave even more: bundle products or add one-time items to your upcoming subscription for free shipping on orders over $99.",
+          "link_text": "Subscribe Now",
+          "link_url": "shopify:\/\/pages\/about"
+        }
+      },
+      "subscriptions-how-it-works": {
+        "type": "subscriptions-how-it-works",
+        "blocks": {
+          "b7a86074-43d9-4d4a-951b-c9e4d931416b": {
+            "type": "point",
+            "settings": {
+              "title": "Choose Your Products",
+              "content": "Manage your recurring subscriptions easily. Add or remove products as often as you please.",
+              "icon": "tub"
+            }
+          },
+          "2c9d3233-503e-4ff1-8786-8f29313b43f8": {
+            "type": "point",
+            "settings": {
+              "title": "Select Your Frequency",
+              "content": "You pick when things ship. Set a desired frequency, but edit or skip orders at any time.",
+              "icon": "calendar"
+            }
+          },
+          "9ba2abf9-72fd-4bc0-865e-5c32f83a032d": {
+            "type": "point",
+            "settings": {
+              "title": "Save on Every Order",
+              "content": "Subscribers enjoy up to 10% off every order. Um, yes please!",
+              "icon": "savings"
+            }
+          }
+        },
+        "block_order": [
+          "b7a86074-43d9-4d4a-951b-c9e4d931416b",
+          "2c9d3233-503e-4ff1-8786-8f29313b43f8",
+          "9ba2abf9-72fd-4bc0-865e-5c32f83a032d"
+        ],
+        "settings": {
+          "title": "How it works"
+        }
+      },
+      "subscriptions-faqs": {
+        "type": "subscriptions-faqs",
+        "blocks": {
+          "9fdefd28-7b62-495d-9ec4-df164317d587": {
+            "type": "faq",
+            "settings": {
+              "question": "How does the subscription work?",
+              "answer": "<p>We make it super easy to subscribe to your favorite products! Simply select any of your favorite products that you’d like to receive on subscription and choose the ‘Subscribe + Save’ option before adding your products to cart. Select how often you'd like to receive them and proceed to checkout. <\/p><p>Don’t worry, you can swap or add products whenever you like! You can also skip or edit your delivery at any time to suit your schedule. <\/p>"
+            }
+          },
+          "e14015ff-7ce3-40fe-b301-86bd73a2a1c3": {
+            "type": "faq",
+            "settings": {
+              "question": "Are there any perks to subscribe?",
+              "answer": "<p>Of course! You’ll receive rewards points with every purchase you make and every order renewal. Points can be redeemed for discounts on certain one-time purchases and certain subscription products.<\/p><p><\/p><p>Plus, enjoy 10% off select products - you can subscribe and save!<\/p><p><\/p><p>We also set aside inventory each month for our product subscriptions so you never have to worry about your must-haves going out of stock.<\/p>"
+            }
+          },
+          "40764783-8801-4905-943d-dc5dfa48585a": {
+            "type": "faq",
+            "settings": {
+              "question": "Do I get more Barefaced Rewards points if I subscribe?",
+              "answer": "<p>Yes! When you make 6 subscription purchases or complete 6 subscription renewals, you’ll earn 100 bonus points and be even closer to redeeming your next reward. <\/p>"
+            }
+          },
+          "499ce6fc-5d2f-48c2-b894-b756c97ee7d3": {
+            "type": "faq",
+            "settings": {
+              "question": "Can I edit or cancel my subscription anytime?",
+              "answer": "<p>Yes, you can cancel or make changes to your subscription at any time by logging into your account and clicking Manage Subscriptions.<\/p>"
+            }
+          },
+          "64438352-c493-43f6-9193-245a32615845": {
+            "type": "faq",
+            "settings": {
+              "question": "When will I be charged for my subscription?",
+              "answer": "<p>You will be charged at the point of purchase and all subsequent charges will follow the frequency that you selected when choosing your subscription.<\/p><p>You can make changes to your order frequency or next charge date at any time.<\/p>"
+            }
+          },
+          "e6c0a9b4-ef0a-4419-b751-2f180b3a0fc7": {
+            "type": "faq",
+            "settings": {
+              "question": "How do I change where my subscription gets shipped to?",
+              "answer": "<p>You can update your delivery address by logging into your account and clicking on the Manage Subscriptions tab. From here, click \"Edit Shipping Address\" to make any changes. <\/p>"
+            }
+          },
+          "cd631466-75be-4b55-b645-87d942856963": {
+            "type": "faq",
+            "settings": {
+              "question": "Can I change the delivery date of my subscription?",
+              "answer": "<p>Yes you can! After logging into your account, select the Manage Subscriptions tab and click on the \"Manage\" button next to the product you wish to edit. From here, you can change the order date, or you can also skip an upcoming order or change the frequency or quantity.<\/p>"
+            }
+          },
+          "65d205ba-d1e1-4d85-958b-7c1fc5da8207": {
+            "type": "faq",
+            "settings": {
+              "question": "How do I change my billing information for my subscription?",
+              "answer": "<p>To update your billing information on existing subscriptions, simply log in to your account, go to Manage Subscriptions and select the \"Update Billing\" button. From here, you will be sent an email to securely update your billing information.<\/p><p><\/p><p>For questions or help with billing, please reach out to <a href=\"mailto:hello@barefaced.com\" title=\"mailto:hello@barefaced.com\">hello@barefaced.com<\/a>.<\/p>"
+            }
+          },
+          "da794f87-0fa9-4d8d-ab71-8294b2518cdb": {
+            "type": "faq",
+            "settings": {
+              "question": "Will I get free shipping on my subscription order?",
+              "answer": "<p>Subscription orders will be shipped Standard Shipping and will incur a flat rate of $9.95 on each renewal. Free Shipping is offered for subscription orders over $99. <\/p><p>If you have multiple subscription products and want them to ship together to receive the Free Shipping rate, make sure the products have the same upcoming order dates and are combined under one address and payment method. If you want to add products to your subscription to reach the $99 Free Shipping minimum, we recommend adding products to upcoming subscription orders through the customer portal versus purchasing a new subscription order altogether. You can even add one-time purchases to your order through the customer portal!<\/p><p>Please note, Free Shipping is determined by the subtotal of the products after discounts have been applied.<\/p><p>For questions about merging product subscriptions to receive free shipping, please reach out to <a href=\"mailto:hello@barefaced.com\" title=\"mailto:hello@barefaced.com\">hello@barefaced.com<\/a> - we're here to help!<\/p>"
+            }
+          },
+          "616f15e9-0641-4443-9442-4313aeeec3d5": {
+            "type": "faq",
+            "settings": {
+              "question": "How do I apply points\/rewards to my upcoming subscription order?",
+              "answer": "<p>If you have an existing subscription, points can be redeemed for rewards and applied to upcoming orders.<\/p><p><\/p><p>Sign into your account and go to the Manage Subscriptions tab. Your points balance is displayed with the option to \"Redeem\" a reward if you have enough points. Select the reward you want to redeem. It will ask \"Are you sure?\" - when you select \"yes,\" your points are <em>immediately<\/em> deducted and a code is displayed. Copy the code and paste it under the \"Apply My Rewards\" link next to the subscription you wish to apply it to.<\/p><p><\/p><p>Once saved, the page will refresh showing that the code has been added and it will automatically apply on the date the subscription renews.<\/p><p><\/p><p>You may also find the redemption codes on the Rewards page in the section on \"Using Points on Existing Subscriptions\" - copy the code from here and navigate back to the Manage Subscriptions tab within your account to paste it under the \"Apply My Rewards\" link.<\/p>"
+            }
+          },
+          "744a1c94-fa88-4fb6-a796-10a2ea5b6eed": {
+            "type": "faq",
+            "settings": {
+              "question": "Can Shop Pay or Shop Pay Installments be used on subscriptions?",
+              "answer": "<p>Shop Pay can be used as the payment method for your subscriptions. However, Shop Pay Installments can not be applied towards subscription purchases.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "9fdefd28-7b62-495d-9ec4-df164317d587",
+          "e14015ff-7ce3-40fe-b301-86bd73a2a1c3",
+          "40764783-8801-4905-943d-dc5dfa48585a",
+          "499ce6fc-5d2f-48c2-b894-b756c97ee7d3",
+          "64438352-c493-43f6-9193-245a32615845",
+          "e6c0a9b4-ef0a-4419-b751-2f180b3a0fc7",
+          "cd631466-75be-4b55-b645-87d942856963",
+          "65d205ba-d1e1-4d85-958b-7c1fc5da8207",
+          "da794f87-0fa9-4d8d-ab71-8294b2518cdb",
+          "616f15e9-0641-4443-9442-4313aeeec3d5",
+          "744a1c94-fa88-4fb6-a796-10a2ea5b6eed"
+        ],
+        "settings": {
+          "subtitle": "FAQ's",
+          "title": "Have any questions?",
+          "cta_title": "Can’t find the answer you’re looking for?",
+          "cta_button_url": "shopify:\/\/pages\/contact",
+          "cta_button_text": "Contact us"
+        }
+      }
+    },
+    "content_for_index": [
+      "1618239699f9018ddd",
+      "161830523515b9553e",
+      "1618240342322a53f1",
+      "161832484167f41b8e",
+      "1618240078e17cefd0",
+      "1618239777fa719fe1",
+      "1619621062f9fc0654"
+    ]
+  },
+  "presets": {
+    "Default": {
+    }
+  }
+}

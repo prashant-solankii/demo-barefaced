@@ -1,0 +1,60 @@
+{% if product.metafields.two_col_block.image_url != blank %}
+  {% assign imageUrl = product.metafields.two_col_block.image_url %}
+  {% assign noFilter = true %}
+{% elsif section.settings.image != blank %}
+  {% assign imageUrl = section.settings.image %}
+  {% assign noFilter = false %}
+{% endif %}
+
+{% if product.metafields.two_col_block.subtitle != blank %}
+  {% assign subtitle = product.metafields.two_col_block.subtitle %}
+{% elsif section.settings.subtitle != blank %}
+  {% assign subtitle = section.settings.subtitle %}
+{% endif %}
+
+{% if product.metafields.two_col_block.title != blank %}
+  {% assign title = product.metafields.two_col_block.title %}
+{% elsif section.settings.title != blank %}
+  {% assign title = section.settings.title %}
+{% endif %}
+
+{% if product.metafields.two_col_block.content != blank %}
+  {% assign content = product.metafields.two_col_block.content %}
+{% elsif section.settings.content != blank %}
+  {% assign content = section.settings.content %}
+{% endif %}
+
+
+{% if section.settings.image != blank or section.settings.title != blank or section.settings.content != blank %}
+  <div class="white-two-col-block">
+    {% render 'two-col-block', classes: 'white-two-col-block__inner two-col-block--alt', image: imageUrl, imageNoFilter: noFilter, subtitle: subtitle, title: title, content: content  %}
+  </div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Product Two Col Block",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "richtext",
+        "id": "content",
+        "label": "Content"
+      }
+    ]
+  }
+{% endschema %}

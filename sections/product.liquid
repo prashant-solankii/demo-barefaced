@@ -1,0 +1,78 @@
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+{%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
+
+<section class="product">
+  {% render 'product-images' %}
+  {% render 'product-content', currentVariant: current_variant %}
+  {% render 'product-content-form', product: product, currentVariant: current_variant, sticky: true, title: true %}
+</section>
+
+
+<script>
+
+{% if customer.metafields.subscriptions.customer_string %}
+    var rechargeIntervalSet = setInterval(function () {
+      var plansContainer = document.querySelector('[data-plans-container]');  
+      var radioSubsave = document.querySelector('[data-radio-subsave]');  
+      if (plansContainer != null) {
+        if (radioSubsave != null) {
+          clearInterval(rechargeIntervalSet);
+          radioSubsave.addEventListener("click", (e) => {
+            if (plansContainer.querySelector('a') == null) {
+              var a = document.createElement('a');
+                  a.appendChild(document.createTextNode('+ Add to your current subscription'));
+                  a.setAttribute('href', `/account?handle={{product.handle}}`);
+                  a.style = "display: flex; padding-top: 10px; text-decoration:underline; font-weight: 600;";
+              plansContainer.appendChild(a);
+            }
+          }); 
+        } else {
+          if (plansContainer.querySelector('a') == null) {
+            clearInterval(rechargeIntervalSet);
+            var a = document.createElement('a');
+                a.appendChild(document.createTextNode('+ Add to your current subscription'));
+                a.setAttribute('href', `/account?handle={{product.handle}}`);
+                a.style = "display: flex; padding-top: 10px; padding-bottom: 24px; text-decoration:underline; font-weight: 600;";
+            plansContainer.appendChild(a);
+            plansContainer.style = "padding-left: 0 !important;"
+          }
+        }
+      }
+    }, 1000);
+  {% endif %}
+
+  {% for tag in product.tags %}
+    {% if tag contains 'recommend_freq-' %}
+      {% assign count = tag | remove: 'recommend_freq-' %}
+      var rechargeIntervalN = setInterval(function () {        
+        var plansContainer = document.querySelector('[data-plans-container]');  
+        var radioSubsave = document.querySelector('[data-radio-subsave]');
+        if(plansContainer != null){        
+          initSelect();
+          clearInterval(rechargeIntervalN);
+        }
+      }, 1000);
+
+      function initSelect(){      
+        // document.querySelector('[data-radio-subsave]').addEventListener("click", (e) => {                
+            document.querySelectorAll('[data-option-subsave] [data-plans-dropdown] option').forEach((element) => {
+              let v = element.getAttribute('data-plan-option');
+              if(v.includes('{{count}}') && element.textContent.includes('Recommended') == false){
+                  element.textContent += ' (Recommended)';
+                  document.querySelector('[data-option-subsave] [data-plans-dropdown]').value = element.value;
+                  if(document.querySelector('[data-radio-subsave]') == null)
+                    document.querySelector('.rc_popup').style = 'opacity: 0';
+              }
+            });
+        // });
+      }
+      {% break %}
+    {% endif %}
+  {% endfor %}
+
+</script>
+
+
+
+
+

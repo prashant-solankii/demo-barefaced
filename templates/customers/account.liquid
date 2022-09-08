@@ -1,0 +1,9 @@
+{% assign name = customer.first_name %}
+{% capture title %}{{ 'customer.account.title' | t: name: name }}{% endcapture %}
+
+{% section 'recharge-dashboard' %}
+
+{% section 'account-cta' %}
+{% comment %}
+{% section 'account-products' %}
+{% endcomment %}

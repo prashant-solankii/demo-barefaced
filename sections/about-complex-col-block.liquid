@@ -1,0 +1,40 @@
+{% if section.blocks != blank or section.settings.title != blank or section.settings.content != blank %}
+  {% render 'complex-col-block', classes: 'complex-col-block--layout1 complex-col-block--nobot', blocks: section.blocks, subtitle: section.settings.subtitle, title: section.settings.title, content: section.settings.content  %}
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Complex Col Block",
+    "max_blocks": 3,
+    "settings": [
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "richtext",
+        "id": "content",
+        "label": "Content"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Image",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

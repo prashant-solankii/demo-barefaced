@@ -1,0 +1,42 @@
+<section class="account-products collection">
+  {% if section.settings.title != blank %}
+    <h3 class="collection__title">{{section.settings.title }}</h3>
+  {% endif %}
+  <ul class="collection__list">
+    {% for block in section.blocks %}
+      {% assign productRecord = all_products[block.settings.product] %}
+      <li class="collection__list-item">
+        {% render 'collection-product' with
+          classes: 'collection__list-link',
+          product: productRecord
+        %}
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+
+{% schema %}
+  {
+    "name": "Account Products",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "product",
+        "name": "Product",
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Product"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

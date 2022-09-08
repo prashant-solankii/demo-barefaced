@@ -1,0 +1,54 @@
+<section class="latest-articles">
+  <header class="latest-articles__header animate-on-scroll">
+    {% if section.settings.subtitle != blank %}
+      <h6 class="latest-articles__header-subtitle">{{ section.settings.subtitle }}</h6>
+    {% endif %}
+    {% if section.settings.title != blank %}
+      <h2 class="latest-articles__header-title">{{ section.settings.title }}</h2>
+    {% endif %}
+    {% if section.settings.link_text != blank and section.settings.link_url != blank %}
+      {% render 'text-link', classes: 'latest-articles__header-link', url: section.settings.link_url, text: section.settings.link_text %}
+    {% endif %}
+  </header>
+  <div class="latest-articles__items">
+    {% for article in blogs.blog.articles limit: 3 %}
+      {% render 'blog-item', classes: 'latest-articles__items-item animate-on-scroll', article: article %}
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Latest Articles",
+    "settings": [
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle",
+        "default": "The blog"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Latest things to digest"
+      },
+      {
+        "type": "text",
+        "id": "link_text",
+        "label": "Link text"
+      },
+      {
+        "type": "url",
+        "id": "link_url",
+        "label": "Link url"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Latest Articles",
+        "category": "Barefaced"
+      }
+    ]
+  }
+{% endschema %}

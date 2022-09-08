@@ -1,0 +1,81 @@
+<section class="team">
+  <header class="team__header animate-on-scroll">
+    {% if section.settings.subtitle != blank %}
+      <h6 class="team__header-subtitle">{{ section.settings.subtitle }}</h6>
+    {% endif %}
+    {% if section.settings.title != blank %}
+      {% render 'title', classes: 'team__header-title', title: section.settings.title %}
+    {% endif %}
+  </header>
+  {% if section.blocks != blank %}
+    <div class="team__swiper team-swiper animate-on-scroll">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            <div class="swiper-slide team-slide">
+              <div class="team-slide__image">
+                {% render 'image-component' with
+                  image: block.settings.image,
+                  sizes: '(min-width: 45em) 30vw',
+                  classes: 'team-slide__image-figure objFit'
+                %}
+              </div>
+              <div class="team-slide__info">
+                {% if block.settings.name != blank %}
+                  <h5 class="team-slide__info-name">{{ block.settings.name }} </h5>
+                {% endif %}
+                {% if block.settings.role != blank %}
+                  <div class="team-slide__info-role">{{ block.settings.role }} </div>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="swiper-scrollbar-container">
+          <div class="swiper-scrollbar"></div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</section>
+
+{% schema %}
+  {
+    "name": "Team",
+    "settings": [
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "member",
+        "name": "Member",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "name",
+            "label": "Name"
+          },
+          {
+            "type": "text",
+            "id": "role",
+            "label": "Role"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

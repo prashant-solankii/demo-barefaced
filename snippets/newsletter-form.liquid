@@ -1,0 +1,51 @@
+{% if classes == blank %}
+  {% assign classes = '' %}
+{% endif %}
+
+<form id="{{ id }}" class="klaviyo_gdpr_embed_SjTpZN form form--transparent newsletter-form {{ classes | join: ' ' }}" action="//manage.kmail-lists.com/subscriptions/subscribe" data-ajax-submit="//manage.kmail-lists.com/ajax/subscriptions/subscribe" method="GET" target="_blank" novalidate="novalidate">
+  <input type="hidden" name="g" value="SjTpZN">
+  <input type="hidden" name="$fields" value="$consent">
+  <input type="hidden" name="$list_fields" value="$consent">
+  <div class="form__row form-row {% unless fullButton %}form-row--inline-email{% endunless %}">
+    <input class="" type="email" value="" name="email" id="k_id_email"/>
+    <label for="k_id_email">{{ 'newsletter.form.email' | t }}</label>
+    {% unless fullButton %}
+      <div class="klaviyo_form_actions">
+        <button type="submit" class="klaviyo_submit_button">{% render 'icon-arrow' %} <span class="screenreader-text">{{ 'newsletter.form.button' | t }}</span></button>
+      </div>
+    {% endunless %}
+  </div>
+  <div class="form__row form-row form-row--checkbox form-row--terms {% if termsCheckbox != true %}hide{% endif %}">
+    {% capture labelText %}{{ 'newsletter.form.terms_html' | t }}{% endcapture %}
+    <input type="checkbox" {% if termsCheckbox != true %}class="hide"{% endif %} name="$consent" id="consent-email" value="email" {% if termsCheckbox != true %}checked{% endif %}>
+    <label for="consent-email">{{ labelText }}</label>
+  </div>
+  {% if termsCheckbox != true %}
+    <div class="form__row form-row form-row--note">
+      {{ 'newsletter.form.spam' | t }}
+    </div>
+  {% endif %}
+  <div class="klaviyo_messages">
+    <div class="success_message" style="display:none;"></div>
+    <div class="error_message" style="display:none;"></div>
+  </div>
+  {% if fullButton %}
+    <div class="klaviyo_form_actions form__row form-row form-row--submit">
+      {% capture buttonText %}{{ 'newsletter.form.button' | t }}{% endcapture %}
+      {% render 'button', type: 'submit', classes: 'klaviyo_submit_button', style: 'tertiary', text: buttonText %}
+    </div>
+  {% endif %}
+</form>
+<script type="text/javascript" src="//www.klaviyo.com/media/js/public/klaviyo_subscribe.js"></script>
+<script type="text/javascript">
+  var id = '#' + {{ id | json  }}
+  KlaviyoSubscribe.attachToForms(id, {
+    hide_form_on_success: true,
+    extra_properties: {
+      $source: '$embed',
+      $method_type: "Klaviyo Form",
+      $method_id: 'embed',
+      $consent_version: 'Embed default text'
+    }
+  });
+</script>

@@ -1,0 +1,507 @@
+{
+  "general": {
+    "accessibility": {
+      "skip_to_content": "Skip to content",
+      "skip_to_nav": "Skip to navigation",
+      "back_to_top": "Back to top",
+      "close_promo_bar": "Close promotional banner",
+      "unit_price_separator": "per",
+      "error": "Error",
+      "previous_slide": "Previous slide",
+      "next_slide": "Next slide",
+      "play_video": "Play video",
+      "open_menu": "Open menu",
+      "close_menu": "Close menu",
+      "close_modal": "Close modal"
+    },
+    "meta": {
+      "tags": "Tagged \"{{ tags }}\"",
+      "page": "Page {{ page }}"
+    },
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next"
+    },
+    "social": {
+      "social_platform": "{{ name }} on {{ platform }}",
+      "social_links": "Social links",
+      "share": "Share",
+      "share_on_facebook": "Share on Facebook",
+      "share_on_twitter": "Share on Twitter",
+      "share_via_email": "Share via Pinterest",
+      "share_via_pinterest": "Pin on Pinterest"
+    },
+    "video": {
+      "play": "Play"
+    }
+  },
+  "collection": {
+    "general": {
+      "no_matches": "Sorry, we couldn't find any products matching your criteria."
+    },
+    "product": {
+      "add_to_cart": "Add to Cart"
+    },
+    "filter": {
+      "all_html": "<strong>All products<\/strong> (<span><\/span> results)",
+      "apply": "Apply filters",
+      "clear": "Clear filters",
+      "show": "Show filters",
+      "hide": "Hide filters",
+      "sort": "Sort by"
+    }
+  },
+  "cookies": {
+    "close": "Close cookies bar"
+  },
+  "newsletter": {
+    "form": {
+      "email": "Email",
+      "spam": "Our skin might be bare but our emails are full of the good stuff",
+      "terms_html": "I'm happy to receive marketing communications and agree to the <a href=\"\/pages\/terms-conditions\">data policy<\/a>.",
+      "button": "Send"
+    },
+    "popup": {
+      "title": "Our skin might be bare but our emails are full of the good stuff",
+      "content": "It’s an inbox boost that’s almost better than a Glow Peel Pad.",
+      "close": "Close newsletter popup"
+    }
+  },
+  "404": {
+    "subtitle": "Apparently this page took the day off to go feed its skincare addiction and is probably buried under a pile of Toning Pads at the moment. That's our bad...we love you!",
+    "title": "Let's get you to the right place...",
+    "home": "Return home"
+  },
+  "blog": {
+    "general": {
+      "no_articles": "Sorry, there are currently no articles."
+    },
+    "filter": {
+      "all": "All"
+    },
+    "article": {
+      "by_author": "by {{ author }}",
+      "back_to_blog": "Back to blog",
+      "length_title": "Length",
+      "length_html": "<span><\/span> minute read",
+      "featured_product": "Featured product",
+      "related": "Related articles"
+    }
+  },
+  "layout": {
+    "customer": {
+      "account": "Account"
+    },
+    "cart": {
+      "title": "Cart"
+    },
+    "search": {
+      "title": "Search"
+    },
+    "featured_collection": "Featured Collection"
+  },
+  "search": {
+    "title": "Search",
+    "header_title": "What can we help you with?",
+    "results_title": "Search results for \"{{ terms }}\"",
+    "placeholder": "Search",
+    "submit": "Search",
+    "filters": {
+      "products": "Products",
+      "posts": "Blog",
+      "pages": "Pages"
+    },
+    "popular": {
+      "terms": {
+        "title": "Popular search terms"
+      },
+      "products": {
+        "title": "Most popular products"
+      }
+    },
+    "heading": "Search result(s)",
+    "results_with_count": "{{ count }} result(s) for \"{{ terms }}\"",
+    "no_results_html": "Please try a different search term or go back to the <a href=\"\/\">homepage<\/a>."
+  },
+  "footer": {
+    "social_platform": "{{ name }} on {{ platform }}",
+    "copyright": "© Barefaced by Jordan PR",
+    "payment_methods": "Payment methods accepted",
+    "website_by": "Website by",
+    "superrb": "Superrb",
+    "legal_note": "The information on this website has is not intended to diagnose, treat, prevent, or cure any disease.  Content may not be reproduced in any form.",
+    "newsletter": {
+      "title": "Our skin might be bare but our emails are full of the good stuff.",
+      "content": "It’s an inbox boost that’s almost better than a Glow Peel Pad."
+    }
+  },
+  "mini-cart": {
+    "title": "Your cart",
+    "close": "Close cart",
+    "empty": {
+      "title": "Your shopping cart is feeling empty",
+      "content": "We can help out with that!",
+      "button_text": "Shop Now"
+    },
+    "error": "Sorry, it looks like something went wrong.",
+    "subtotal": "Subtotal",
+    "view_cart": "View Cart",
+    "checkout": "Checkout",
+    "shipping_more_html": "Spend {{ value }} more and receive free shipping!",
+    "shipping_qualify": "Spend $99 or more on product purchases for free shipping!",
+    "product_details": "Product details",
+    "quantity": "Qty",
+    "taxes_html": "Taxes and shipping calculated at checkout. <br> For shipping policy details see <a href=\"\/pages\/shipping\">here<\/a>.",
+    "usp": "Discover your best skin yet"
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Add to Cart",
+      "from_text_html": "From {{ price }}",
+      "on_sale": "On Sale",
+      "on_sale_from_html": "On Sale from {{ price }}",
+      "quantity": "Quantity",
+      "regular_price": "Regular price",
+      "sold_out": "Sold Out",
+      "sale_price": "Sale price",
+      "unavailable": "Unavailable",
+      "adding_to_basket": "Adding to basket",
+      "unit_price_label": "Unit price",
+      "include_taxes": "Tax included.",
+      "shipping_policy_html": "<a href=\"{{ link }}\">Shipping<\/a> calculated at checkout.",
+      "sizes": "Sizes:"
+    },
+    "recommendations": {
+      "title": "You may also like"
+    },
+    "slideshow": {
+      "no_images": "No images found"
+    }
+  },
+  "contact": {
+    "general": {
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email"
+    },
+    "form": {
+      "title": "We’re here for you.",
+      "post_success": "Thanks for contacting us. We'll get back to you as soon as possible.",
+      "submit": "Send",
+      "error_heading": "There are errors with this form",
+      "name": {
+        "label": "Name",
+        "placeholder": "Enter your name"
+      },
+      "email": {
+        "label": "Email address*",
+        "placeholder": "Enter your email address"
+      },
+      "phone": {
+        "label": "Phone number",
+        "placeholder": "Enter your phone number"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Start typing your message here"
+      }
+    }
+  },
+  "cart": {
+    "title": "Cart",
+    "subtotal": "Subtotal",
+    "general": {
+      "title": "Shopping Cart",
+      "remove": "Remove",
+      "note": "Special instructions for seller",
+      "subtotal": "Subtotal",
+      "total": "Total",
+      "taxes_and_shipping_at_checkout": "Taxes and shipping calculated at checkout",
+      "taxes_and_shipping_policy_at_checkout_html": "Taxes and <a href=\"{{ link }}\">shipping<\/a> calculated at checkout",
+      "taxes_included_but_shipping_at_checkout": "Tax included and shipping calculated at checkout",
+      "taxes_included_and_shipping_policy_html": "Tax included. <a href=\"{{ link }}\">Shipping<\/a> calculated at checkout.",
+      "update": "Update Cart",
+      "checkout": "Checkout",
+      "empty": "Your cart is currently empty.",
+      "cookies_required": "Enable cookies to use the shopping cart",
+      "continue_shopping": "Continue shopping",
+      "item_quantity": "Item quantity",
+      "savings": "You're saving",
+      "other_payment_types": "Other payment methods",
+      "discounts": {
+        "title": "Looking to use a discount code?",
+        "message": "No worries! You'll be able to use it during Checkout."
+      }
+    },
+    "label": {
+      "discounted_price": "Discounted price",
+      "discounted_total": "Discounted total",
+      "remove": "Remove {{ product }}",
+      "original_price": "Original price",
+      "product": "Product",
+      "product_details": "Product details",
+      "price": "Price",
+      "quantity": "Quantity",
+      "regular_total": "Regular total",
+      "total": "Total"
+    },
+    "summary": {
+      "title": "Order summary",
+      "subtotal": "Subtotal",
+      "shipping": "Shipping",
+      "apply_at_checkout": "Applied at checkout",
+      "tax": "Tax",
+      "over_shipping": "You qualify for free shipping"
+    }
+  },
+  "faqs": {
+    "faq": {
+      "back": "Back to FAQs"
+    }
+  },
+  "password_page": {
+    "opening_soon": "Opening Soon",
+    "form": {
+      "password": {
+        "label": "Password",
+        "placeholder": "Your password",
+        "submit": "Enter"
+      }
+    }
+  },
+  "gift_cards": {
+    "issued": {
+      "title_html": "Here's your {{ value }} gift card for {{ shop }}!",
+      "disabled": "Disabled",
+      "expired": "Expired on {{ expiry }}",
+      "active": "Expires on {{ expiry }}",
+      "initial_value": "Gift card value: {{ value }}",
+      "redeem_html": "Use this code at checkout to redeem your {{ value }} gift card",
+      "shop_link": "Start shopping",
+      "print": "Print this gift card",
+      "remaining_html": "{{ balance }} left",
+      "add_to_apple_wallet": "Add to Apple Wallet",
+      "qr_image_alt": "QR code — scan to redeem gift card"
+    }
+  },
+  "customer": {
+    "account": {
+      "title": "Hi {{ name }}, welcome back",
+      "details": "Account details",
+      "view_addresses": "View addresses",
+      "manage_subscriptions": "Manage Subscriptions",
+      "breadcrumb": "My Account",
+      "dashboard": "Dashboard",
+      "subscriptions": "Subscriptions",
+      "log_out": "Logout",
+      "favourite_products": "Your favorite products",
+      "orders": {
+        "title": "My orders",
+        "intro": "Your latest orders",
+        "order_number": "Order",
+        "order_number_link": "Order number {{ number }}",
+        "date": "Date",
+        "payment_status": "Payment Status",
+        "fulfillment_status": "Status",
+        "total": "Total",
+        "none": "You haven't placed any orders yet."
+      }
+    },
+    "activate_account": {
+      "title": "Activate Account",
+      "intro": "Create your password to activate your account.",
+      "submit": "Activate Account",
+      "cancel": "Decline Invitation",
+      "password": {
+        "label": "Password",
+        "placeholder": "Enter your password"
+      },
+      "password_confirm": {
+        "label": "Confirm Password",
+        "placeholder": "Enter confirm your password"
+      }
+    },
+    "addresses": {
+      "notice": "To update your subscription shipping address, please click on",
+      "default": "Main address (default)",
+      "set_default": "Set as default address",
+      "add": "Add Address",
+      "update": "Update Address",
+      "cancel": "Or Cancel",
+      "edit": "Edit Address",
+      "edit_address": "Edit address",
+      "delete": "Delete Address",
+      "delete_confirm": "Are you sure you wish to delete this address?",
+      "add_new": {
+        "button": "Add New Address",
+        "title": "Add New Address",
+        "intro": "Enter an additional address to be added to your addresses"
+      },
+      "first_name": {
+        "label": "First Name",
+        "placeholder": "Enter your First Name"
+      },
+      "last_name": {
+        "label": "Last Name",
+        "placeholder": "Enter your Last Name"
+      },
+      "company": {
+        "label": "Company",
+        "placeholder": "Enter your company"
+      },
+      "address1": {
+        "label": "Address Line 1",
+        "placeholder": "Enter the first line of your Address"
+      },
+      "address2": {
+        "label": "Address Line 2",
+        "placeholder": "Enter the seconnd line of your Address"
+      },
+      "city": {
+        "label": "City",
+        "placeholder": "Enter your City"
+      },
+      "country": {
+        "label": "Country",
+        "placeholder": "Enter your Country"
+      },
+      "province": {
+        "label": "Province",
+        "placeholder": "Enter your Province"
+      },
+      "zip": {
+        "label": "Post \/ Zip Code",
+        "placeholder": "Enter your Post \/ Zip Code"
+      },
+      "phone": {
+        "label": "Phone*",
+        "placeholder": "Enter your Phone number"
+      }
+    },
+    "login": {
+      "title": "Welcome back!",
+      "intro": "Thank you for being a loyal customer! Log in to see your order history, points and more.",
+      "forgot_password": "Forgot password?",
+      "sign_in": "Login to account",
+      "guest_title": "Continue as a guest",
+      "guest_continue": "Continue",
+      "create_account": {
+        "title": "New to Barefaced?  We're glad you're here!",
+        "intro": "Please click the button below to start the process of registering",
+        "text": "Register for an account to earn points & exclusive rewards every time you shop. Your home for fresh, vibrant skin awaits!",
+        "button_text": "Create Account",
+        "sign_up": "Don't have an account? Let's fix that!",
+        "benefits_html": "<li>{{ icon }} Track your orders<\/li><li>{{ icon }} Save address and payment info<\/li> <li>{{ icon }} Access exclusive offers<\/li>"
+      },
+      "form": {
+        "email": {
+          "label": "Email",
+          "placeholder": "Enter your email address"
+        },
+        "password": {
+          "label": "Password",
+          "placeholder": "Enter your password"
+        }
+      },
+      "recover_password": {
+        "title": "Reset password",
+        "submit": "Submit",
+        "cancel": "Or Cancel",
+        "subtext": "We'll send you an email to reset your password.",
+        "success": "We've sent you an email with a link to update your password.",
+        "form": {
+          "email": {
+            "label": "Email Address*",
+            "placeholder": "Enter your email address"
+          }
+        }
+      }
+    },
+    "order": {
+      "title": "Order {{ name }}",
+      "date_html": "Placed on {{ date }}",
+      "track": "Track order",
+      "cancelled_html": "Order Cancelled on {{ date }}",
+      "cancelled_reason": "Reason: {{ reason }}",
+      "billing_address": "Billing Address",
+      "payment_status": "Payment Status",
+      "shipping_address": "Shipping Address",
+      "fulfillment_status": "Status",
+      "discount": "Discount",
+      "shipping": "Shipping",
+      "tax": "Tax",
+      "product": "Product",
+      "sku": "SKU",
+      "price": "Price",
+      "quantity": "Quantity",
+      "total": "Total",
+      "fulfilled_at": "Date fulfilled",
+      "track_shipment": "Track shipment",
+      "tracking_url": "Tracking link",
+      "tracking_company": "Carrier",
+      "tracking_number": "Tracking number",
+      "subtotal": "Subtotal"
+    },
+    "register": {
+      "title": "Create Account",
+      "intro": "Thank you for being a loyal customer! Log in to see your order history, points and more.",
+      "submit": "Create Account",
+      "cancel": "Return to Store",
+      "login": "Already have an account? Login",
+      "form": {
+        "first_name": {
+          "label": "First name",
+          "placeholder": "Please enter your first name"
+        },
+        "last_name": {
+          "label": "Last name",
+          "placeholder": "Please enter your last name"
+        },
+        "email": {
+          "label": "Email address",
+          "placeholder": "Please enter your email address"
+        },
+        "password": {
+          "label": "Password",
+          "placeholder": "Enter your password"
+        }
+      }
+    },
+    "reset_password": {
+      "title": "Forgot Password?",
+      "intro": "Enter your email and we will send you a password reset link",
+      "submit": "Reset Password",
+      "form": {
+        "password": {
+          "label": "Password*",
+          "placeholder": "Enter your password"
+        },
+        "password_confirm": {
+          "label": "Confirm Password*",
+          "placeholder": "Enter confirm your password"
+        }
+      }
+    }
+  },
+  "locksmith": {
+    "forms": {
+      "submit_button_text": "Continue",
+      "loading_text": "One moment..."
+    }
+  },
+  "shopify": {
+    "checkout": {
+      "customer_account": {
+        "have_an_account_label": "Points to redeem? Brilliant!",
+        "sign_in_link_label": "LOG IN"
+      },
+      "marketing": {
+        "accept_marketing_checkbox_label": "Sign me up for updates and exclusive offers!"
+      },
+      "contact": {
+        "phone_label": "Phone",
+        "optional_phone_label": "Phone"
+      }
+    }
+  }
+}

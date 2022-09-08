@@ -1,0 +1,89 @@
+{% if sticky == true %}
+  {% assign classes = 'product-content-form product-content-form--stick' %}
+{% else %}
+  {% assign classes = 'product-content-form product-content__form' %}
+{% endif %}
+
+{% form 'product', product, data-productid: product.id, class: classes, data-product-form: '', data-product-handle: product.handle, data-enable-history-state: 'true', novalidate: 'novalidate' %}
+
+  {% if title == true %}
+    <h5 class="product-content-form__title">
+      {{ product.title }}
+    </h5>
+  {% endif %}
+
+  {% unless product.has_only_default_variant %}
+    <div class="product-content-form__options product-options">
+      {% for option in product.options_with_values %}
+        <div class="product-options__row">
+          <label for="Option{{ option.position }}">
+            {{ option.name }}:
+          </label>
+          <select
+            id="Option{{ option.position }}"
+            name="options[{{ option.name | escape }}]">
+            {% for value in option.values %}
+            {% unless value contains '% off)' %}
+              <option
+                value="{{ value | escape }}"
+                {% if option.selected_value == value %}selected="selected"{% endif %}>
+                  {{ value }}
+              </option>
+            {%endunless%}  
+            {% endfor %}
+          </select>
+        </div>
+      {% endfor %}
+    </div>
+  {% endunless %}
+
+  <select class="hide rc-widget-variant" name="id" data-productid="{{ product.id }}" data-product-select>
+    {% for variant in product.variants %}
+{% unless variant.metafields.secomapp.freegifts %}
+{% unless variant.title contains '(Freegifts)' %}
+
+      <option
+        {% if variant == currentVariant %}selected="selected"{% endif %}
+        {% unless variant.available %}disabled="disabled"{% endunless %}
+        value="{{ variant.id }}">
+          {{ variant.title }} {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
+      </option>
+
+{%endunless%}
+{%endunless%}
+    {% endfor %}
+  </select>
+{% if product.type != 'FREEGIFT_HIDDEN' %}
+  <div class="product-content-form__quantity product-quantity {% unless currentVariant.available %} hide{% endunless %}">
+    <div class="quantity-incrementor">
+      <label for="Quantity" class="quantity-incrementor__label">{{ 'products.product.quantity' | t }}</label>
+      <button class="quantity-incrementor__minus" type="button"><span class="screenreader-text">{{ 'incrementor.minus' | t }}</span></button>
+      <input class="quantity-incrementor__input" type="number" id="Quantity" name="quantity" value="1" min="1">
+      <button class="quantity-incrementor__plus" type="button"><span class="screenreader-text">{{ 'incrementor.plus' | t }}</span></button>
+    </div>
+  </div>
+
+  <button
+    type="submit"
+    name="add"
+    class="button button--add-to-cart product-content-form__button {% unless currentVariant.available %}product-content-form__button--soldout{% endunless %}"
+    data-submit-button
+    {% unless currentVariant.available %}disabled="disabled" aria-disabled="true"{% endunless %}>
+      <span data-submit-button-text>
+        {% if currentVariant.available %}
+          {{ 'products.product.add_to_cart' | t }}
+        {% else %}
+          {{ 'products.product.sold_out' | t }}
+        {% endif %}
+      </span>
+      {% if currentVariant.available %}
+        {% render 'product-price', product: currentVariant, classes: 'product-content-form__button-price' %}
+      {% endif %}
+  </button>
+
+  <!-- HC - shoppay - 15 Mar '22 -->
+  <div class="hc-shoppay">
+    {{ form | payment_terms }}
+  </div>
+{%endif%}
+{% endform %}

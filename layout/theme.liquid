@@ -1,0 +1,177 @@
+{%- comment %}<locksmith:a3e2>{% endcomment -%}
+  {%- include 'locksmith' -%}
+{%- comment %}</locksmith:a3e2>{% endcomment -%}
+
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+<head>
+
+  {{ locksmith_initializations }}
+  {% render 'head-preload' %}
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"> -->
+  <meta name="format-detection" content="telephone=no" />
+
+  {%- if canonical_url != blank  -%}
+    <link rel="canonical" href="{{ canonical_url }}">
+  {%- endif -%}
+
+  {% render 'head-title' %}
+
+  {%- if page_description -%}
+    {%- comment %}<locksmith:d76e>{% endcomment -%}
+      {%- capture var %}{% render 'locksmith-variables', variable: 'transparent', hiding_scope: 'resource' %}{% endcapture %}{% if var == 'true' %}<meta name="description" content="{{ page_description | escape }}">{% endif -%}
+      {%- comment %}original: <meta name="description" content="{{ page_description | escape }}">{%- endcomment %}
+    {%- comment %}</locksmith:d76e>{% endcomment -%}
+  {%- endif -%}
+
+  {% render 'head-social-meta-tags' %}
+  {% render 'head-fonts' %}
+  {% render 'head-favicons' %}
+
+  <script>
+    window.theme = {
+      strings: {
+        addToCart: {{ 'products.product.add_to_cart' | t | json }},
+        soldOut: {{ 'products.product.sold_out' | t | json }},
+        unavailable: {{ 'products.product.unavailable' | t | json }},
+        addingToBasket: {{ 'products.product.adding_to_basket' | t | json }},
+        emptyCart: {{ 'mini-cart.empty' | t | json }},
+        miniCartError: {{ 'mini-cart.error' | t | json }},
+        openMenu: {{ 'general.accessibility.open_menu' | t | json }},
+        closeMenu: {{ 'general.accessibility.close_menu' | t | json }},
+        collectionEmpty: {{ 'collection.general.no_matches' | t | json }}
+      },
+      loadingSvgUrl: {{ 'loading-spinner.svg' | asset_url | json }},
+      moneyFormat: {{ shop.money_format | json }},
+      routes: { 
+        "account_addresses_url": "{{ routes.account_addresses_url }}",
+        "account_logout_url": "{{ routes.account_logout_url }}",
+      },
+    };
+    window.routes = {
+      predictive_search: '{{ routes.search_url }}/suggest.json',
+    };
+  </script>
+
+  {{ content_for_header }} <!-- Header hook for plugins -->
+
+  <style>
+    {% render 'critical' %}
+  </style>
+
+  <link rel="stylesheet" href="{{ 'theme.min.css' | asset_url }}" type="text/css" media="print" onload="this.media='all'">
+
+  {% render 'google-analytics' %}
+
+  {% render 'yotpo' %}
+  
+  <!-- Hotjar Tracking Code for https://www.barefaced.com/ -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:2453593,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<script>
+  window.onload = () => { 
+    if (window.location.href.includes('#billingTab')) {
+        document.querySelector('[data-account-tab]').classList.remove('open'); 
+        document.querySelector('[data-billing-tab]').classList.add('open'); 
+    }
+};
+</script>
+
+<style>
+  .btn-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+</style>
+  
+{% include 'sca.freegifts' %}
+  <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/hv3ovKG2HulzQE3uO6PGzg" async></script>
+
+  <!-- <link rel="preload" href="{{ '/services/javascripts/countries.js' }}" as="script"> -->
+  <!-- <link rel="preload" href="{{ 'shopify_common.js' | shopify_asset_url }}" as="script"> -->
+  <!-- <link rel="preload" href="{{ 'customer_area.js' | shopify_asset_url }}" as="script"> -->
+  <!-- <link rel="preload" href="{{ 'startup.js' | asset_url }}" as="script"> -->
+
+</head>
+<body id="{{ page_title | handle }}" class="template-{{ request.page_type | handle }} template-{{ template.name | handle }} template-{{ template.suffix | handle }}">
+
+  <nav id="skip-to">
+    <a href="#main-content">{{ 'general.accessibility.skip_to_content' | t }}</a>
+    <a href="#main-nav">{{ 'general.accessibility.skip_to_nav' | t }}</a>
+  </nav>
+
+  <a id="top"></a>
+  <site-overlay class="d-block" id="site-overlay"></site-overlay>
+  
+  <div class="header-container">
+    {% section 'promo-bar' %}
+    {% section 'header' %}
+    {%- comment -%}      
+      {% if request.page_type == 'customers/account' or request.page_type == 'customers/addresses' or request.page_type == 'customers/order' or request.page_type == blank %}
+        {% render 'account-sub-nav' %}
+      {% endif %}
+    {%- endcomment -%}
+    {% if template.suffix == 'about-index' or template.suffix == 'about-ethos' or template.suffix == 'about-team' %}
+      {% render 'about-nav' %}
+    {% endif %}
+  </div>
+
+  {% section 'mini-cart' %}
+
+  <main role="main" id="main-content">
+    {{ content_for_layout }}
+  </main>
+
+  {% section 'cookies' %}
+
+  {% section 'footer' %}
+
+  {% render 'modal' %}
+  {% unless template.directory contains 'customer' %}
+  {% render 'modal-quickview' %}
+  {% endunless %}
+
+  <!-- {% render 'newsletter-popup' %} -->
+
+  <nav id="back-to-top">
+    <a href="#top">{{ 'general.accessibility.back_to_top' | t }}</a>
+  </nav>
+
+  <script src="{{ 'theme.min.js' | asset_url }}" async defer></script>
+
+  <script>
+    window.globalVariables = {
+      template: '{{ template.name }}',
+      customer_email:'{{ customer.email }}',      
+      money_format: {{ shop.money_format | json }},      
+      customersID:'{{ customer.id }}',
+      customersEmail:'{{ customer.email }}',
+      customerMetafields: '{{ customer.metafields.subscriptions.customer_string }}',
+      discount_code: {% if settings.discount_code != '' %}'{{settings.discount_code}}'{% else %}null{% endif %},
+      domain: '{{shop.permanent_domain}}',
+      shopify_date: '{{ "now" | time_tag }}',
+      no_image_replacement: {% if settings.no_image_replacement != blank%}'{{ settings.no_image_replacement | img:url: "large"}}'{% else %}null{% endif %}
+    };
+    </script>
+
+{%- render 'script-tags' -%}
+
+<!-- Back in Stock helper snippet -->
+{% render 'back-in-stock-helper' %}
+<!-- End Back in Stock helper snippet -->
+</body>
+</html>

@@ -1,0 +1,31 @@
+<div class="product__content product-content" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+  <div class="product-content__inner">
+
+    <link itemprop="availability" href="http://schema.org/{% if currentVariant.available %}InStock{% else %}OutOfStock{% endif %}">
+
+    {% for tag in product.tags %}
+      {% if tag contains 'discount' %}
+        <div class="product-content__discount">
+          {% render 'icon-circle-ridged' %}
+          <span class="product-content__discount-label">-{{ tag | remove: 'discount_' }}%</span>
+        </div>
+      {% endif %}
+    {% endfor %}
+
+    <h1 class="product-content__title">{{ product.title }}</h1>
+
+    {% if product.metafields.global.sizes != blank %}
+      <h4 class="product-content__sizes">
+        <strong>{{ 'products.product.sizes' | t }}</strong> {{ product.metafields.global.sizes }}
+      </h4>
+    {% endif %}
+
+    <div class="product-content__stars product-stars">
+      {% render 'product-stars' %}
+    </div>
+    <div class="product-content__description rte">{{ product.description }}</div>
+
+    {% render 'product-content-form', product: product, currentVariant: currentVariant %}
+  </div>
+</div>
+

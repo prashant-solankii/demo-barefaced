@@ -1,0 +1,89 @@
+{% paginate blog.articles by 14 %}
+
+  {% section 'blog-banner' %}
+
+  {% if blog.articles != blank %}
+    {% render 'blog-filter' %}
+  {% endif %}
+
+  <section class="blog {% if blog.articles == blank %}blog--empty{% endif %}">
+
+    {% if blog.articles != blank %}
+
+      {% assign featured = false %}
+      {% assign addFirstArticle = false %}
+
+      {% capture articlesTop %}
+        {% for article in blog.articles limit: 6 offset: 1 %}
+          {% if article.tags contains 'Featured' and featured == blank %}
+            {% assign featured = article %}
+          {% else %}
+            {% render 'blog-item' classes: 'blog-items__item', article: article %}
+          {% endif %}
+        {% endfor %}
+      {% endcapture %}
+
+      {% if featured == blank %}
+        {% assign featured = blog.articles[0] %}
+      {% else %}
+        {% assign addFirstArticle = true %}
+      {% endif %}
+
+      <div class="blog__list blog-list">
+        <div class="blog-list__featured">
+          {% render 'blog-item' classes: 'blog-list__featured-item offset-from-header offset-from-header--extra', article: featured %}
+        </div>
+        <div class="blog-list__items blog-items">
+          {% if addFirstArticle %}
+          {% render 'blog-item' classes: 'blog-items__item', article: blog.articles[0]  %}
+          {% endif %}
+          {{ articlesTop }}
+        </div>
+      </div>
+
+      {% section 'blog-cta' %}
+
+      {% if blog.articles.size > 7 %}
+
+      {% assign featured = false %}
+      {% assign addFirstArticle = false %}
+
+        {% capture articlesBot %}
+          {% for article in blog.articles offset: 8 %}
+            {% if article.tags contains 'Featured' and featured == blank %}
+              {% assign featured = article %}
+            {% else %}
+              {% render 'blog-item' classes: 'blog-items__item', article: article %}
+            {% endif %}
+          {% endfor %}
+        {% endcapture %}
+
+        {% if featured == blank %}
+          {% assign featured = blog.articles[7] %}
+        {% else %}
+          {% assign addFirstArticle = true %}
+        {% endif %}
+
+        <div class="blog__list blog-list blog-list--secondary">
+          <div class="blog-list__featured">
+            {% render 'blog-item' classes: 'blog-list__featured-item offset-from-header offset-from-header--extra', article: featured %}
+          </div>
+          <div class="blog-list__items blog-items">
+            {% if addFirstArticle %}
+              {% render 'blog-item' classes: 'blog-items__item', article: blog.articles[7]  %}
+            {% endif %}
+            {{ articlesBot  }}
+          </div>
+        </div>
+      {% endif %}
+
+      {%- if paginate.pages > 1 -%}
+        {% render 'pagination', classes: 'blog__pagination' paginate: paginate %}
+      {%- endif -%}
+
+    {% else %}
+      <div class="blog__empty">{{ 'blog.general.no_articles' | t }}</div>
+    {% endif %}
+  </section>
+
+{% endpaginate %}

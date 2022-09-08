@@ -1,0 +1,32 @@
+{% if menu != blank  %}
+  {% assign navLinks = linklists[menu].links %}
+  {% assign subNavLinks = linklists['main-sub-nav'].links %}
+
+  {% if classes == blank %}
+    {% assign classes = '' %}
+  {% endif %}
+
+  <nav class="main-nav {{ classes | join: ' ' }}" role="navigation" id="main-nav">
+    {% render 'search-form', classes: 'main-nav__search' %}
+    <ul class="main-nav__list">
+      {% for link in navLinks %}
+        {%- comment %}<locksmith:56ff>{% endcomment -%}
+          {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+        {%- comment %}</locksmith:56ff>{% endcomment -%}
+        {% render 'main-header-nav-item', link: link %}
+      {% endfor %}
+    </ul>
+    <ul class="main-nav__sub main-nav-sub">
+      {% for link in subNavLinks %}
+        {%- comment %}<locksmith:fbf2>{% endcomment -%}
+          {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+        {%- comment %}</locksmith:fbf2>{% endcomment -%}
+        <li class="main-nav-sub__item {% if link.active or link.child_active %}main-nav-sub__item--active{% endif %}">
+          <a href="{{ link.url }}" class="main-nav-sub__link" {% if link.current %} aria-current="page"{% endif %}>
+            {{ link.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+{% endif %}

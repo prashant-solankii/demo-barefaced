@@ -1,0 +1,124 @@
+{% if product.metafields.benefits.title != blank %}
+  {% assign title = product.metafields.benefits.title %}
+{% elsif section.settings.title != blank %}
+  {% assign title = section.settings.title %}
+{% endif %}
+
+{% if product.metafields.benefits.intro != blank %}
+  {% assign intro = product.metafields.benefits.intro %}
+{% elsif section.settings.intro != blank %}
+  {% assign intro = section.settings.intro %}
+{% endif %}
+
+{% if product.metafields.benefits.benefits_list != blank %}
+  {% assign list = product.metafields.benefits.benefits_list %}
+{% elsif section.settings.benefits != blank %}
+  {% assign list = section.settings.benefits %}
+{% endif %}
+
+{% if product.metafields.benefits.image_url != blank %}
+  {% assign imageUrl = product.metafields.benefits.image_url %}
+  {% assign noFilter = true %}
+{% elsif section.settings.image != blank %}
+  {% assign imageUrl = section.settings.image %}
+  {% assign noFilter = false %}
+{% endif %}
+
+<section class="product-benefits">
+  <div class="product-benefits__inner animate-on-scroll">
+    <div class="product-benefits__content product-benefits-content">
+      {% if section.settings.subtitle != blank %}
+        <h6 class="product-benefits-content__subtitle">{{ subtitle }}</h6>
+      {% endif %}
+      {% if title != blank %}
+        {% assign title = title | split: '~' %}
+        <h2 class="product-benefits-content__title">{{ title[0] }} <span>{{title[1]}}</span></h2>
+      {% endif %}
+      {% if intro != blank %}
+        <div class="product-benefits-content__intro">{{ intro }}</div>
+      {% endif %}
+      {% if list != blank %}
+        {% assign benefits = list | newline_to_br | split: '<br />' %}
+        <ul class="product-benefits-content__benefits">
+          {% for benefit in benefits %}
+            <li class="product-benefits-content__benefits-item">{% render 'icon-asterix' %} {{ benefit }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+    {% if imageUrl != blank %}
+      {% render 'image-component' with
+        image: imageUrl,
+        nofilter: noFilter,
+        sizes: '(min-width: 63.75em) 30vw, 95vw',
+        classes: 'product-benefits__image objFit'
+      %}
+    {% endif %}
+  </div>
+  <div class="product-benefits__info product-benefits-info">
+    {% if product.metafields.benefits.suited_to != blank %}
+      <div class="product-benefits-info__col animate-on-scroll">
+        <h5 class="product-benefits-info__col-title">Suited To</h5>
+        <p class="product-benefits-info__col-info">{{ product.metafields.benefits.suited_to }}</p>
+      </div>
+    {% endif %}
+    {% if product.metafields.benefits.ingredients_summary != blank or product.metafields.benefits.ingredients_full != blank %}
+      <div class="product-benefits-info__col animate-on-scroll">
+        <h5 class="product-benefits-info__col-title">Key Ingredients</h5>
+        {% if product.metafields.benefits.ingredients_summary != blank %}
+          <p class="product-benefits-info__col-info">{{product.metafields.benefits.ingredients_summary}}</p>
+        {% endif %}
+        {% if product.metafields.benefits.ingredients_full != blank %}
+          {% render 'text-link', classes: 'product-benefits-info__col product-ingredients-button', text: 'Full ingredients list' %}
+        {% endif %}
+      </div>
+    {% endif %}
+    {% if product.metafields.benefits.skin_feel != blank %}
+      <div class="product-benefits-info__col animate-on-scroll">
+        <h5 class="product-benefits-info__col-title">Pairs Well With</h5>
+        <p class="product-benefits-info__col-info">{{ product.metafields.benefits.skin_feel }}</p>
+      </div>
+    {% endif %}
+  </div>
+  {% if product.metafields.benefits.ingredients_full != blank %}
+    {% capture productIngredientsHtml %}{% render 'product-ingredients', product: product %}{% endcapture %}
+    {% render 'modal', classes: 'modal--ingredients', html: productIngredientsHtml  %}
+  {% endif %}
+</section>
+
+
+{% schema %}
+  {
+    "name": "Product Benefits",
+    "settings": [
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle",
+        "default": "Product Benefits"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "The beauty ~within~"
+      },
+      {
+        "type": "richtext",
+        "id": "intro",
+        "label": "Intro"
+      },
+      {
+        "type": "textarea",
+        "id": "benefits",
+        "label": "Benefits"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      }
+    ]
+  }
+{% endschema %}
+

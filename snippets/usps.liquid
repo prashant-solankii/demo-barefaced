@@ -1,0 +1,11 @@
+{% if classes == blank %}
+  {% assign classes = '' %}
+{% endif %}
+
+<div class="usps {{ classes | join: ' ' }}">
+  {% for usp in usps %}
+    <div class="usps__usp">
+      <h6 class="usps__usp-title">{{ usp.settings.title }}</h6>
+    </div>
+  {% endfor %}
+</div>

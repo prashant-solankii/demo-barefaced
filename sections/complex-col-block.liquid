@@ -1,0 +1,69 @@
+{% if section.blocks != blank or section.settings.title != blank or section.settings.content != blank %}
+  <div class="complex-col-block-container">
+    {% render 'complex-col-block', classes: 'complex-col-block--layout1 complex-col-block--layout5 complex-col-block-container__inner', blocks: section.blocks, subtitle: section.settings.subtitle, title: section.settings.title, content: section.settings.content, list: section.settings.list, linkText: section.settings.link_text, linkUrl: section.settings.link_url, roundal: 2  %}
+  </div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Complex Col Block",
+    "max_blocks": 3,
+    "settings": [
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "richtext",
+        "id": "content",
+        "label": "Content"
+      },
+      {
+        "type": "textarea",
+        "id": "list",
+        "label": "List"
+      },
+      {
+        "type": "text",
+        "id": "link_text",
+        "label": "Link text"
+      },
+      {
+        "type": "url",
+        "id": "link_url",
+        "label": "Link url"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Image",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "video_url",
+            "label": "Video URL",
+            "info": "Video can be uploaded here /admin/settings/files"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Complex Col Block",
+        "category": "Barefaced"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,9 @@
+{% render 'page-title', title: page_title %}
+
+<section class="list-collections">
+  {% for collection in collections %}
+    {% if collection.image != blank or collection.products.first != blank %}
+      {% render 'list-collection', classes: 'list-collections__item', collection: collection %}
+    {% endif %}
+  {% endfor %}
+</section>

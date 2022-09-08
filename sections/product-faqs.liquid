@@ -1,0 +1,58 @@
+<section class="product-faqs">
+  {% render 'faqs', classes: 'product-faqs__inner', subtitle: section.settings.subtitle, title: section.settings.title, cta_title: section.settings.cta_title, cta_button_url: section.settings.cta_button_url, cta_button_text: section.settings.cta_button_text, faqs: section.blocks %}
+</section>
+
+{% schema %}
+  {
+    "name": "FAQs",
+    "settings": [
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle",
+        "default": "FAQ's"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Have any questions?"
+      },
+      {
+        "type": "text",
+        "id": "cta_title",
+        "label": "CTA title",
+        "default": "Can’t find the answer you’re looking for?"
+      },
+      {
+        "type": "url",
+        "id": "cta_button_url",
+        "label": "CTA button URL"
+      },
+      {
+        "type": "text",
+        "id": "cta_button_text",
+        "label": "CTA button text"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "faq",
+        "name": "FAQ",
+        "settings": [
+          {
+            "type": "text",
+            "id": "question",
+            "label": "Question"
+          },
+          {
+            "type": "richtext",
+            "id": "answer",
+            "label": "Answer"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+

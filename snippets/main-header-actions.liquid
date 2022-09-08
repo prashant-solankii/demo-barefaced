@@ -1,0 +1,31 @@
+{% if classes == blank %}
+  {% assign classes = '' %}
+{% endif %}
+
+<div class="actions {{ classes | join: ' ' }}">
+
+  <a href="/search" class="actions__search">
+    {% render 'icon-search' %}
+    <span class="actions__search-label">
+      {{ 'layout.search.title' | t }}
+    </span>
+  </a>
+
+  {% if shop.customer_accounts_enabled %}
+    <div class="actions__account">
+      {% if customer %}
+        <a href="{{ routes.account_url }}" class="actions__account-link">
+      {% else %}
+        <a href="{{ routes.account_login_url }}" class="actions__account-link">
+      {% endif %}
+        {{ 'layout.customer.account' | t }}
+      </a>
+    </div>
+  {% endif %}
+
+  <a class="actions__cart {% if cart.item_count > 0 %}actions__cart--active{% endif %}" href="{{ routes.cart_url }}">
+    <span class="actions__cart-label">{{ 'layout.cart.title' | t }}</span>
+    <div class="actions__cart-count {% if cart.item_count > 0 %}actions__cart-count--active{% endif %}" data-cart-count><span>{{ cart.item_count }}</span></div>
+  </a>
+
+</div>

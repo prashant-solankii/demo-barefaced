@@ -1,0 +1,70 @@
+{% comment %}
+  It’s possible to increase the data-limit as the recommendation algorithm
+  associates up to ten products per individual product, in order of relevance.
+  However, if you want to promote only the most relevant recommendations,
+  it’s advised that you show no more than four products per product page.
+{% endcomment %}
+
+<div class="product-recommendations" data-product-id="{{ product.id }}" data-limit="3">
+  {%- if recommendations.performed -%}
+    {%- if recommendations.products_count > 0 -%}
+      <div class="product-recommendations">
+        <header class="product-recommendations__header">
+          {% if section.settings.subtitle != blank %}
+            <h6 class="product-recommendations__header-subtitle">{{ section.settings.subtitle }}</h6>
+          {% endif %}
+          {% if recommendationsTitle != blank %}
+            {% render 'title', classes: 'product-recommendations__header-title', title: recommendationsTitle %}
+          {% endif %}
+          {% if section.settings.link_url != blank and linkText != blank %}
+            {% render 'button', classes: 'product-recommendations__header-button', style: 'secondary', text: linkText, url: section.settings.link_url %}
+          {% endif %}
+        </header>
+        <div class="product-recommendations__collection collection">
+          <ul class="collection__list">
+            {%- for product in recommendations.products -%}
+              {%- comment %}<locksmith:2759>{% endcomment -%}
+                {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, subject_parent: recommendations, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+              {%- comment %}</locksmith:2759>{% endcomment -%}
+              <li class="collection__list-item">
+                {% render 'collection-product' with
+                  classes: 'product-slide-product',
+                  product: product,
+                  hideForm: true
+                %}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    {%- endif -%}
+  {%- endif -%}
+</div>
+
+{% schema %}
+  {
+    "name": "Product Recommendations",
+    "settings": [
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "link_text",
+        "label": "Link text"
+      },
+      {
+        "type": "url",
+        "id": "link_url",
+        "label": "Link url"
+      }
+    ]
+  }
+{% endschema %}

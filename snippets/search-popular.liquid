@@ -1,0 +1,36 @@
+<div class="search-popular">
+  <div class="search-popular__terms">
+    <h5 class="search-popular__terms-title">{{ 'search.popular.terms.title' | t }}</h5>
+    <ul class="search-popular__terms-list search-popular-terms-list">
+      {% assign searchTerms = settings['search_terms'] %}
+      {% assign searchTerms = searchTerms | newline_to_br | split: '<br />' %}
+      {% for t in searchTerms %}
+        <li class="search-popular-terms-list__item">
+          <a href="/search?type=product&q={{ t }}" class="search-popular-terms-list__link">{{ t }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="search-popular__products">
+    <h5 class="search-popular__products-title">{{ 'search.popular.products.title' | t }}</h5>
+    <ul class="search-popular__products-collection search-popular-collection">
+      {% assign products = settings['search_products'] %}
+      {% assign products = products | newline_to_br | split: '<br />' %}
+
+      {% for p in products %}
+        {%- comment %}<locksmith:cf8d>{% endcomment -%}
+          {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: p, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+        {%- comment %}</locksmith:cf8d>{% endcomment -%}
+        {% assign productHandle = p | strip %}
+        {% assign product = all_products[productHandle] %}
+        <li class="search-popular-collection__item">
+          {% render 'collection-product' with
+            classes: 'search-popular-collection__link',
+            product: product,
+            hideForm: true
+          %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

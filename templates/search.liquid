@@ -1,0 +1,77 @@
+{% paginate search.results by 12 %}
+
+  {% if search.performed %}
+    {% assign pageTitle = 'search.results_with_count' | t: terms: search.terms, count: search.results_count %}
+  {% else %}
+    {% assign pageTitle = 'search.title' | t %}
+  {% endif %}
+
+  {% render 'page-title', title: pageTitle %}
+
+  <div class="search-form-container">
+    {% render 'search-form', classes: 'search-form-container__form' %}
+  </div>
+
+  {% if search.performed  %}
+    {% render 'search-filter' %}
+  {% else %}
+    {% render 'search-popular' %}
+  {% endif %}
+
+  <div class="search">
+    {% if search.performed %}
+      {% if search.results_count == 0 %}
+        <section class="search__empty">
+          <h4>{{ 'search.no_results_html' | t: terms: search.terms }}</h4>
+        </section>
+      {% else %}
+        {% if search.types contains 'product' %}
+          <div class="search__results" data-search-type="products">
+            <section class="collection">
+              <ul class="collection__list">
+                {% for product in search.results %}
+                  {%- comment %}<locksmith:4677>{% endcomment -%}
+                    {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, subject_parent: search, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                  {%- comment %}</locksmith:4677>{% endcomment -%}
+                  {% if product.object_type == 'product' %}
+                {% if product.type != 'FREEGIFT_HIDDEN' %}
+                    <li class="collection__list-item">
+                      {% render 'collection-product' with
+                        classes: 'collection__list-link',
+                        product: product
+                      %}
+                    </li>
+                {%endif%}
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            </section>
+          </div>
+        {% endif %}
+
+        {% if search.types contains 'article' %}
+          <div class="search__results" data-search-type="articles">
+            <div class="blog">
+              <div class="blog__list blog-list blog-list--search">
+                <div class="blog-list__items blog-items blog-list__items--search blog-items--search">
+                  {% for article in search.results %}
+                    {%- comment %}<locksmith:6493>{% endcomment -%}
+                      {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: article, subject_parent: search, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                    {%- comment %}</locksmith:6493>{% endcomment -%}
+                    {% if article.object_type == 'article' %}
+                      {% render 'blog-item', classes: 'blog-items__item', article: article %}
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+
+        {%- if paginate.pages > 1 -%}
+          {% render 'pagination', paginate: paginate %}
+        {%- endif -%}
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+{% endpaginate %}

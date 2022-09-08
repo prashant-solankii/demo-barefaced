@@ -1,0 +1,18 @@
+{%- if template.name contains 'account' -%}
+    <script src="{{ 'flatpicker.js' | asset_url }}" defer></script>
+    <script src="{{ 'recharge.js' | asset_url }}" defer></script>
+{%- endif -%}
+<script src="{{ 'global.js' | asset_url }}" defer></script>
+{%- comment -%}<script src="{{ 'utility.js' | asset_url }}" defer></script>{%- endcomment -%}
+
+
+
+
+{%- comment -%} Shopify Basic functionalities {%- endcomment -%}
+<script src="{{ 'shopify-basics.js' | asset_url }}" ></script>
+
+
+{%- comment -%} Address Page JS {%- endcomment -%}
+<!-- {%- if template.name == 'addresses' -%} -->
+<script src="{{ 'template-account-address.js' | asset_url }}" defer></script>
+<!-- {%- endif -%} -->

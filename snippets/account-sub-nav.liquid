@@ -1,0 +1,19 @@
+<nav class="fixed-sub-nav">
+  <ul class="fixed-sub-nav__list">
+    <li class="fixed-sub-nav__list-item">
+      <a class="fixed-sub-nav__list-link {% if request.path == routes.account_url %}fixed-sub-nav__list-link--active{% endif %}" href="{{ routes.account_url }}">{{ 'customer.account.dashboard' | t }}</a>
+    </li>
+    <li class="fixed-sub-nav__list-item">
+      <a class="fixed-sub-nav__list-link {% if request.path == routes.account_addresses_url %}fixed-sub-nav__list-link--active{% endif %}" href="{{ routes.account_addresses_url }}">{{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})</a>
+    </li>
+    <li class="fixed-sub-nav__list-item" id="rc_link_container">
+      <a class="fixed-sub-nav__list-link {% if request.path == '/tools/recurring/login' %}fixed-sub-nav__list-link--active{% endif %}" href="/tools/recurring/login">{{ 'customer.account.manage_subscriptions' | t }}</a>
+    </li>
+    <li class="fixed-sub-nav__list-item">
+      <a class="fixed-sub-nav__list-link" href="/pages/loyalty">Rewards</a>
+    </li>
+    <li class="fixed-sub-nav__list-item">
+      <a class="fixed-sub-nav__list-link" href="{{ routes.account_logout_url }}">{{ 'customer.account.log_out' | t }}</a>
+    </li>
+  </ul>
+</nav>

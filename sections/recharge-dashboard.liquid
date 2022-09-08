@@ -1,0 +1,143 @@
+{{ 'global.css' | asset_url | stylesheet_tag }}
+{{ 'recharge.css' | asset_url | stylesheet_tag }}
+{{ 'flatpicker.css' | asset_url | stylesheet_tag }}
+
+<custom-dashboard data-dashboard>
+    <custom-tabs class="section-content d-block pt-7 pt-md-11 pb-0">
+        <div class="account-baneer">
+            <div class="container">
+                <div class="d-flex justify-content-center">
+                    <div class="col-12 text-center">
+                        <h2 class="text-capitalize mb-md-6 mb-5">Hi {{ customer.first_name }}, Welcome Back!</h2>
+                        <div class="account-menu-name overflow-hidden">
+                            <ul class="nav-pills overflow-auto" role="tablist">
+                                <li class="nav-item tablink open" data-account-tab>
+                                    <a class="nav-link" href="#accountTab" role="tab" data-toggle="tab" data-tabcontent="#accountTab" aria-expanded="true">Manage Subscriptions</a>
+                                </li>
+                                {% if customer.metafields.subscriptions.customer_string %}
+                                <li class="nav-item tablink" data-billing-tab>
+                                    <a class="nav-link" href="#billingTab" role="tab" data-toggle="tab" data-tabcontent="#billingTab" aria-expanded="false" data-subscription-billing>Subscription Billing</a>
+                                </li>
+                                {% endif %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/pages/order-history">Order History</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ routes.account_addresses_url }}">Addresses</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/pages/loyalty">Rewards</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ routes.account_logout_url }}">Log Out</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pt-lg-10 pt-7">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 text-lg-start text-center mb-lg-0 mb-8 pb-md-0 pb-1">
+                        <div class="d-flex flex-lg-row flex-column align-items-center mb-md-4 mb-5">
+                            <div class="profile position-relative me-lg-3 mb-4 mb-lg-0">
+                                <p class="fw-bold m-0 position-absolute text-uppercase text-white w-auto">{{ customer.first_name | slice: 0 }}{{ customer.last_name | slice: 0 }}</p>
+                            </div>
+                            <p class="custome-name fw-bold ls-0 lh-sm m-0 text-capitalize">{{ customer.name }}</p>
+                        </div>
+                        <div>
+                            <p class="mb-md-3 pb-md-1 mb-4">
+                                <a href="mailto:{{ customer.email }}" class="fw-normal lh-base ls-0">{{ customer.email }}</a>
+                            </p>
+                            <p class="mb-md-3 mb-4 fw-normal ls-0 lh-base text-black"> Password:**********
+                                <a href="/account/login#recover" class="text-capitalize fw-medium ls-0 ps-2 text-decoration-underline" style="font-size: 14px;">reset</a>
+                            </p>
+                            <p class="fw-normal lh-base ls-0 mb-0">
+                                <span>Total Orders:</span> 
+                                {{ customer.orders_count }}
+                            </p>
+                            {% if customer %}
+                                <div class="pb-md-1 d-lg-block d-none">
+                                    <div class="yotpo-widget-instance" data-yotpo-instance-id="213681"></div>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col-lg-9 ps-xl-2">
+                        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 50vh;" data-spinner>
+                            <div class="hollow-dots-spinner my-3" :style="spinnerStyle">
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            </div>
+                            <p class="text-uppercase fw-bold ls-1 w-auto">Please Wait...</p>
+                        </div>
+
+                        <div class="tab-content" id="myTabContent"> 
+                            {%- comment -%}Subscription Order Tab:{%- endcomment -%}
+                            <div id="accountTab" class="tab-pane tabcontent open" role="tabpanel" aria-labelledby="subscriptions-tab">
+                                <div data-subsciptions-list></div>
+                            </div>
+
+                            {%- comment -%} Billing Tab: {%- endcomment -%}
+                            <div id="billingTab" class="tab-pane tabcontent" role="tabpanel" aria-labelledby="biiling-tab">
+                                <section id="billing-info">
+                                    <div class="col-12 col-lg-10 heading-wrapper">
+                                        <h3 class="fw-bold mb-3 pb-1 text-capitalize ls-n2">Billing Information</h3>
+                                        <div class="table-responsive">
+                                            <table table-responsive="true" class="table biiling_table">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="font-size-xl fw-semibold ls-sm">Card on File</td>
+                                                        <td class="rc_text--base">
+                                                            <p class="fw-medium mb-2" data-card-details><span class="text-capitalize"data-card-brand></span> ending in <span data-card-4digit></span></p>
+                                                            <p  class="fw-medium text-capitalize mb-2" data-card-exp-details></p>
+                                                            <!-- <p class="fw-medium mb-2">To update your card, please contact <a class="text-blue-100" href="mailto:hello@barefaced.com">hello@barefaced.com</a>.</p>	 -->
+                                                            <p class="d-none" data-no-card>{{ 'customer.billing_info.sorry_msg' | t }}</p>
+                                                            <p class="d-none" ><a href="#" data-update-card  class="font-size-md fw-bold text-uppercase">Update Card</a></p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <p class="font-size-xl fw-semibold ls-sm">Billing Information</p>
+                                                        </td>
+                                                        <td class="rc_text--base">
+                                                            <p class="fw-normal ls-sm mb-0" data-original-billing-address>
+                                                                <span class="mb-2 d-block fw-medium" data-billing-name></span>
+                                                                <span class="mb-2 d-block fw-medium" data-billing-address1></span>
+                                                                <span class="mb-2 d-block fw-medium" data-billing-province></span>
+                                                                <span class="mb-2 d-block fw-medium" data-billing-countryName></span>
+                                                            </p>
+                                                            <p>
+                                                                <a href="#" class="btn btn-fill" data-update-email-btn>
+                                                                    <span class="add-text">Send update email</span>
+                                                                    <span class="spinner"></span>   
+                                                                </a>
+                                                            </p>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                    {% if customer %}
+                        <div class="pb-md-1 d-lg-none d-block">
+                            <div class="yotpo-widget-instance" data-yotpo-instance-id="213681"></div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </custom-tabs>
+
+    {% include 'modal-subscription' %}
+    
+</custom-dashboard>
+

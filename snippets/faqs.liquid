@@ -1,0 +1,64 @@
+{% if faqs != blank %}
+  {% if classes == blank %}
+    {% assign classes = '' %}
+  {% endif %}
+
+  {% if categories %}
+    {% capture faqsRender %}
+      {% assign categories = categories | split: ', ' %}
+      {% for category in categories %}
+        {% assign categoryInfo = category | split: ' | ' %}
+        {% assign categoryHandle = categoryInfo[0] %}
+        {% assign categoryTitle = categoryInfo[1] %}
+        <h4 class="faqs-list__title animate-on-scroll">{{ categoryTitle }}</h4>
+        {% for faq in faqs %}
+          {% if faq.settings.question != blank and faq.settings.answer != blank and faq.settings.category == categoryHandle %}
+            <div class="faqs-list__item faq animate-on-scroll">
+              <button class="faq__question">{{ faq.settings.question }} <div class="faq__question-icon"></div></button>
+              <div class="faq__answer"><div class="faq__answer-inner rte">{{ faq.settings.answer }}</div></div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    {% endcapture %}
+  {% else %}
+    {% capture faqsRender %}
+      {% for faq in faqs %}
+        {% if faq.settings.question != blank and faq.settings.answer != blank %}
+          <div class="faqs-list__item faq animate-on-scroll">
+            <button class="faq__question">{{ faq.settings.question }} <div class="faq__question-icon"></div></button>
+            <div class="faq__answer"><div class="faq__answer-inner rte">{{ faq.settings.answer }}</div></div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    {% endcapture %}
+  {% endif %}
+
+  <div class="faqs {{ classes | join: ' ' }}">
+    {% if title != blank or subtitle != blank %}
+      <header class="faqs__header faqs-header animate-on-scroll">
+        {% if subtitle != blank %}
+          <h6 class="faqs-header__subtitle">{{ subtitle }}</h6>
+        {% endif %}
+        {% if title != blank %}
+          {% render 'title', classes: 'faqs-header__title', title: title %}
+        {% endif %}
+      </header>
+    {% endif %}
+
+    <div class="faqs__list faqs-list">
+      {{ faqsRender }}
+    </div>
+
+    <footer class="faqs__cta faqs-cta animate-on-scroll">
+      {% if cta_title != blank %}
+        <h4 class="faqs-cta__title">{{ cta_title }}</h4>
+      {% endif %}
+
+      {% if cta_button_url != blank or cta_button_text != blank %}
+        {% render 'button', url: cta_button_url, text: cta_button_text, style: 'secondary' %}
+      {% endif %}
+    </footer>
+  </div>
+{% endif %}
+

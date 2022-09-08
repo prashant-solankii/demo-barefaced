@@ -1,0 +1,26 @@
+{% if customer.metafields.subscriptions.customer_string %}
+  {% assign linkUrl = '/account' %}
+  {% capture linkText %}{{ 'customer.account.manage_subscriptions' | t }}{% endcapture %}
+{% endif %}
+
+<section class="banner banner--{{ align }} banner--{{ height }}{% if cappedWidth %} banner--capped-width{% endif %}">
+  {% assign asset = false %}
+  {% if image == blank %}
+    {% assign image = 'banner-default.jpg' %}
+    {% assign asset = true %}
+  {% endif %}
+  {% render 'image-component' with
+    image: image,
+    asset: asset
+    sizes: '100vw',
+    classes: 'banner__image objFit'
+  %}
+  <div class="banner__content">
+    {% render 'title', classes: 'banner__content-title', element: 'h1', title: title %}
+    <p class="banner__content-intro">{{ intro }}</p>
+
+    {% if linkUrl != blank and linkText != blank %}
+      {% render 'button', url: linkUrl, text: linkText, classes: 'banner__content-link' %}
+    {% endif %}
+  </div>
+</section>

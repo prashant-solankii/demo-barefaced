@@ -1,0 +1,1013 @@
+.account-link li {
+    display: block;
+}
+
+@media (min-width:768px) {
+    .account-link li {
+        position: relative;
+        display: inline-block;
+    }
+    .account-link li:not(:last-child):after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 17px;
+        background-color: var(--bs-color-secondary);
+    }
+}
+
+.order-history-table td {
+    white-space: nowrap;
+}
+
+.common-box {
+    overflow: unset;
+}
+
+.close-icon {
+    top: 25px;
+}
+
+.modal-sticky-title {
+    top: 0;
+    z-index: 4;
+    position: sticky;
+    background-color: #fff;
+}
+
+@media (max-width:767px) {
+    .common-box.modal {
+        bottom: 0;
+        overflow: auto;
+    }
+    .common-box.modalRecharge .modal-dialog {
+        align-items: initial;
+    }
+}
+
+.common-box .modal-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Handle */
+
+.common-box .modal-body::-webkit-scrollbar-thumb {
+    background: #E2E2E2;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .common-box .modal-dialog {
+        margin: 0;
+        height: 100%;
+        min-width: 100%;
+        min-height: 100%;
+    }
+}
+
+.product_lists input {
+    display: none;
+}
+
+.product_lists {
+    border: 1px solid var(--bs-color-gray-100);
+    cursor: pointer;
+    border-radius: 14px;
+}
+
+.product_lists:hover {
+    border: 1px solid #2E2828;
+}
+
+.prodct_img_conatiner {
+    padding-top: 100%;
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+.product_lists.active {
+    border: 2px solid #2E2828;
+}
+
+.product_lists.active .checkbox-sub {
+    display: block;
+}
+
+.pro-img {
+    position: relative;
+    padding-bottom: 100%;
+}
+
+.pro-img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.custom-radio label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.custom-radio span {
+    width: 1rem;
+    min-width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: 1px solid #9b999a;
+    position: relative;
+    display: inline-block;
+}
+
+.custom-radio input:checked~label {
+    color: #2E2828;
+}
+
+.custom-radio input:checked~label span {
+    border-color: #2E2828;
+    background-color: #2E2828;
+}
+
+.custom-radio input:checked~label span:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--bs-color-white);
+}
+
+
+/* chnage date */
+
+.flatpickr-day.prevMonthDay,
+.flatpickr-day.nextMonthDay {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+.flatpickr-day.selected:hover,
+.flatpickr-day.selected {
+    background-color: #2E2828 !important;
+    border-color: #2E2828 !important;
+}
+
+.flatpickr-calendar {
+    width: 349px;
+    padding: 30px;
+    margin: 0 auto;
+    box-shadow: none;
+    border-radius: 14px;
+    border: 1px solid #E2E2E2;
+}
+
+@media (min-width:768px) {
+    .flatpickr-calendar {
+        width: 254px;
+        padding: 19px 19px 10px;
+    }
+}
+
+.flatpickr-current-month {
+    padding: 0;
+}
+
+
+/* Select A New Scent css */
+
+.change-subscription .common-box .modal-body {
+    padding: 0 15px;
+}
+
+.change-subscription .change_btn {
+    font-size: 14px;
+}
+
+@media (min-width:768px) {
+    .change-subscription .common-box .modal-body {
+        padding: 0 9px;
+    }
+    .change-subscription .change_btn {
+        font-size: 11px;
+    }
+}
+
+
+/* EDIT shipping address */
+
+.flatpickr-current-month {
+    font-size: 16px;
+}
+
+.flatpickr-current-month span,
+.flatpickr-current-month .numInputWrapper .cur-year {
+    font-weight: 600;
+    letter-spacing: normal;
+}
+
+span.flatpickr-weekday {
+    font-size: 13px;
+    color: #000000;
+    font-weight: 600;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+/*=============================================
+=             recharge dashboard css          =
+=============================================*/
+
+.modal__back-button svg {
+    width: 20px;
+    height: 14px;
+}
+
+@media (max-width: 468px) {
+    .account-baneer .container {
+        padding: 0;
+    }
+    .subscriptions-details {
+        border-bottom: 1.75px solid #2E2828;
+    }
+    .account-menu-name {
+        position: relative;
+    }
+    .account-menu-name::before {
+        left: 0 !important;
+        transform: rotate(90deg) !important;
+    }
+    .account-menu-name::after,
+    .account-menu-name::before {
+        top: 0;
+        right: 0;
+        content: "";
+        width: 30px;
+        height: 100%;
+        position: absolute;
+        transform: rotate(-90deg);
+        background-image: linear-gradient(#FFFFFF00, #FBF5ED);
+    }
+}
+
+.nav-pills {
+    display: flex;
+    list-style: none;
+}
+
+.account-baneer .h2 {
+    letter-spacing: -1.28px;
+}
+
+.custome-details,
+.card-details {
+    width: 100%;
+}
+
+@media (min-width: 1024px) {
+    .nav-pills {
+        justify-content: center;
+    }
+}
+
+@media (min-width:768px) {
+    .custome-details {
+        width: 54%;
+        position: relative;
+    }
+    .custome-details::after {
+        content: '';
+        right: 0;
+        bottom: 0;
+        height: 85%;
+        width: 1.75px;
+        position: absolute;
+        background-color: #2E2828;
+    }
+    .card-details {
+        width: 46%;
+    }
+    .account-baneer .h2 {
+        letter-spacing: -2px;
+    }
+}
+
+.fill-details:hover {
+    color: #979494;
+}
+
+.nav-pills .nav-item:first-child {
+    padding-left: 12px;
+}
+
+.nav-pills .nav-item:last-child {
+    padding-right: 16px;
+}
+
+.nav-pills .nav-item {
+    padding: 7px 27px 9px 0;
+}
+
+.nav-pills .nav-item .nav-link {
+    font-size: 15px;
+    font-weight: 700;
+    color: #2E2828;
+    white-space: nowrap;
+    text-transform: capitalize;
+    transition: all 0.3s ease-in-out;
+}
+
+@media (min-width:768px) {
+    .nav-pills .nav-item .nav-link {
+        font-size: 16px;
+    }
+    .nav-pills .nav-item {
+        padding: 7px 27px 9px;
+    }
+    .nav-pills .nav-item .nav-link:hover {
+        color: #979494;
+    }
+}
+
+.custome-name {
+    font-size: 22px;
+}
+
+.nav-pills .nav-item.open .nav-link::before {
+    content: '';
+    width: 11px;
+    height: 11px;
+    margin-right: 6px;
+    border-radius: 100%;
+    display: inline-block;
+    background: #2E2828;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-pills .nav-item.open .nav-link:hover::before {
+    background: #979494;
+}
+
+.subscription-order-table {
+    border-radius: 8px;
+    padding: 30px 25px;
+    background-color: #fff;
+}
+
+@media (min-width:768px) {
+    .subscription-order-table {
+        padding: 32px 32px 27px 30px;
+    }
+}
+
+.profile {
+    min-width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #EB9575;
+}
+
+.profile p {
+    top: 50%;
+    left: 50%;
+    font-size: 1.375rem;
+    transform: translate(-50%, -50%);
+}
+
+.order-image {
+    width: 100%;
+    max-width: 120px;
+    margin-right: 22px;
+    position: relative;
+}
+
+.order-image .badge {
+    top: 0;
+    left: 0;
+    color: #fff;
+    font-size: 13px;
+    padding: 2px 8px;
+    position: absolute;
+    border-radius: 15px;
+    background-color: #EB9575;
+}
+
+.order-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.btn-outline {
+    color: #2E2828;
+    border-radius: 3px;
+    background-color: #fff;
+    border: 2px solid #2E2828;
+}
+
+.btn-outline:hover {
+    color: #fff;
+    background-color: #2E2828;
+}
+
+.subscription-order-table .re-active .text-link {
+    color: #EB9575;
+}
+
+.subscription-order-table .re-active .text-link::before,
+.subscription-order-table .re-active .text-link::after {
+    background: #EB9575;
+}
+
+.reactivate-order .order-image,
+.reactivate-order .order-image-info,
+.reactivate-order p {
+    opacity: 0.5;
+}
+
+
+/* Edit Your Subscription css */
+
+.individual-option img {
+    max-height: 55px;
+    height: 100%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.individual-option {
+    cursor: pointer;
+    position: relative;
+    border-radius: 4px;
+    padding: 28px 20px;
+    background-color: #FBF5ED;
+    transition: all 0.3s ease-in;
+    border: 1.75px solid transparent;
+}
+
+.individual-option:hover {
+    border: 1.75px solid #2E2828;
+}
+
+@media (min-width:768px) {
+    .individual-option {
+        min-height: 189px;
+        padding: 37px 40px 24px;
+    }
+    .individual-option img {
+        margin-bottom: 30px;
+    }
+}
+
+.individual-option.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.change-product-size select.form-control {
+    padding: 13.5px 48px 13.5px 18px;
+}
+
+.quantity-incrementor__plus:hover,
+.quantity-incrementor__plus:focus,
+.quantity-incrementor__minus:hover,
+.quantity-incrementor__minus:focus {
+    opacity: 1 !important;
+}
+
+.skip-change-order input:hover {
+    box-shadow: none !important;
+}
+
+.skip-change-order input.form-control {
+    padding: 13px 40px 14px 18px!important;
+}
+
+.skip-change-order input.flatpickr-mobile,
+.skip-change-order input.form-control {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 20px 19px;
+    background-repeat: no-repeat;
+    background-position: right 18px center;
+    background-image: url(https://cdn.shopify.com/s/files/1/0567/1868/8418/files/Select-date.svg?v=1658901504);
+}
+
+.cancel-note a:hover {
+    color: #979494;
+}
+
+.cancel-subscription select.form-control {
+    padding: 14px 17px;
+}
+
+.cancel-subscription textarea.form-control {
+    min-height: 217px;
+}
+
+@media (min-width:768px) {
+    .cancel-subscription textarea.form-control {
+        min-height: 111px;
+        padding: 13px 16px;
+    }
+}
+
+@media (max-width: 767px) {
+    .cancel-subscription .btn-fill {
+        width: 100%;
+        display: block;
+    }
+}
+
+select::placeholder,
+textarea::placeholder {
+    color: #2E2828;
+}
+
+select.form-control,
+textarea.form-control {
+    border: 1.5px solid #2E2828;
+}
+
+select.form-control:hover,
+textarea:hover {
+    box-shadow: none;
+}
+
+.change-frequency input {
+    display: none;
+}
+
+.hold-box .select-border,
+.change-frequency label {
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: center;
+    padding: 37px 24px 34px;
+    background-color: #FBF5ED;
+    border: 1.75px solid transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.hold-box:hover .select-border,
+.hold-box.select .select-border,
+.change-frequency:hover label,
+.change-frequency input:checked~label {
+    border: 1.75px solid #2E2828;
+}
+
+.change-frequency label {
+    padding: 30.25px !important;
+}
+
+.hold-box .select-border img {
+    max-height: 43px;
+    margin: 0 auto 30px;
+}
+
+@media (min-width:768px) {
+    .hold-box .select-border {
+        padding: 35px 20px 34px!important;
+    }
+    .hold-box .select-border img {
+        margin: 0 auto 28px;
+    }
+}
+
+.order-date {
+    /* display: none; */
+    transition: all 0.3s ease-in-out;
+}
+
+.hold-box.select~.select-border .order-date {
+    /* display: block; */
+    margin-top: 25px;
+}
+
+.subscription-product {
+    border-radius: 4px;
+    padding: 25px 25px;
+    background-color: #FBF5ED;
+}
+
+.subscription-product .product-img {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 300px;
+}
+
+.add-subscription select#address_list {
+    padding: 14px 30px 14px 12px!important;
+    text-overflow: ellipsis;
+}
+
+@media (min-width:768px) {
+    .subscription-product .product-img {
+        margin-right: 0;
+        max-width: 201px;
+        margin-right: 25px;
+    }
+}
+
+.change-frequency .checkbox-sub {
+    top: 10px;
+    right: 10px;
+    width: 17px;
+    height: 17px;
+    position: absolute;
+}
+
+.change-frequency input:checked~label .checkbox-sub::before {
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("https://cdn.shopify.com/s/files/1/0567/1868/8418/files/select-icon.svg?v=1655891685");
+}
+
+.edit-form .form-row label {
+    line-height: 1;
+}
+
+.edit-form input {
+    font-size: 15px;
+    padding: 18.125px 18px 8px;
+    transition: all 0.5s ease-in-out;
+}
+
+.edit-form input:hover,
+.edit-form select:hover {
+    box-shadow: none !important;
+}
+
+.edit-form select {
+    padding: 18px 18px 8px;
+}
+
+.edit-form .form-row select.field--filled+label {
+    top: 0.4rem !important;
+}
+
+.edit-form .form-row input.field--filled+label,
+.edit-form .form-row select.field--filled+label {
+    top: 0.5rem;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+@media (min-width: 768px) {
+    .ls-n1 {
+        letter-spacing: -1.2px;
+    }
+    .ls-n2 {
+        letter-spacing: -0.78px;
+    }
+}
+
+.subscription-product .product-quantity .quantity-incrementor__minus,
+.subscription-product .product-quantity .quantity-incrementor__plus {
+    width: 32px;
+    height: 32px;
+}
+
+.subscription-product .product-quantity .quantity-incrementor__input {
+    width: 41px;
+    height: 41px;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.pop_up_img {
+    max-width: 46px;
+}
+
+.pop_up_img img {
+    width: 100%;
+    height: 100%;
+}
+
+.edit-form {
+    margin-bottom: 15px;
+}
+
+.confirmed-popup {
+    padding: 0 !important;
+}
+
+.confirmed-popup .close-quickshop .close-icon {
+    top: 36px;
+}
+
+@media (max-width:768px) {
+    .confirmed-title {
+        font-size: 32px !important;
+    }
+    .add-subscription {
+        margin-bottom: 30px;
+    }
+}
+
+.addresses-page .page-title {
+    padding-top: 35px !important;
+}
+
+.template-customers-order header.page-title {
+    padding: 0;
+    text-align: start;
+    padding-bottom: 4rem !important;
+}
+
+.product-list-modal .modal-body {
+    overflow-y: auto;
+}
+
+.product-list-modal .modal-body,
+.product-list-modal .modal-head {
+    background-color: #FBF5ED !important;
+}
+
+.product-list-modal .close-quickshop {
+    top: 0;
+    right: 10px;
+}
+
+.add-more-subscription .collection__list-item {
+    margin: 0 15px 40px !important;
+    flex-basis: calc(50% - ((2 / 1) * 15px));
+}
+
+@media (min-width: 1200px) {
+    .subscription-search {
+        padding-left: 186px;
+    }
+}
+
+.yotpo-coupons-redemption-widget .yotpo-redemption-option-redeem-button.yotpo-action-button-widget .yotpo-button-style{
+    width: 50%;
+}
+
+@media (min-width: 992px) {
+    .yotpo-coupons-redemption-widget .yotpo-redemption-option-redeem-button.yotpo-action-button-widget .yotpo-button-style{
+        width: 100%;
+    } 
+}
+
+@media (min-width: 768px) {
+    .product-list-modal .close-quickshop {
+        top: 40px;
+        right: 30px;
+    }
+    .add-more-subscription .collection__list-item {
+        margin: 0 15px 40px !important;
+        flex-basis: calc(25% - ((2 / 1) * 15px));
+    } 
+}
+
+.collection-product__image{
+    z-index: 1;
+}
+
+.add-more-subscription .collection-product__images{
+    margin-bottom: 21px !important;
+}
+
+.collection-product__images{
+    z-index: 3;
+}
+
+.add-more-subscription .collection-product__content .collection-product-content__info{
+    flex: 0 0 80% !important;
+}
+
+.add-more-subscription .collection__list-item .collection-product-content__info-title {
+    text-align: start !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    margin-bottom: 13px !important;
+}
+
+.add-more-subscription .collection__list-item .collection-product-content__info-summary {
+    opacity: 70% !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    margin-bottom: 0 !important;
+    color: #2E2828 !important;
+    text-align: start !important;
+}
+
+.loader {
+    opacity: 0.5;
+    cursor: pointer;
+    pointer-events: none;
+}
+
+.link-button .spinner {
+    display: none;
+}
+
+.link-button .add-text {
+    opacity: 1;
+}
+
+.link-button.loader .spinner {
+    display: block;
+}
+
+.link-button.loader .add-text {
+    opacity: 0.5;
+}
+
+.productList {
+    display: none !important;
+}
+
+@media (max-width: 768px) {
+    .sticky-header {
+        top: 0;
+        left: 0;
+        z-index: 5;
+        position: sticky;
+        padding-bottom: 20px;
+        background-color: #fbf5ed!important;
+    }
+}
+
+.yotpo-background {
+    overflow: hidden;
+    margin-top: 20px !important;
+    border-radius: 3px !important;
+    background-color: #fff !important;
+}
+
+.yotpo-logged-in-view .yotpo-headline {
+    margin-bottom: 15px !important;
+}
+
+.yotpo-action-buttons-tile .yotpo-primary-button-link {
+    margin-bottom: 10px !important;
+    display: block !important;
+}
+
+.yotpo-action-buttons-tile .yotpo-primary-button-link .yotpo-primary-button button {
+    padding: 13px 41px !important;
+}
+
+.yotpo-action-buttons-tile .yotpo-primary-button-link .yotpo-primary-button button,
+.yotpo-action-buttons-tile .yotpo-secondary-button button {
+    width: auto !important;
+    height: auto !important;
+    border-radius: 3px !important;
+}
+
+.yotpo-action-buttons-tile .yotpo-primary-button-link .yotpo-primary-button {
+    padding-right: 0 !important;
+}
+
+.yotpo-action-buttons-tile .yotpo-secondary-button {
+    padding-left: 0 !important;
+}
+
+.yotpo-action-buttons-tile .yotpo-primary-button-link .yotpo-primary-button button span,
+.yotpo-action-buttons-tile .yotpo-secondary-button button span {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+}
+
+.yotpo-headline .yotpo-inner-text {
+    font-size: 25px !important;
+    font-family: inherit !important;
+}
+
+.yotpo-description .yotpo-inner-text {
+    font-size: 18px !important;
+    font-family: inherit !important;
+}
+
+.yotpo-rewards-guide-tile-wrapper {
+    display: none !important;
+}
+
+.yotpo-coupons-redemption-widget .three-in-row .yotpo-redemption-item{
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.yotpo-coupons-redemption-widget .yotpo-redemption-option-container{
+    padding: 0 5px !important;
+}
+
+.yotpo-coupons-redemption-widget .yotpo-headline{
+    color: #2e2828 !important;
+}
+
+.yotpo-coupons-redemption-widget .yotpo-description{
+    color: #2e2828 !important;
+    font-size: 14px !important; 
+}
+
+.yotpo-coupons-redemption-widget .yotpo-redemption-options-list{
+    margin-top: 25px !important;
+}
+
+.yotpo-coupons-redemption-widget .yotpo-points-balance{
+    padding: 10px !important;
+    font-size: 24px !important;
+}
+
+.collection-overlay {
+    top: 0;
+    left: 0;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+}
+
+@media (min-width: 1020px) {
+    .collection-overlay {
+        display: none;
+    }
+}
+
+.collection-product-content__price{
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+}
+
+.product-price__soldout{
+    margin: 0;
+    white-space: nowrap;
+}
+
+@media (max-width: 1023px) {
+    .subscriptionModal .modalRecharge.open .full-popup .collection-product__add{
+        display: none;
+    }
+}
+
+.yotpo-coupons-redemption-widget .yotpo-message-toast-container{
+    min-width: 100% !important;
+    max-width: 100% !important;
+}
+
+.main-footer__newsletter .newsletter__title,
+.footer-nav__title{
+    font-size: 1em !important;
+}
+
+.account-cta__inner{
+    margin-bottom: 32px;
+}
+
+.main-footer__inner .main-footer__usps .usps__usp .usps__usp-title,
+.account-cta .account-cta__inner .account-cta__content .account-cta__content-subtitle{
+    font-size: .875em !important;
+}
+
+.account-cta .account-cta__inner .account-cta__content .account-cta__content-title{
+    font-size: 1.625em !important;
+}
+
+@media (min-width: 30em){
+    .account-cta .account-cta__inner .account-cta__content .account-cta__content-title{
+        font-size: calc(.29167em + 4.44444vw) !important;
+    }
+}
+
+@media (min-width: 63.75em){
+    .account-cta .account-cta__inner .account-cta__content .account-cta__content-title{
+        font-size: 3.125em !important;
+    }
+}
+
+@media (max-width: 768px){
+    .yotpo-coupons-redemption-widget .yotpo-message-toast-container.yotpo-is-mobile{
+        min-width: auto !important;
+    }
+} 
+
+.flatpickr-day.today {
+    color: #3939391d !important;
+    border-color: #3939391d !important;
+}

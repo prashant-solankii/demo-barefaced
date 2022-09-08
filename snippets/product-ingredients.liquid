@@ -1,0 +1,13 @@
+<div class="modal__ingredients product-ingredients">
+  <div class="product-ingredients__content">
+    {{ product.metafields.benefits.ingredients_full }}
+  </div>
+  {% if product.metafields.benefits.ingredients_image != blank %}
+    {% render 'image-component' with
+      image: product.metafields.benefits.ingredients_image,
+      nofilter: true,
+      sizes: '(min-width: 63.75em) 45vw, 100vw',
+      classes: 'product-ingredients__image'
+    %}
+  {% endif %}
+</div>

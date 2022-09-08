@@ -1,0 +1,89 @@
+<section class="approach">
+  <header class="approach__header animate-on-scroll">
+    {% if section.settings.subtitle != blank %}
+      <h6 class="approach__header-subtitle">{{ section.settings.subtitle }}</h6>
+    {% endif %}
+    {% if section.settings.title != blank %}
+      {% render 'title', classes: 'approach__header-title', title: section.settings.title %}
+    {% endif %}
+    {% if section.settings.intro != blank %}
+      <p class="approach__header-intro">{{ section.settings.intro }}</p>
+    {% endif %}
+    {% if section.settings.link_url != blank and section.settings.link_text != blank %}
+      {% render 'text-link', classes: 'approach__header-link', text: section.settings.link_text, url: section.settings.link_url %}
+    {% endif %}
+  </header>
+  {% if section.blocks %}
+    <ul class="approach__points">
+      {% for block in section.blocks %}
+        <li class="approach__points-point approach-point animate-on-scroll">
+          <header class="approach-point__header">
+            <div class="approach-point__header-count">0{{ forloop.index }}</div>
+            <div class="approach-point__header-asterix">{% render 'icon-asterix' %}</div>
+          </header>
+          {% if block.settings.title != blank %}
+            <h4 class="approach-point__header-title">{{ block.settings.title }}</h4>
+          {% endif %}
+          {% if block.settings.content != blank %}
+            <p class="approach-point__header-content">{{ block.settings.content }}</p>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+</section>
+
+{% schema %}
+  {
+    "name": "Approach",
+    "max_blocks": 4,
+    "settings": [
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle",
+        "default": "Our approach"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Our way to healthy skin"
+      },
+      {
+        "type": "richtext",
+        "id": "intro",
+        "label": "Intro"
+      },
+      {
+        "type": "text",
+        "id": "link_text",
+        "label": "Link text"
+      },
+      {
+        "type": "url",
+        "id": "link_url",
+        "label": "Link url"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "point",
+        "name": "Point",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "textarea",
+            "id": "content",
+            "label": "Content"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

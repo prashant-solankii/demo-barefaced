@@ -1,0 +1,60 @@
+{% form 'customer_login', class: 'form',  novalidate: 'novalidate' %}
+
+  <header class="form__header form-header form-header--left">
+    <h2 class="form-header__title">{{ 'customer.login.title' | t }}</h2>
+    <p class="form-header__intro">{{ 'customer.login.intro' | t }}</p>
+  </header>
+
+  {% if form.errors != blank %}
+    <div class="form__message form-message form-message--error">
+      {{ form.errors | default_errors }}
+    </div>
+  {% endif %}
+
+  <div class="form__row form-row {% if form.errors contains 'email' %} input-error{% endif %}">
+    <input  type="email"
+            name="customer[email]"
+            id="CustomerEmail"
+            class=""
+            spellcheck="false"
+            {%- if form.errors contains 'form' -%}
+              aria-invalid="true"
+            {%- endif -%}
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+            autofocus>
+    <label for="CustomerEmail">
+      {{ 'customer.login.form.email.label' | t }}
+    </label>
+  </div>
+
+  {% if form.password_needed %}
+    <div class="form__row form-row {% if form.errors contains 'password' %} form-row-error{% endif %}">
+      <input type="password"
+      name="customer[password]"
+      id="CustomerPassword"
+      {%- if form.errors contains 'form' -%}
+        aria-invalid="true"
+      {%- endif -%}/>
+      <label for="CustomerPassword">
+        {{ 'customer.login.form.password.label' | t }}
+      </label>
+    </div>
+  {% endif %}
+
+  <div class="form__row form-row form-row--submit">
+    {%- capture buttonText -%}{{ 'customer.login.sign_in' | t }}{%- endcapture -%}
+    {% render 'button', type: 'submit', text: buttonText, style: 'tertiary' %}
+  </div>
+
+  <div class="form__info form-info">
+    {% if form.password_needed %}
+      {% assign textLinkText = 'customer.login.forgot_password' | t %}
+      {% render 'text-link', url: '#recover', id: 'RecoverPassword', text: textLinkText %}
+    {% endif %}
+    {% assign textLinkText = 'customer.login.create_account.sign_up' | t %}
+    {% render 'text-link', url: routes.account_register_url, text: textLinkText %}
+  </div>
+
+{% endform %}

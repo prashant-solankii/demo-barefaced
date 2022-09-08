@@ -1,0 +1,27 @@
+{% if section.settings.image != blank and section.settings.text != blank %}
+  {% render 'image-w-scrolling-text', image: section.settings.image, text: section.settings.text %}
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Image w/ scrolling text",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "text",
+        "label": "Text"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image w/ scrolling text",
+        "category": "Barefaced"
+      }
+    ]
+  }
+{% endschema %}

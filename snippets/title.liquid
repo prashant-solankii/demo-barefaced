@@ -1,0 +1,23 @@
+{% if title != blank %}
+
+  {% assign title = title | split: '~' %}
+
+  {% if classes == blank %}
+    {% assign classes = '' %}
+  {% endif %}
+
+  {% if element == blank %}
+    {% assign element = 'h2' %}
+  {% endif %}
+
+  <{{element}} class="title {{ classes | join: ' ' }}">
+    {% for t in title %}
+      {% assign mod = forloop.index | modulo: 2 %}
+      {% if mod == 0 %}
+        <span>{{ t }}</span><!-- even -->
+      {% else %}
+        {{ t }}
+      {% endif %}
+    {% endfor %}
+  </{{element}} >
+{% endif %}

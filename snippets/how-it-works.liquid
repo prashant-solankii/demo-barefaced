@@ -1,0 +1,43 @@
+{% if points != blank %}
+  {% if classes == blank %}
+    {% assign classes = '' %}
+  {% endif %}
+
+  <section class="how-it-works">
+    {% if title != blank %}
+      <header class="how-it-works__header animate-on-scroll">
+        {% render 'title', classes: 'how-it-works__header-title' title: title %}
+      </header>
+    {% endif %}
+
+    <ul class="how-it-works__points">
+      {% for point in points %}
+        <li class="how-it-works__points-point how-it-works-point animate-on-scroll">
+          <header class="how-it-works-point__header">
+            <div class="how-it-works-point__header-count">0{{ forloop.index }}</div>
+            <div class="how-it-works-point__header-asterix">{% render 'icon-asterix' %}</div>
+          </header>
+          {% if point.settings.icon %}
+            <div class="how-it-works-point__icon how-it-works-point__icon--{{ point.settings.icon}}">
+              {% case point.settings.icon %}
+                {% when 'tub' %}
+                  {% render 'icon-tub' %}
+                {% when 'calendar' %}
+                  {% render 'icon-calendar' %}
+                {% when 'savings' %}
+                  {% render 'icon-savings' %}
+              {% endcase %}
+            </div>
+          {% endif %}
+          {% if point.settings.title != blank %}
+            <h4 class="how-it-works-point__title">{{ point.settings.title }}</h4>
+          {% endif %}
+          {% if point.settings.content != blank %}
+            <p class="how-it-works-point__content">{{ point.settings.content }}</p>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+{% endif %}
+

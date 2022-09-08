@@ -1,0 +1,116 @@
+{% if section.blocks != blank %}
+  <section class="social-slider">
+    <div class="social-slider__slideshow slideshow slideshow--trans-opacity animate-on-scroll">
+      <div class="slideshow__slides">
+        {% for block in section.blocks %}
+          <div class="slideshow__slide social-slider-slide">
+            {% render 'image-component' with
+              image: block.settings.image,
+              sizes: '(min-width: 63.75em) 55vw, 98vw',
+              classes: 'social-slider-slide__image objFit'
+            %}
+            {% if block.settings.caption != blank %}
+              <div class="social-slider-slide__caption">
+                {{ block.settings.caption }}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+      <button type="button" class="slideshow__button slideshow__button--prev">
+        <span class="screenreader-text">{{ 'general.accessibility.previous_slide' | t }}</span>
+        {% render 'icon-arrow' %}
+      </button>
+      <button type="button" class="slideshow__button slideshow__button--next">
+        <span class="screenreader-text">{{ 'general.accessibility.next_slide' | t }}</span>
+        {% render 'icon-arrow' %}
+      </button>
+    </div>
+    <div class="social-slider__content social-slider-content animate-on-scroll">
+      <div class="social-slider-content__next">
+        <div class="social-slider-content__next-inner">
+          {% for block in section.blocks %}
+            <div class="social-slider-content__next-slide" data-slide="{{ forloop.index }}">
+              {% render 'image-component' with
+                image: block.settings.image,
+                sizes: '18vw',
+                classes: 'social-slider-content__next-image objFit'
+              %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% if section.settings.title != blank %}
+        <h6 class="social-slider-content__subtitle">{{ section.settings.subtitle }}</h6>
+      {% endif %}
+      {% if section.settings.title != blank %}
+        {% render 'title', classes: 'social-slider-content__title', title: section.settings.title %}
+      {% endif %}
+      {% if section.settings.content != blank %}
+        <p class="social-slider-content__content">{{ section.settings.content }}</p>
+      {% endif %}
+      {% if section.settings.link_url != blank and section.settings.link_text != blank %}
+        {% render 'button', classes: 'social-slider-content__button', url: section.settings.link_url, text: section.settings.link_text, style: 'secondary' %}
+      {% endif %}
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Social Slider",
+    "settings": [
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle",
+        "default": "Just for you"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Discover the power of ~healthy skin~"
+      },
+      {
+        "type": "textarea",
+        "id": "content",
+        "label": "Content"
+      },
+      {
+        "type": "text",
+        "id": "link_text",
+        "label": "Link text"
+      },
+      {
+        "type": "url",
+        "id": "link_url",
+        "label": "Link url"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Image",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "textarea",
+            "id": "caption",
+            "label": "Caption"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Social Slider",
+        "category": "Barefaced"
+      }
+    ]
+  }
+{% endschema %}

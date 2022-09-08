@@ -1,0 +1,65 @@
+<section class="account-cta">
+  <div class="account-cta__inner">
+    {% if section.settings.image != blank %}
+      {% render 'image-component' with
+        image: section.settings.image,
+        sizes: '(min-width: 63.75em) 30vw, (min-width: 45em) 50vw, 96vw',
+        classes: 'account-cta__image'
+      %}
+    {% endif %}
+    <div class="account-cta__content">
+      {% if section.settings.subtitle != blank %}
+        <h6 class="account-cta__content-subtitle">{{ section.settings.subtitle }}</h6>
+      {% endif %}
+      {% if section.settings.title != blank %}
+        {% render 'title', classes: 'account-cta__content-title', title: section.settings.title %}
+      {% endif %}
+      {% if section.settings.link_url != blank and section.settings.link_text != blank %}
+        {% render 'text-link', classes: 'account-cta__content-link', url: section.settings.link_url, text: section.settings.link_text %}
+      {% endif %}
+    </div>
+  </div>
+  {% if section.settings.discount != blank %}
+    <div class="account-cta__discount">
+      {% render 'icon-asterix' %} {{ section.settings.discount }}
+    </div>
+  {% endif %}
+</section>
+
+{% schema %}
+  {
+    "name": "CTA",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "link_text",
+        "label": "Link text"
+      },
+      {
+        "type": "url",
+        "id": "link_url",
+        "label": "Link url"
+      },
+      {
+        "type": "richtext",
+        "id": "discount",
+        "label": "Discount"
+      }
+    ]
+  }
+{% endschema %}

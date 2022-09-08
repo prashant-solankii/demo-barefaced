@@ -1,0 +1,16 @@
+{% if classes == blank %}
+  {% assign classes = '' %}
+{% endif %}
+
+<div class="header-search {{ classes | join: ' ' }}">
+
+  <div class="header-search__inner">
+
+    <h4 class="header-search__title">{{ 'search.header_title' | t }}</h4>
+
+    {% render 'search-form', classes: 'header-search__form' %}
+
+    {% render 'search-popular' %}
+  </div>
+
+</div>

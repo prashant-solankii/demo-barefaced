@@ -1,0 +1,350 @@
+/**
+  * prevent body Touch event in Touch devices when Overlay is visible
+  *
+  * @param {event} event - event instance
+*/
+function bodyTouchMove(event){
+  let currentTarget = event.target;
+  if (!currentTarget.closest('[data-touch-moveable]')) {
+    event.preventDefault();
+    return false;
+  }
+}
+/**
+* Website Overlay for Mobile Menu and Cart Drawer
+*/
+class siteOverlay extends HTMLElement{
+  constructor() {
+    super();
+    this.menuDrawer = document.querySelector('#mobile-menu-drawer');
+    this.cartDrawer = document.querySelector('ajax-cart.cart-drawer');
+    this.bindEvents();
+  }
+
+  /**
+   * bind Click and Touchend event to this custom component
+   */
+  bindEvents(){
+    this.addEventListener('click', this.onClick.bind(this));
+    this.addEventListener('touchend', this.onClick.bind(this));
+  }
+
+  /**
+   * Click event of Site overlay
+   * @param {event} Event instance performed
+   */
+   onClick(event){
+    if(this.menuDrawer && this.menuDrawer.classList.contains('opened-drawer')){
+     this.menuDrawer.classList.remove('opened-drawer');
+      document.querySelector('.close-mobile--navbar').dispatchEvent(new Event('click'));
+    }
+    this.hideOverlay();
+  }
+
+  /**
+   * Show Overlay
+   */
+  showOverlay(){
+    document.getElementById('site-overlay').classList.add('overlay--body');
+    document.body.style.overflowY = "hidden";
+    document.querySelector('body').classList.add('fixed-scroll');
+    document.body.addEventListener('touchmove', bodyTouchMove, false);
+  }
+
+  /**
+   * Hide overlay
+   */
+  hideOverlay(){
+    document.getElementById('site-overlay').classList.remove('overlay--body');
+    document.body.style.overflowY = "auto";
+    document.querySelector('body').classList.remove('fixed-scroll','body-fixed');
+    // document.querySelector('[data-apply-reward-drawer]').classList.add("d-none");
+    document.querySelector('[data-apply-reward-drawer]').classList.remove("opened-drawer");
+    document.body.removeEventListener('touchmove', bodyTouchMove, false);
+  }
+}
+customElements.define("site-overlay", siteOverlay);
+
+
+/**
+ * Modal Dialogue
+ *
+ */
+class ModalDialog extends HTMLElement {
+  constructor() {
+    super();
+
+    this.modal = this.querySelector('.modal-deshboard');
+    this.modalOpeners = document.querySelectorAll('[data-modal-opener="'+this.id+'"]');
+    if(this.modalOpeners.length > 0) {
+      this.modalOpeners.forEach((opener)=>{
+        opener.addEventListener('click', ()=>{
+          this.show(opener);
+        });
+      });
+    }
+
+    if(this.querySelector('[id^="ModalClose-"]')){
+      this.querySelector('[id^="ModalClose-"]').addEventListener(
+        'click',
+        this.hide.bind(this)
+      );
+    }
+
+    this.addEventListener('click', (event) => {
+      if (event.target.nodeName === 'MODAL-DIALOG') this.hide();
+    });
+
+    this.addEventListener('keyup', () => {
+      if (event.code.toUpperCase() === 'ESCAPE') this.hide();
+    });
+
+  }
+
+  show(opener) {
+    this.openedBy = opener;
+    this.modal.classList.add('open');
+    // siteOverlay.prototype.showOverlay();
+    Utility.trapFocus(this);
+    Utility.forceFocus(this.querySelector('[id^="ModalClose-"]'));
+  }
+
+  hide() {
+    document.body.classList.remove('overflow-hidden');
+    if(this.modal.classList.contains('open')){
+      this.modal.classList.remove('open');
+    }
+    // siteOverlay.prototype.hideOverlay();
+    Utility.removeTrapFocus(this.openedBy);
+
+    if(this.id == 'PopupModal-video' && document.getElementsByTagName('custom-video')){
+      this.querySelector('.video-section').innerHTML = '';
+      document.querySelector('custom-video').classList.remove('show--video');
+    }
+  }
+}
+customElements.define('modal-dialog', ModalDialog);
+
+
+
+class Notification extends HTMLElement {
+  constructor() {
+    super();
+
+    this.paused = false;
+    this.container = this.querySelector('.snotifyToast');
+    this.closeBtn = this.querySelector('.snotifyToast__close');
+
+    this.container.addEventListener('mouseover', (event) =>{
+      this.paused = true;
+    });
+    this.container.addEventListener('mouseout', (event) =>{
+      this.paused = false;
+    });
+
+    if(this.closeBtn){
+      this.closeBtn.addEventListener('click', (e)=> {
+        e.preventDefault();
+        this.container.classList.remove('open');
+        this.querySelector('.snotifyToast__title').innerHTML = '';
+        this.querySelector('.snotifyToast__body').innerHTML = '';
+        this.container.classList.remove('snotify-warning,snotify-info,snotify-error,snotify-success');
+        this.querySelector('[data-toast-pr]').removeAttribute('style');
+      });
+    }
+  }
+
+  updateNotification(title, body, options){
+    this.querySelector('.snotifyToast__title').innerHTML = title;
+    this.querySelector('.snotifyToast__body').innerHTML = body;
+
+    if(options.type == 'error'){
+      this.container.classList.add('snotify-error');
+    }else if(options.type == 'warning'){
+      this.container.classList.add('snotify-warning');
+    }else if(options.type == 'info'){
+      this.container.classList.add('snotify-info');
+    }else if(options.type == 'success'){
+      this.container.classList.add('snotify-success');
+    }
+
+    this.container.classList.add('open');
+    this.manageToggle(options.timeout)
+  }
+
+  manageToggle(timeout){
+    this.progressBar = this.querySelector('[data-toast-pr]');
+    let unit = parseInt(timeout) / 1000;
+    unit = 100 / unit;
+    let width = 0;
+
+    let interval = setInterval(() => {
+      console.log(this.paused)
+      if(this.paused == false){
+        width += unit;
+        this.progressBar.setAttribute('style', `width: ${width}%`);
+        if (width > 100) {
+          this.closeBtn.dispatchEvent(new Event('click'));
+          clearInterval(interval);
+        }
+      }
+    }, 1000)
+  }
+}
+customElements.define("custom-notification", Notification);
+
+
+class customTabs extends HTMLElement {
+  constructor() {
+    super();
+    this.tabLinks = this.querySelectorAll('.tablink');
+    this.tabContainers = this.querySelectorAll('.tabcontent');
+    this.tabLinks.forEach( link => link.addEventListener('click', this.toggleTabs.bind(this)));
+  }
+  /**
+   * Focus Out Event to close drawer
+   *
+   * @param {event} Event instance
+   */
+  focusOut(event){
+  }
+  /**
+   * Escape Key Press to close drawer when focus is within the container
+   *
+   * @param {event} Event instance
+   */
+  onKeyUp(event) {
+    if(event.code.toUpperCase() !== 'ESCAPE') return;
+  }
+  /**
+   * Toggle Tabs on link click
+   *
+   * @param {event} Event instance
+   */
+  toggleTabs(event){
+    event.preventDefault();
+    event.stopPropagation();
+    const currentTab = event.currentTarget;
+    const tabLink = currentTab.querySelector('[data-toggle="tab"]');
+    const tabContainer = document.querySelector(tabLink.dataset.tabcontent);
+    this.openTab(currentTab, tabContainer)
+   
+    // let isOpen = currentTab.classList.contains('open');
+    // isOpen ? this.closeTab(currentTab, tabContainer) : this.openTab(currentTab, tabContainer);
+  }
+  /**
+   * Open Tab Container
+   *
+   * @param {Node} currentTab Tab Container Open link
+   * @param {Node} tabContainer Tab Container to open
+   */
+  openTab(currentTab, tabContainer) {
+    this.tabContainers.forEach(container => {
+      container.classList.remove('open');
+      const linkEle = document.querySelector('.tablink a[data-toggle="tab"][data-tabcontent="#'+container.id+'"]');
+      if(linkEle){
+        linkEle.setAttribute('aria-expanded', false);
+        if(linkEle.closest('.tablink')){ linkEle.closest('.tablink').classList.remove('open');}
+      }
+    });
+    const tabLink = currentTab.querySelector('[data-toggle="tab"]');
+    if(tabLink.getAttribute("data-tabcontent") == "#accountTab"){
+      document.querySelectorAll('[data-tabcontent="#accountTab"]').forEach(elem =>{
+        elem.closest(".tablink").classList.add('open');
+      })
+    }
+    currentTab.classList.add('open');
+    currentTab.querySelector('[data-toggle="tab"]').setAttribute('aria-expanded', true);
+    tabContainer.classList.add('open');
+  }
+  /**
+   * Close Tab Container
+   *
+   * @param {Node} currentTab Tab Container link
+   * @param {Node} tabContainer Tab Container to close
+   */
+  closeTab(currentTab, tabContainer) {
+    currentTab.classList.remove('open');
+    currentTab.querySelector('[data-toggle="tab"]').setAttribute('aria-expanded', false);
+    tabContainer.classList.remove('open');
+  }
+}
+customElements.define("custom-tabs", customTabs);
+
+
+/***
+ * Image Filter
+ */
+ function _getSizedImageUrl(src, size){
+  let match;
+  if (src === null) {
+    return;
+  }
+
+  if (typeof (src) === 'object') {
+    src = src.src;
+  }
+
+  if (size === 'master') {
+    src = _removeProtocol(src);
+  }
+
+  if (src) {
+    match = src.match(/\.(jpg|jpeg|gif|png|bmp|bitmap|tiff|tif)(\?v=\d+)?$/i);
+  }
+
+  if (match) {
+    const prefix = src.split(match[0]);
+    const suffix = match[0];
+
+    src = _removeProtocol(`${prefix[0]}_${size}${suffix}`);
+  }
+  return src;
+}
+
+/**
+ * Remove Image Filter
+ */
+ function _removeProtocol(path) {
+  return path.replace(/http(s)?:/, '');
+}
+
+
+
+
+
+
+
+// const swiper = new Swiper('.swiper', {
+//   // Optional parameters
+//   direction: 'horizontal',
+//   loop: false,
+//   slidesPerView:1,
+//   // If we need pagination
+//   pagination: {
+//     el: '.swiper-pagination',
+//   },
+//   // Navigation arrows
+//   navigation: {
+//     nextEl: '.swiper-button-next',
+//     prevEl: '.swiper-button-prev',
+//   },
+//   // And if we need scrollbar
+//   scrollbar: {
+//     el: '.swiper-scrollbar',
+//   },
+//   breakpoints: {
+//     // when window width is <= 576px
+//     576: {
+//         slidesPerView: 2,
+//     },
+//     // when window width is <= 768px
+//     768: {
+//         slidesPerView: 3,
+//     },
+//     // when window width is <= 992px
+//     992: {
+//       slidesPerView: 4,
+//     }
+// }
+// });

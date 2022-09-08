@@ -1,0 +1,68 @@
+{% if section.blocks != blank %}
+  <section class="slider">
+    <div class="slider__slideshow slideshow slideshow--trans-opacity">
+      <div class="slideshow__slides">
+        {% for block in section.blocks %}
+          <div class="slideshow__slide slider-slide">
+            <div class="slider-slide__inner">
+              <div class="slider-slide__image">
+                {% render 'image-component' with
+                  image: block.settings.image,
+                  sizes: '(min-width: 45em) 50vw, 100vw',
+                  classes: 'slider-slide__image-figure objFit'
+                %}
+                <div class="slider-slide__image-timer"></div>
+              </div>
+              <div class="slider-slide__content">
+                {% if block.settings.subtitle != blank %}
+                  <h6 class="slider-slide__content-subtitle">{{ block.settings.subtitle }} </h6>
+                {% endif %}
+                {% if block.settings.title != blank %}
+                  <h2 class="slider-slide__content-title">{{ block.settings.title }} </h2>
+                {% endif %}
+                {% if block.settings.content != blank %}
+                  <div class="slider-slide__content-content">{{ block.settings.content }} </div>
+                {% endif %}
+                <div class="slider-slide__content-counter">{{ forloop.index }}/{{ section.blocks | size }}</div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Slider",
+    "blocks": [
+      {
+        "type": "slide",
+        "name": "Slide",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "subtitle",
+            "label": "Subtitle"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

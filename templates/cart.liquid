@@ -1,0 +1,37 @@
+<script data-cfasync="false" type="text/javascript">if (typeof Shopify === "undefined") var Shopify = {}; Shopify.cart = {{ cart | json }};</script> 
+<div id="sca-fg-owl-carousel">
+  <div id="freegift_cart_container" class="sca-fg-cart-container" style="display: none;">
+    <div id="freegift_message" class="owl-carousel"></div>
+  </div> 
+  <div id="sca-fg-slider-cart" style="display: none;">
+    <div class="sca-fg-cart-title">
+      <strong>Select your free gift (s)</strong>
+    </div>
+    <div id="sca_freegift_list" class="owl-carousel"></div>
+  </div>
+</div>
+<div id="sca_fg_cart">
+{% render 'page-title', title: page_title %}
+{% capture linkText %}{{ 'cart.general.continue_shopping' | t }}{% endcapture %}
+
+<section class="cart">
+  <div class="cart__error">Test error message</div>
+  {% if cart.item_count > 0 %}
+    <form action="{{ routes.cart_url }}" method="post" novalidate class="cart__form cart-form" >
+      <div class="cart-form__column cart-form__column--left">
+        {% render 'cart-table' %}
+        <a href="{{routes.all_products_collection_url}}" class="cart-form__back">{% render 'icon-arrow' %} {{ linkText }}</a>
+      </div>
+      <div class="cart-form__column cart-form__column--right">
+        {% render 'cart-summary' %}
+      </div>
+    </form>
+  {% else %}
+    <div class="cart__empty">
+      <h3 class="cart__empty-title">{{ 'cart.general.empty' | t }}</h3>
+      {% render 'text-link', classes: 'cart__empty-back', url: routes.all_products_collection_url, text: linkText %}
+    </div>
+  {% endif %}
+</section>
+
+</div>

@@ -1,0 +1,25 @@
+{% if classes == blank %}
+  {% assign classes = '' %}
+{% endif %}
+
+<form action="{{ routes.search_url }}" method="get" role="search"  class="search-form form {{ classes | join: ' ' }}">
+  {% comment %}
+    By default, search only searches products.
+    I have removed this to search everything instead. To change this add the hidden field below, options are article, page or product
+    <input type="hidden" name="type" value="product" />
+  {% endcomment %}
+  <input type="hidden" name="type" value="{% if search.types contains 'article' %}article{% else %}product{% endif %}" />
+  <div class="form__row form-row form-row--search">
+    <input type="search"
+        name="q"
+        id="Search"
+        value="{{ search.terms | escape }}">
+    <label for="Search">
+      {{ 'search.placeholder' | t }}
+    </label>
+
+    {%- capture buttonText -%}{{ 'search.submit' | t }}{%- endcapture -%}
+    {%- capture icon -%}{% render 'icon-search' %}{%- endcapture -%}
+    {% render 'button', type: 'submit', label_a11y: buttonText, icon: icon  %}
+  </div>
+</form>

@@ -1,0 +1,56 @@
+{%- comment -%}IMPORTANT - If updating this file, please reflect these updates in collection.js{%- endcomment -%}
+
+{% if classes == blank %}
+  {% assign classes = '' %}
+{% endif %}
+
+<div title="{{ product.title }}" data-product-div class="collection-product position-relative {% if product.images.size >= 2 %}collection-product--image-hover{% endif %} {{ classes | join: ' ' }}" itemscope itemtype="http://schema.org/Product">
+  
+  {% if product.variants.first.inventory_quantity > 0 %}<a href="javascript:void(0)" class="collection-overlay" data-add-addon-product-btn></a>{% endif %}
+  <div class="collection-product__images">
+    {% render 'image-component',
+      image: product.featured_image,
+      sizes: '(min-width: 45em) 33vw, 50vw',
+      classes: 'collection-product__image objFit'
+    %}
+    {% if product.images.size >= 2 %}
+      {% render 'image-component',
+        image: product.images[1],
+        sizes: '(min-width: 45em) 33vw, 50vw',
+        classes: 'collection-product__image objFit'
+      %}
+    {% endif %}
+
+    {% unless hideForm == true %}
+      {% if product.variants.first.inventory_quantity > 0 %}
+        <form class="collection-product__add" method="post" action="/cart/add">
+          <script data-addonProductJSON type="application/json">
+            {
+              "product" : {{ product | json }},
+              "product_default_variant" : {{ product.variants.first | json }},
+              "options_with_values" : {{ product.options_with_values | json }}
+            }
+          </script>
+          <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+          <input type="number" name="quantity" value="1" id="quantity" min="1" class="hide" />
+          {% capture buttonText %}+ Add{% endcapture %}
+          {% capture buttonAttributes %}data-submit-button data-add-addon-product-btn{% endcapture %}
+          {% render 'button', type: 'button', text: buttonText style: 'primary', classes: 'collection-product__add-button', attributes: buttonAttributes  %}
+        </form>
+      {% endif %}
+    {% endunless %}
+  </div>
+  <div class="collection-product__content collection-product-content">
+    <div class="collection-product-content__info">
+      <div class="collection-product-content__info-title" itemprop="name">
+        {{ product.title }}
+      </div>
+      {% if product.metafields.global.summary != blank %}
+        <div class="collection-product-content__info-summary">
+          {{ product.metafields.global.summary }}
+        </div>
+      {% endif %}
+    </div>
+    {% render 'product-price', product: product, classes: 'collection-product-content__price' %}
+  </div>
+</div>

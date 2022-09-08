@@ -1,0 +1,33 @@
+{% if classes == blank %}
+  {% assign classes = '' %}
+{% endif %}
+
+<div class="quote-col-block {{ classes | join: ' ' }}">
+  <div class="quote-col-block__inner">
+    <div class="quote-col-block__image">
+      {% if image != blank %}
+        {% render 'image-component' with
+          image: image,
+          sizes: '(min-width: 63.75em) 50vw, 100vw',
+          classes: 'quote-col-block__image-figure objFit'
+        %}
+      {% endif %}
+    </div>
+    <div class="quote-col-block__content">
+      <div class="quote-col-block__content-inner">
+        {% if quote != blank %}
+          <p class="quote-col-block__content-quote">{{ quote }}</p>
+        {% endif %}
+        {% if cite != blank %}
+          <h5 class="quote-col-block__content-subtitle">{{ cite }}</h5>
+        {% endif %}
+        {% if citeRole != blank %}
+          <h6 class="quote-col-block__content-role">{{ citeRole }}</h6>
+        {% endif %}
+        {% if linkUrl != blank and linkText != blank %}
+          {% render 'button', classes: 'quote-col-block__content-button', text: linkText, url: linkUrl, style: 'secondary' %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

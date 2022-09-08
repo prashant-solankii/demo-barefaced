@@ -1,0 +1,66 @@
+{% if classes == blank %}
+  {% assign classes = '' %}
+{% endif %}
+
+{% assign alignClass = '' %}
+{% if align != blank %}
+  {% capture alignClass %}two-col-block--{{ align }}{% endcapture %}
+{% endif %}
+
+{% if imageNoFilter == blank %}
+  {% assign imageNoFilter = false %}
+{% endif %}
+
+<div class="two-col-block {{ alignClass }}  {{ classes | join: ' ' }}">
+  <div class="two-col-block__image animate-on-scroll">
+    {% if image != blank %}
+      {% render 'image-component' with
+        image: image,
+        nofilter: imageNoFilter,
+        sizes: '(min-width: 63.75em) 45vw, 100vw',
+        classes: 'two-col-block__image-figure'
+      %}
+    {% endif %}
+  </div>
+  <div class="two-col-block__content animate-on-scroll">
+    <div class="two-col-block__content-inner">
+      {% if subtitle != blank %}
+        <h6 class="two-col-block__content-subtitle">{{ subtitle }}</h6>
+      {% endif %}
+      {% if title != blank %}
+        {% render 'title', classes: 'two-col-block__content-title' title: title %}
+      {% endif %}
+      {% if list != blank %}
+        <ul class="two-col-block__content-list">
+          {% assign listItems = list | newline_to_br | split: '<br />' %}
+          {% for i in listItems %}
+            <li>{% render 'icon-asterix' %} {{ i }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+      {% if content != blank %}
+        <div class="two-col-block__content-content">{{ content }}</div>
+      {% endif %}
+      {% if linkUrl != blank and linkText != blank %}
+        {% if linkButton %}
+          {% render 'button', classes: 'two-col-block__content-button', text: linkText, url: linkUrl, style: 'secondary' %}
+        {% else %}
+          {% render 'text-link', classes: 'two-col-block__content-link', text: linkText, url: linkUrl%}
+        {% endif %} 
+      {% endif %}
+      {% if icons %}
+        <div class="two-col-block__content-icons two-col-block-icons">
+          {% for icon in section.blocks %}
+            {% if icon.settings.image != blank %}
+              {% render 'image-component' with
+                image: icon.settings.image,
+                sizes: '12em',
+                classes: 'two-col-block-icons__image'
+              %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

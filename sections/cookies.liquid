@@ -1,0 +1,29 @@
+<section class="section cookies">
+  <div class="cookies__inner">
+    <div class="cookies__icon">
+      {% render 'icon-cookie' %}
+    </div>
+
+    {% if section.settings.text != blank %}
+      <div class="cookies__message">{{ section.settings.text }}</div>
+    {% endif %}
+
+    <button class="cookies__close close-button">
+      <div class="close-button__icon"></div>
+      <span class="screenreader-text">{{ 'cookies.close' | t }}</span>
+    </button>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Cookies",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text"
+      }
+    ]
+  }
+{% endschema %}

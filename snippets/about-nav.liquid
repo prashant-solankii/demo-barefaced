@@ -1,0 +1,16 @@
+{% assign navLinks = linklists['about'].links %}
+
+{% if navLinks != blank %}
+  <nav class="fixed-sub-nav fixed-sub-nav--center fixed-sub-nav--init-hide hide-init">
+    <ul class="fixed-sub-nav__list">
+      {% for link in navLinks %}
+        {%- comment %}<locksmith:d56b>{% endcomment -%}
+          {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+        {%- comment %}</locksmith:d56b>{% endcomment -%}
+        <li class="fixed-sub-nav__list-item">
+          <a href="{{ link.url }}" class="fixed-sub-nav__list-link {% if link.active %}fixed-sub-nav__list-link--active{% endif %}"><span>{{ link.title }}</span></a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+{% endif %}

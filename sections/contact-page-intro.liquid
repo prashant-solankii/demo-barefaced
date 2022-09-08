@@ -1,0 +1,25 @@
+{% render 'page-intro', subtitle: section.settings.subtitle, title: section.settings.title, intro: section.settings.intro %}
+
+{% schema %}
+  {
+    "name": "Page intro",
+    "settings": [
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "richtext",
+        "id": "intro",
+        "label": "Intro"
+      }
+    ]
+  }
+{% endschema %}
+

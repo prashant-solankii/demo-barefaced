@@ -1,0 +1,34 @@
+<section class="featured-products">
+  <div class="featured-products__swiper featured-products-swiper">
+    <header class="featured-products-swiper__header animate-on-scroll">
+      {% if subtitle != blank %}
+        <h6 class="featured-products-swiper__header-subtitle">{{ subtitle }}</h6>
+      {% endif %}
+      {% if title != blank %}
+        {% render 'title', classes: 'featured-products-swiper__header-title', title: title %}
+      {% endif %}
+      {% if linkUrl != blank and linkText != blank %}
+        {% render 'button', classes: 'featured-products-swiper__header-button', style: 'secondary', text: linkText, url: linkUrl %}
+      {% endif %}
+    </header>
+    <div class="swiper-container animate-on-scroll">
+      <div class="swiper-wrapper">
+        {% for block in products %}
+          {%- comment %}<locksmith:7904>{% endcomment -%}
+            {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+          {%- comment %}</locksmith:7904>{% endcomment -%}
+          <div class="swiper-slide product-slide">
+            {% assign product = all_products[block.settings.product] %}
+            {% render 'collection-product' with
+              classes: 'product-slide-product',
+              product: product
+            %}
+          </div>
+        {% endfor %}
+      </div>
+      <div class="swiper-scrollbar-container">
+        <div class="swiper-scrollbar"></div>
+      </div>
+    </div>
+  </div>
+</section>

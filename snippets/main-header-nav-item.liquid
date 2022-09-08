@@ -1,0 +1,65 @@
+<li class="main-nav__list-item {% if link.links != blank %}main-nav__list-item--subnav{% endif %} {% if link.active or link.child_active %}main-nav__list-item--active{% endif %}">
+  <a href="{{ link.url }}" class="main-nav__list-link" {% if link.current %} aria-current="page"{% endif %}>
+    <span class="main-nav__list-title">
+      {{ link.title }}
+      {% if link.title contains 'Quiz' %}
+        <div class="active-dot">
+          <span class="active-dot__inner"></span>
+          <span class="active-dot__outer"></span>
+          <span class="active-dot__outer"></span>
+        </div>
+      {% endif %}
+    </span>
+    {% if link.links != blank %}
+      {% render 'icon-chevron' %}
+    {% endif %}
+  </a>
+  {% if link.links != blank %}
+    <ul class="main-nav__list-sub-nav sub-nav-list {% if child_link.links != blank %}sub-nav-list--has-children{% endif %}">
+      <button class="sub-nav-list__back">{% render 'icon-arrow' %}</button>
+      {% for child_link in link.links %}
+        {%- comment %}<locksmith:2d07>{% endcomment -%}
+          {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: child_link, subject_parent: link, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+        {%- comment %}</locksmith:2d07>{% endcomment -%}
+        <li class="sub-nav-list__item {% if child_link.active %}sub-nav-list__item--active{% endif %}">
+          <a href="{{ child_link.url }}" class="sub-nav-list__link" {% if child_link.current %} aria-current="page"{% endif %}>{{ child_link.title | escape }}</a>
+          {% if child_link.links != blank %}
+            <ul class="sub-nav-list__grand-child-list grand-child-list">
+            {% for grandchild_link in child_link.links %}
+              {%- comment %}<locksmith:5e3e>{% endcomment -%}
+                {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: grandchild_link, subject_parent: child_link, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+              {%- comment %}</locksmith:5e3e>{% endcomment -%}
+              <li class="grand-child-list__item">
+                <a href="{{ grandchild_link.url }}" class="grand-child-list__link"
+                {% if grandchild_link.current %} aria-current="page"{% endif %}>
+                  {{ grandchild_link.title | escape }}
+                </a>
+              </li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+      {% endfor %}
+      <div class="sub-nav-list__featured sub-nav-featured-collection">
+        <h5 class="sub-nav-featured-collection__title">{{ 'layout.featured_collection' | t }}</h5>
+        {% assign collection = collections[shop.metafields.global.featured_collection] %}
+        <a href="{{ collection.url }}" class="sub-nav-featured-collection__image">
+          {% if collection.image != blank %}
+            {% assign image = collection.image %}
+            {% assign asset = false %}
+          {% else %}
+            {% assign image = '404.jpg' %}
+            {% assign asset = true %}
+          {% endif %}
+          {% render 'image-component' with
+            image: image,
+            asset: asset
+            sizes: '20vw',
+            classes: 'sub-nav-featured-collection__image-figure objFit'
+          %}
+          <h4 class="sub-nav-featured-collection__image-title">{{ collection.title }}</h4>
+        </a>
+      </div>
+    </ul>
+  {% endif %}
+</li>

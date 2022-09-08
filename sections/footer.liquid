@@ -1,0 +1,62 @@
+<footer class="main-footer" id="main-footer" role="contentinfo">
+  <div class="main-footer__inner">
+
+    {% if section.blocks != blank %}
+      {% render 'usps', classes: 'main-footer__usps', usps: section.blocks %}
+    {% endif %}
+
+    <div class="main-footer__top">
+      <div class="main-footer__newsletter">
+        {% capture newsletterTitle %}{{ 'footer.newsletter.title' | t }}{% endcapture %}
+        {% capture newsletterContent %}{{ 'footer.newsletter.content' | t }}{% endcapture %}
+        {% render 'newsletter', title: newsletterTitle, content: newsletterContent, id: 'newsletter-footer-signup' %}
+      </div>
+
+      <div class="main-footer__navs">
+        {% render 'footer-nav' with
+          classes: 'main-footer__navs-nav',
+          menu: 'learn'
+        %}
+        {% render 'footer-nav' with
+          classes: 'main-footer__navs-nav',
+          menu: 'help'
+        %}
+      </div>
+    </div>
+
+    {% render 'social-links' with
+      classes: 'main-footer__social-links'
+    %}
+
+    <div class="main-footer__legal-note">
+      {% render 'icon-asterix' %}
+      {{ 'footer.legal_note' | t }}
+    </div>
+
+    <div class="main-footer__copyright footer-copyright">
+      {{ 'footer.copyright' | t }} {{ 'now' | date: "%Y" }} | {{ 'footer.website_by' | t }} <a href="https://www.superrb.com" target="_blank" rel="noopener nofollow" class="footer-copyright__link" title="{{ 'footer.website_by' | t }} {{ 'footer.superrb' | t }}">{{ 'footer.superrb' | t }}</a>
+    </div>
+
+  </div>
+</footer>
+
+{% schema %}
+  {
+    "name": "Footer",
+    "settings": [],
+    "max_blocks": 3,
+    "blocks": [
+      {
+        "type": "usp",
+        "name": "USP",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "title",
+            "label": "Title"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

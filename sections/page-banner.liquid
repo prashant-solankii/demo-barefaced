@@ -1,0 +1,81 @@
+{% assign count = 0 | plus: 0 %}
+
+{% for block in section.blocks %}
+  {% unless count > 0 %}
+    {% if block.settings.page == page.handle %}
+      {% assign banner = block %}
+      {% assign count = count | plus: 1 %}
+    {% endif %}
+  {% endunless %}
+{% endfor %}
+
+{% render 'banner', image: banner.settings.image, title: banner.settings.title, intro: banner.settings.content, linkText: banner.settings.link_text, linkUrl: banner.settings.link_url, align: banner.settings.align, height: banner.settings.height, cappedWidth: banner.settings.capped_width %}
+
+{% schema %}
+  {
+    "name": "Banner",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "block",
+        "name": "Banner",
+        "settings": [
+          {
+            "type": "page",
+            "id": "page",
+            "label": "Page for block"
+          },
+          {
+            "id": "image",
+            "label": "Image",
+            "type": "image_picker"
+          },
+          {
+            "id": "title",
+            "label": "Title",
+            "type": "text"
+          },
+          {
+            "id": "content",
+            "label": "Content",
+            "type": "textarea"
+          },
+          {
+            "type": "text",
+            "id": "link_text",
+            "label": "Link text"
+          },
+          {
+            "type": "url",
+            "id": "link_url",
+            "label": "Link url"
+          },
+          {
+            "type": "select",
+            "id": "height",
+            "label": "Height",
+            "options": [
+                { "value": "shallow", "label": "Shallow"},
+                { "value": "deep", "label": "Deep"}
+            ]
+          },
+          {
+            "type": "radio",
+            "id": "align",
+            "options": [
+                { "value": "left", "label": "Left"},
+                { "value": "center", "label": "Center"}
+            ],
+            "label": "Align content"
+          },
+          {
+            "type": "checkbox",
+            "id": "capped_width",
+            "label": "Capped width",
+            "default": false
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

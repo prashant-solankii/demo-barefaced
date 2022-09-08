@@ -1,0 +1,130 @@
+{{ 'global.css' | asset_url | stylesheet_tag }}
+{{ 'recharge.css' | asset_url | stylesheet_tag }}
+
+<custom-dashboard>
+  <custom-tabs class="section-content d-block">
+      <div class="account-baneer">
+          <div class="container">
+              <div class="d-flex justify-content-center">
+                  <div class="col-12 text-center">
+                      <h2 class="text-capitalize mb-7">Hi, {{ customer.first_name }}, Welcome Back!</h2>
+                      <div class="account-menu-name overflow-hidden">
+                        <ul class="nav-pills overflow-auto" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/account#accountTab">Manage Subscriptions</a>
+                            </li>
+                            {% if customer.metafields.subscriptions.customer_string %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="/account#billingTab" data-subscription-billing>Subscription Billing</a>
+                            </li>
+                            {% endif %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="/pages/order-history">Order History</a>
+                            </li>
+                            <li class="nav-item open">
+                                <a class="nav-link" href="{{ routes.account_addresses_url }}">Addresses</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/pages/loyalty">Rewards</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ routes.account_logout_url }}">Log Out</a>
+                            </li>
+                        </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="pt-lg-10 pt-7">
+          <div class="container">
+              <div class="tab-content" id="myTabContent">
+                  {%- comment -%}Subscription Order Tab:{%- endcomment -%}
+                  <div class="tab-pane tabcontent open" id="accountTab" role="tabpanel" aria-labelledby="subscriptions-tab">
+                      <div class="row addresses-page">
+                          <div class="col-lg-3 text-lg-start text-center mb-md-0 mb-8">
+                              <div class="d-flex flex-lg-row flex-column align-items-center mb-5">
+                                  <div class="profile position-relative me-lg-4 mb-4 mb-lg-0">
+                                      <p class="fw-bold m-0 position-absolute text-uppercase text-white w-auto">{{ customer.first_name | slice: 0 }}{{ customer.last_name | slice: 0 }}</p>
+                                  </div>
+                                  <p class="custome-name fw-bold ls-0 m-0 text-capitalize">{{ customer.name }}</p>
+                              </div>
+                              <div>
+                                  <p class="mb-4">
+                                      <a href="mailto:{{ customer.email }}" class="fw-normal ls-0">{{ customer.email }}</a>
+                                  </p>
+                                  <p class="mb-4 fw-normal ls-0 text-black"> Password:**********
+                                      <a href="/account/login#recover" class="text-capitalize fw-medium ls-0 ps-2 text-decoration-underline" style="font-size: 14px;">reset</a>
+                                  </p>
+                                  <p class="fw-normal ls-0 mb-0">
+                                      <span data-order-count="{{ customer.orders_count }}">Total Orders:</span> 
+                                      {{ customer.orders_count }}
+                                  </p>
+                              </div>
+                          </div>
+                          <div class="col-lg-9">
+                            {% paginate customer.addresses by 5 %}
+                              <!-- <div class="address__note-container">
+                                <span class="address__note top-0">
+                                  {% render 'icon-asterix' %}
+                                  <p>{{ 'customer.addresses.notice' | t }} {% render 'text-link', text: 'Manage Subscriptions', url: '/account' %}</p>
+                                </span>
+                              </div> -->
+
+                              {% render 'page-title', title: page_title %}
+
+                              {% if customer.addresses != blank %}
+                                <section class="addresses pt-3">
+                                  <div class="addresses__inner">
+                                    {% for address in customer.addresses %}
+                                      <div class="addresses__address address {% if address == customer.default_address %}address--default{% endif %}"
+                                        data-address>
+
+                                        <div class="address__container">
+                                          {% if address == customer.default_address %}
+                                            <h4 class="address__heading">{{ 'customer.addresses.default' | t }}</h4>
+                                          {% endif %}
+
+                                          <div class="address__content">
+                                            {{ address | format_address }}
+                                          </div>
+                                          <div class="address__buttons">
+                                            {% capture linkText %}{{ 'customer.addresses.edit' | t }}{% endcapture %}
+                                            {% capture linkAttributes %}data-address-toggle{% endcapture %}
+                                            {% render 'text-link', text: linkText, type: 'button', attributes: linkAttributes %}
+
+                                            <form data-address-delete-form method="post" action="/account/addresses/{{ address.id }}" data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}">
+                                              <input type="hidden" name="_method" value="delete" />
+                                              {% capture linkText %}{{ 'customer.addresses.delete' | t }}{% endcapture %}
+                                              {% render 'text-link', text: linkText, type: 'submit' %}
+                                            </form>
+                                          </div>
+                                        </div>
+
+                                        {% render 'address-form', address: address %}
+
+                                      </div>
+                                    {% endfor %}
+                                  </div>
+                                </section>
+                              {% endif %}
+
+                              {% render 'addresses-new-address' %}
+
+                              {% if paginate.pages > 1 %}
+                                {% render 'pagination', paginate: paginate %}
+                              {% endif %}
+
+                            {% endpaginate %}
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </custom-tabs>
+</custom-dashboard>
+
+
+

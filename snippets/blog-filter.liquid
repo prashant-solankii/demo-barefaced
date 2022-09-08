@@ -1,0 +1,22 @@
+{% if blog.tags.size > 0 %}
+  <section class="blog-filter offset-from-header">
+    <div class="blog-filter__inner">
+      <ul class="blog-filter__list">
+      <li class="blog-filter__list-item {% if current_tags == blank %}blog-filter__list-item--active{% endif %}" data-link="all"><a href="{{ blog.url }}">{{ 'blog.filter.all' | t }}</a></li>
+        {% for tag in blog.all_tags %}
+          {% if tag != 'Featured' %}
+            <li class="blog-filter__list-item {% if current_tags contains tag %}blog-filter__list-item--active{% endif %}" data-link="{{ tag | handle }}">{{ tag | link_to_tag: tag }}</li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+      <select class="blog-filter__select">
+        <option value="all">{{ 'blog.filter.all' | t }}</option>
+        {% for tag in blog.all_tags %}
+          {% if tag != 'Featured' %}
+            <option value="{{ tag | handle }}" {% if current_tags contains tag %}selected{% endif %}>{{ tag }}</option>
+          {% endif %}
+        {% endfor %}
+      </select>
+    </div>
+  </section>
+{% endif %}

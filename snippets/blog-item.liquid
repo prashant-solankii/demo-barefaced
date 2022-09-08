@@ -1,0 +1,17 @@
+{% if classes == blank %}
+  {% assign classes = '' %}
+{% endif %}
+
+<article class="blog-item {{ classes | join: ' ' }}">
+  <a href="{{ article.url }}" title="{{ article.title }}" class="blog-item__link">
+
+    {% render 'image-component' with
+      image: article.image,
+      sizes: '(min-width: 63.75em) 33vw, 50vw',
+      classes: 'blog-item__image objFit'
+    %}
+
+    <h5 class="blog-item__title">{{ article.title }}</h5>
+
+  </a>
+</article>

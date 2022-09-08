@@ -1,0 +1,11 @@
+<div class="newsletter-popup">
+  <div class="newsletter-popup__inner">
+    <button class="newsletter-popup__close close-button">
+      <div class="close-button__icon"></div>
+      <span class="screenreader-text">{{'newsletter.popup.close' | t }}</span>
+    </button>
+    {% capture newsletterTitle %}{% render 'icon-asterix' %}{{ 'newsletter.popup.title' | t }}{% endcapture %}
+    {% capture newsletterContent %}{{ 'newsletter.popup.content' | t }}{% endcapture %}
+    {% render 'newsletter', title: newsletterTitle, content: newsletterContent, id: 'newsletter-popup-signup', termsCheckbox: true %}
+  </div>
+</div>

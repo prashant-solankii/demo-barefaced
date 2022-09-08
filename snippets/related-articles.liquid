@@ -1,0 +1,34 @@
+{% capture all_the_tags %}{% for tag in article.tags %}{{ tag }} {% endfor %}{% endcapture %}
+{% assign current = article.id %}
+{% assign count = 0 %}
+{% assign relatedArticles = '' %}
+
+{% for article in blog.articles %}
+  {% if count < 3  %}
+    {% unless article.id == current %}
+      {% for tag in article.tags %}
+        {% if all_the_tags contains tag %}
+          {% capture articleHTML %}
+            {% render 'blog-item', classes: 'related-articles__item', article: article %}
+          {% endcapture %}
+          {% unless relatedArticles contains articleHTML %}
+            {% assign relatedArticles = relatedArticles | append: articleHTML %}
+            {% assign count = count | plus:1 %}
+          {% endunless %}
+        {% endif %}
+      {% endfor %}
+    {% endunless %}
+  {% endif %}
+{% endfor %}
+
+
+{% unless count == 0 %}
+  <section class="related-articles">
+    <div class="related-articles__inner">
+      <h2 class="related-articles__title">{{ 'blog.article.related' | t }}</h2>
+      <div class="related-articles__items">
+        {{ relatedArticles }}
+      </div>
+    </div>
+  </section>
+{% endunless %}

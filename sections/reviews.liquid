@@ -1,0 +1,43 @@
+<section class="reviews">
+  <header class="reviews__header">
+    {% if section.settings.subtitle != blank %}
+      <h6 class="reviews__header-subtitle">{{ section.settings.subtitle }}</h6>
+    {% endif %}
+    {% if section.settings.title != blank %}
+      {% render 'title', classes: 'reviews__header-title', title: section.settings.title %}
+    {% endif %}
+  </header>
+  <div class="reviews__carousel">
+  <div class="yotpo yotpo-reviews-carousel"
+    data-background-color="transparent"
+    data-mode="manual"
+    data-type="both"
+    data-review-ids="257754736,257697294,257774342,257774367,257697247,257726614"
+    data-show-bottomline="1"
+    data-show-navigation="1">&nbsp;</div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Reviews",
+    "settings": [
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Reviews",
+        "category": "Barefaced"
+      }
+    ]
+  }
+{% endschema %}

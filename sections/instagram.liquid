@@ -1,0 +1,42 @@
+<section class="instagram">
+  <header class="instagram__header">
+    {% if section.settings.title != blank %}
+      <div class="instagram__header-title">{{ section.settings.title }}</div>
+    {% endif %}
+
+    <a href="{{ settings['social_instagram_link'] }}" class="instagram__header-link instagram-header-link">
+      {% if section.settings.display_picture != blank %}
+        {% render 'image-component' with
+          image: section.settings.display_picture,
+          sizes: '4em',
+          classes: 'instagram-header-link__image objFit'
+        %}
+      {% endif %}
+      {% render 'icon-instagram' %}
+      {% assign instagramHandle = settings['social_instagram_link'] | split: '/' %}
+      {% assign handleSize = instagramHandle | size | minus: 1 %}
+      {% assign instagramHandle = instagramHandle[handleSize] %}
+      @{{ instagramHandle}}
+    </a>
+  </header>
+
+  <div class="yotpo yotpo-pictures-widget" data-gallery-id="621fd580a64b7e733b56a445"></div>
+</section>
+
+{% schema %}
+  {
+    "name": "Instagram",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "image_picker",
+        "id": "display_picture",
+        "label": "Display picture"
+      }
+    ]
+  }
+{% endschema %}

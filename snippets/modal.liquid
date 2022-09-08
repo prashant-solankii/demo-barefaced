@@ -1,0 +1,13 @@
+{% if classes == blank %}
+  {% assign classes = '' %}
+{% endif %}
+
+<div class="modal {{ classes | join: ' ' }}" {{ attributes }}>
+  <div class="modal__inner">
+    <button class="modal__close close-button">
+      <div class="close-button__icon"></div>
+      <span class="screenreader-text">{{ 'general.accessibility.close_modal' | t }}</span>
+    </button>
+    {{ html }}
+  </div>
+</div>

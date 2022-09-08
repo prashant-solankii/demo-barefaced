@@ -1,0 +1,60 @@
+<section class="faqs-container">
+  {% assign categories = 'all-about-your-regimen | All about your routine, product-usage-tips | Product Usage Tips, science-ingredients | Science and Ingredients, online-orders-shipping-returns | Online Orders, Shipping & Returns, subscriptions | Subscriptions, barefaced-loyalty-program | Barefaced Rewards Program, company | Skincare Consults' %}
+  {% render 'faqs', classes: 'faqs-container__inner', cta_title: section.settings.cta_title, cta_button_url: section.settings.cta_button_url, cta_button_text: section.settings.cta_button_text, faqs: section.blocks, categories: categories %}
+</section>
+
+{% schema %}
+  {
+    "name": "FAQs",
+    "settings": [
+      {
+        "type": "text",
+        "id": "cta_title",
+        "label": "CTA title",
+        "default": "Can’t find the answer you’re looking for?"
+      },
+      {
+        "type": "url",
+        "id": "cta_button_url",
+        "label": "CTA button URL"
+      },
+      {
+        "type": "text",
+        "id": "cta_button_text",
+        "label": "CTA button text"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "faq",
+        "name": "FAQ",
+        "settings": [
+          {
+            "type": "text",
+            "id": "question",
+            "label": "Question"
+          },
+          {
+            "type": "richtext",
+            "id": "answer",
+            "label": "Answer"
+          },
+          {
+            "type": "select",
+            "id": "category",
+            "label": "Category",
+            "options": [
+              { "value": "all-about-your-regimen", "label": "All about your routine"},
+              { "value": "product-usage-tips", "label": "Product Usage Tips"},
+              { "value": "science-ingredients", "label": "Science and Ingredients"},
+              { "value": "online-orders-shipping-returns", "label": "Online Orders"},
+              { "value": "subscriptions", "label": "Subscriptions"},
+              { "value": "barefaced-loyalty-program", "label": "Barefaced Rewards Program"},
+              { "value": "company", "label": "Skincare Consults"}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

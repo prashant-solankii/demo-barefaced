@@ -1,0 +1,47 @@
+{% if product.metafields.video.video_url != blank and product.metafields.video.image_url != blank %}
+  {% assign videoUrl = product.metafields.video.video_url %}
+  {% assign imageUrl = product.metafields.video.image_url %}
+  {% assign noFilter = true %}
+  {% if product.metafields.video.caption != blank %}
+    {% assign caption = product.metafields.video.caption %}
+  {% endif %}
+{% elsif section.settings.video_url != blank and section.settings.image != blank %}
+  {% assign videoUrl = section.settings.video_url %}
+  {% assign imageUrl = section.settings.image %}
+  {% assign noFilter = false %}
+  {% if section.settings.caption != blank %}
+    {% assign caption = section.settings.caption %}
+  {% endif %}
+{% endif %}
+
+
+{% if videoUrl != blank and imageUrl != blank %}
+  <section class="product-video animate-on-scroll">
+    <div class="product-video__inner">
+      {% render 'video', classes: 'product-video__video', video_url: videoUrl, image: imageUrl, noFilter: noFilter caption: caption %}
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Product Video",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "id": "video_url",
+        "type": "text",
+        "label": "Video URL"
+      },
+      {
+        "type": "richtext",
+        "id": "caption",
+        "label": "Caption"
+      }
+    ]
+  }
+{% endschema %}

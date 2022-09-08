@@ -1,0 +1,66 @@
+{% if section.settings.enable == true %}
+  <section class="blog-cta">
+    <div class="blog-cta__inner">
+      {% if section.settings.image != blank %}
+        {% render 'image-component' with
+          image: section.settings.image,
+          sizes: '(min-width: 48em) 33vw, 90vw',
+          classes: 'blog-cta__image objFit'
+        %}
+      {% endif %}
+      <div class="blog-cta__content">
+        {% if section.settings.subtitle != blank %}
+          <h6 class="blog-cta__content-subtitle">{{ section.settings.subtitle }}</h6>
+        {% endif %}
+        {% if section.settings.title != blank %}
+          {% render 'title', classes: 'blog-cta__content-title', title: section.settings.title %}
+        {% endif %}
+        {% if section.settings.link_url != blank or section.settings.link_text != blank %}
+          {% render 'text-link', url: section.settings.link_url, text: section.settings.link_text %}
+        {% endif %}
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Blog CTA",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable",
+        "label": "Enable",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle",
+        "default": "We believe in"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "link_text",
+        "label": "Link text",
+        "default": "Find out more"
+      },
+      {
+        "type": "url",
+        "id": "link_url",
+        "label": "Link url"
+      }
+    ]
+  }
+{% endschema %}
+

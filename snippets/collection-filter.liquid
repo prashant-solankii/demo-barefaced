@@ -1,0 +1,90 @@
+<section class="collection-filter {% if currentTags != blank %}collection-filter--active{% endif %}">
+  <div class="collection-filter__header">
+    <div class="collection-filter__size">
+      {{ 'collection.filter.all_html' | t: size: size }}
+    </div>
+    <div class="collection-filter__show">
+      <button class="collection-filter__show-button">
+        <span class="collection-filter__show-label collection-filter__show-label--show">
+          {{ 'collection.filter.show' | t }}
+        </span>
+        <span class="collection-filter__show-label collection-filter__show-label--hide">
+          {{ 'collection.filter.hide' | t }}
+        </span>
+        <div class="collection-filter__show-icon">
+          <div></div>
+          <div></div>
+        </div>
+      </button>
+    </div>
+    <div class="collection-filter__sort ">
+      <button class="collection-filter__sort-button">
+        {{ 'collection.filter.sort' | t }}
+        <div class="collection-filter__sort-icon">
+          {% render 'icon-chevron' %}
+        </div>
+      </button>
+      <form class="collection-filter__sort-form sort">
+        <h5 class="sort__title">{{ 'collection.filter.sort' | t }}</h5>
+        <div class="sort__inner">
+          {% for option in collection.sort_options %}
+            <div class="sort__row form-row form-row--radio">
+              <input id="{{ option.value }}" name="sort-by" type="radio" {% if option.value == collection.sort_by %}checked{% endif %}>
+              <label for="{{ option.value }}" >{{ option.name }}</label>
+            </div>
+          {% endfor %}
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="collection-filter__filter-sort filter-sort">
+    <div class="filter-sort__inner">
+      <form class="filter-sort__sort sort">
+        <h5 class="filter__col-title">{{ 'collection.filter.sort' | t }}</h5>
+        <div class="sort__inner">
+          {% for option in collection.sort_options %}
+            <div class="sort__row form-row form-row--radio">
+              <input id="{{ option.value }}" name="sort-by" type="radio" {% if option.value == collection.sort_by %}checked{% endif %}>
+              <label for="{{ option.value }}" >{{ option.name }}</label>
+            </div>
+          {% endfor %}
+        </div>
+      </form>
+
+      {% assign collectionFilters = shop.metafields.collection.headings | split: ', ' %}
+      {% assign collectionTags = shop.metafields.collection.filters | split: ', ' %}
+
+      <form action="" class="filter-sort__filter filter">
+        <div class="filter__inner">
+          <div class="filter__cols">
+            {% if collectionFilters != blank %}
+              {% for collectionFilter in collectionFilters %}
+                <div class="filter__col">
+                  <h5 class="filter__col-title">{{ collectionFilter }}</h5>
+                  {% for tag in collectionTags %}
+                    {% if tag contains collectionFilter %}
+                      {% assign tagHandle = tag | handle %}
+                      <div class="filter__col-row form-row form-row--checkbox">
+                        <input id="{{ tagHandle }}" type="checkbox" {% if current_tags contains tagHandle %}checked{% endif %}>
+                        <label for="{{ tagHandle }}">{{ tag | remove: collectionFilter | remove: '_' }}</label>
+                      </div>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              {% endfor %}
+            {% endif %}
+          </div>
+
+          <div class="filter__apply">
+            {% capture clearText %}{{ 'collection.filter.clear' | t }}{% endcapture %}
+            {% render 'text-link', text: clearText, classes: 'filter__apply-clear'   %}
+            {% capture buttonText %}{{ 'collection.filter.apply' | t }}{% endcapture %}
+            {% capture buttonAttributes %}data-collection-url="{{ collection.url }}"{% endcapture %}
+            {% render 'button', text: buttonText, style: 'tertiary', attributes: buttonAttributes, classes: 'filter__apply-button' %}
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

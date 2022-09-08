@@ -1,0 +1,53 @@
+{%- if section.blocks.size > 0 -%}
+  <div class="product-usps">
+    {%- for block in section.blocks -%}
+      {% if block.settings.title != blank %}
+        <div class="product-usps__usp product-usp">
+          <div class="product-usp__icon">
+            {% case block.settings.icon %}
+            {% when 'box' %}
+              {% render 'icon-box' %}
+            {% when 'heart' %}
+              {% render 'icon-heart' %}
+            {% when 'recycle' %}
+              {% render 'icon-recycling' %}
+            {% endcase %}
+          </div>
+          <h5 class="product-usp__title">{{ block.settings.title }}</h5>
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Product USPs",
+    "settings": [],
+    "max_blocks": 3,
+    "blocks": [
+      {
+        "type": "usp",
+        "name": "USP",
+        "settings": [
+          {
+            "type": "select",
+            "id": "icon",
+            "label": "Icon",
+            "options": [
+              { "value": "box", "label": "Box"},
+              { "value": "heart", "label": "Heart"},
+              { "value": "recycle", "label": "Recycle"}
+            ]
+          },
+          {
+            "type": "textarea",
+            "id": "title",
+            "label": "Title"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+

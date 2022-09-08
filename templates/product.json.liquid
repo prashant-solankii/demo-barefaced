@@ -1,0 +1,6 @@
+{% layout none %}
+  {
+    "product" : {{ product | json }},
+    "product_default_variant" : {{ product.variants.first | json }},
+    "options_with_values" : {{ product.options_with_values | json }}
+  }

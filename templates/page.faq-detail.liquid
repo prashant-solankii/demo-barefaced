@@ -1,0 +1,10 @@
+{% render 'back-to' %}
+{% render 'page-title', title: page_title %}
+
+{% if page.content != blank %}
+  <section class="rte-body rte">
+    <div class="rte-body__inner">
+      {{ page.content }}
+    </div>
+  </section>
+{% endif %}

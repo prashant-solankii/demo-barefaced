@@ -1,0 +1,38 @@
+{% if section.settings.image != blank or section.settings.title != blank or section.settings.content != blank %}
+  <div class="white-two-col-block">
+    {% render 'two-col-block', classes: 'white-two-col-block__inner', image: section.settings.image, subtitle: section.settings.subtitle, title: section.settings.title, content: section.settings.content, linkUrl: section.settings.link_url, linkText: section.settings.link_text %}
+  </div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Two Col Block",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "link_text",
+        "label": "Link text"
+      },
+      {
+        "type": "url",
+        "id": "link_url",
+        "label": "Link url"
+      }
+    ]
+  }
+{% endschema %}

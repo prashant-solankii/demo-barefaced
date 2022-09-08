@@ -1,0 +1,40 @@
+<header class="article__banner article-banner">
+
+  <div class="article-banner__content">
+
+    <a href="{{ blog.url }}" class="article-banner__content-back">
+      {% render 'icon-back' %}
+      {{ 'blog.article.back_to_blog' | t: title: blog.title }}
+    </a>
+
+    <h1 class="article-banner__content-title">{{ article.title }}</h1>
+
+    {% if article.excerpt.size > 0 %}
+      <p class="article-banner__content-summary">
+        {{ article.excerpt }}
+      </p>
+    {% endif %}
+
+    <div class="article-banner__content-info">
+      {% render 'social-sharing', classes: 'article-banner__content-sharing', share_title: article.title, share_permalink: article.url, share_image: article.image %}
+      <div class="article-banner__content-length article-banner-length">
+        <h5 class="article-banner-length__title">{{ 'blog.article.length_title' | t }}</h5>
+        <div class="article-banner-length__time">{{ 'blog.article.length_html' | t }}</div>
+      </div>
+    </div>
+
+  </div>
+
+  {% if article.image %}
+    {% render 'image-component' with
+      image: article.image,
+      sizes: '(min-width: 45em) 33vw, 100vw',
+      classes: 'article-banner__image'
+    %}
+  {% endif %}
+
+  <!-- <time class="article-header__date">{{ article.published_at | time_tag: format: 'date' }}</time>
+
+  <div class="article-header__author">{{ 'blog.article.by_author' | t: author: article.author }}</div> -->
+
+</header>

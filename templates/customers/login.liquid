@@ -1,0 +1,38 @@
+<section class="account-blocks account-blocks--split" id="CustomerLoginForm">
+
+  <div class="account-blocks__message hide" id="ResetSuccess">
+    <div class="form-message form-message--success">
+      {{ 'customer.login.recover_password.success' | t }}
+    </div>
+  </div>
+
+  <div class="account-blocks__block">
+    {% render 'customer-login-form' %}
+  </div>
+
+  <div class="account-blocks__block account-block-info">
+    <h4 class="account-block-info__title">{{ 'customer.login.create_account.title' | t }}</h4>
+    <p class="account-block-info__intro">{{ 'customer.login.create_account.text' | t }}</p>
+    <ul class="account-block-info__list">
+      {% capture icon %}{% render 'icon-asterix' %}{% endcapture %}
+      {{ 'customer.login.create_account.benefits_html' | t: icon: icon }}
+    </ul>
+    {%- capture buttonText -%}{{ 'customer.login.create_account.button_text' | t }}{%- endcapture -%}
+    {% render 'button', url: routes.account_register_url, text: buttonText, style: 'secondary' %}
+    {%- comment -%}
+      {% if shop.checkout.guest_login %}
+        <h2>{{ 'customer.login.guest_title' | t }}</h2>
+        {% form 'guest_login' %}
+          {%- capture buttonText -%}{{ 'customer.login.guest_continue' | t }}{%- endcapture -%}
+          {% render 'button', type: 'submit', text: buttonText  %}
+        {% endform %}
+      {% endif %}
+    {%- endcomment -%}
+  </div>
+</section>
+
+<section class="account-blocks hide" id="RecoverPasswordForm">
+  <div class="account-blocks__block">
+    {% render 'customer-recover-password-form' %}
+  </div>
+</section>

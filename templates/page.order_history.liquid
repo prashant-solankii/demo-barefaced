@@ -1,0 +1,127 @@
+{{ 'global.css' | asset_url | stylesheet_tag }}
+{{ 'recharge.css' | asset_url | stylesheet_tag }}
+
+<custom-dashboard>
+    <custom-tabs class="section-content d-block">
+        <div class="account-baneer">
+            <div class="container">
+                <div class="d-flex justify-content-center">
+                    <div class="col-12 text-center">
+                        <h2 class="text-capitalize mb-7">Hi, {{ customer.first_name }}, Welcome Back!</h2>
+                        <div class="account-menu-name overflow-hidden">
+                            <ul class="nav-pills overflow-auto" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/account#accountTab">Manage Subscriptions</a>
+                                </li>
+                                {% if customer.metafields.subscriptions.customer_string %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/account#billingTab" data-subscription-billing>Subscription Billing</a>
+                                </li>
+                                {% endif %}
+                                <li class="nav-item open">
+                                    <a class="nav-link" href="/pages/order-history">Order History</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ routes.account_addresses_url }}">Addresses</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/pages/loyalty">Rewards</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ routes.account_logout_url }}">Log Out</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pt-lg-10 pt-7">
+            <div class="container">
+                <div class="tab-content" id="myTabContent">
+                    {%- comment -%}Subscription Order Tab:{%- endcomment -%}
+                    <div class="tab-pane tabcontent open" id="accountTab" role="tabpanel" aria-labelledby="subscriptions-tab">
+                        <div class="row">
+                            <div class="col-lg-3 text-lg-start text-center mb-md-0 mb-8">
+                                <div class="d-flex flex-lg-row flex-column align-items-center mb-5">
+                                    <div class="profile position-relative me-lg-4 mb-4 mb-lg-0">
+                                        <p class="fw-bold m-0 position-absolute text-uppercase text-white w-auto">{{ customer.first_name | slice: 0 }}{{ customer.last_name | slice: 0 }}</p>
+                                    </div>
+                                    <p class="custome-name fw-bold ls-0 m-0 text-capitalize">{{ customer.name }}</p>
+                                </div>
+                                <div>
+                                    <p class="mb-4">
+                                        <a href="mailto:{{ customer.email }}" class="fw-normal ls-0">{{ customer.email }}</a>
+                                    </p>
+                                    <p class="mb-4 fw-normal ls-0 text-black"> Password:**********
+                                        <a href="/account/login#recover" class="text-capitalize fw-medium ls-0 ps-2 text-decoration-underline" style="font-size: 14px;">reset</a>
+                                    </p>
+                                    <p class="fw-normal ls-0 mb-0">
+                                        <span data-order-count="{{ customer.orders_count }}">Total Orders:</span> 
+                                        {{ customer.orders_count }}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-9">
+                                <section class="dashboard p-0">
+                                    {% paginate customer.orders by 20 %}
+                                      <div class="dashboard__orders orders m-0">
+                                        <header class="orders__header orders-header text-center text-capitalize">
+                                          <h3 class="orders-header__heading">{{ 'customer.account.orders.title' | t }}</h3>
+                                        </header>
+                                        {% if customer.orders.size != 0 %}
+                                          <table class="orders__table orders-table responsive-table">
+                                            <thead>
+                                                <tr>
+                                                <th>{{ 'customer.account.orders.order_number' | t }}</th>
+                                                <th>{{ 'customer.account.orders.date' | t }}</th>
+                                                <th>{{ 'customer.account.orders.payment_status' | t }}</th>
+                                                <th>{{ 'customer.account.orders.fulfillment_status' | t }}</th>
+                                                <th>{{ 'customer.account.orders.total' | t }}</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            {% for order in customer.orders %}
+                                              <tr class="responsive-table-row">
+                                                <td data-label="{{ 'customer.account.orders.order_number' | t }}">
+                                                  <a href="{{ order.customer_url }}" aria-label="{{ 'customer.account.orders.order_number_link' | t: number: order.name }}">{{ order.name }}</a>
+                                                </td>
+                                                <td data-label="{{ 'customer.account.orders.date' | t }}">{{ order.created_at | time_tag: '%m/%d/%Y' }}</td>
+                                                <td data-label="{{ 'customer.account.orders.payment_status' | t }}">{{ order.financial_status_label }}</td>
+                                                <td data-label="{{ 'customer.account.orders.fulfillment_status' | t }}">{{ order.fulfillment_status_label }}</td>
+                                                <td data-label="{{ 'customer.account.orders.total' | t }}">{{ order.total_price | money }}</td>
+                                              </tr>
+                                            {% endfor %}
+                                            </tbody>
+                                          </table>
+                                        {% else %}
+                                          <p>{{ 'customer.account.orders.none' | t }}</p>
+                                        {% endif %}
+                                        {%- if paginate.pages > 1 -%}
+                                          {% render 'pagination', paginate: paginate %}
+                                        {%- endif -%}
+                                      </div>
+                                    {% endpaginate %}
+                                    <!-- <div class="dashboard__addresses dashboard-addresses">
+                                      <h4 class="">{{ 'customer.account.details' | t }}</h4>
+                                      {{ customer.default_address | format_address }}
+                                      <p>
+                                        {% capture linkText %}{{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }}){% endcapture %}
+                                        {% render 'text-link', url: routes.account_addresses_url, text: linkText %}
+                                      </p>
+                                    </div> -->
+                                </section> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </custom-tabs>
+
+    {%- comment -%}{% include 'modal-subscription' %}{%- endcomment -%}
+</custom-dashboard>
+
+{%- comment -%}<script src="{{ 'flatpicker.js' | asset_url }}" defer></script>{%- endcomment -%}
+{%- comment -%}<script src="{{ 'recharge.js' | asset_url }}" defer></script>{%- endcomment -%}

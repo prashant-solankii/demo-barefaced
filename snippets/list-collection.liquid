@@ -1,0 +1,21 @@
+{% if classes == blank %}
+  {% assign classes = '' %}
+{% endif %}
+
+<div class="list-collection {{ classes | join: ' ' }}">
+  <div class="list-collection__image">
+    {%- assign image_object = collection.image | default: collection.products.first.featured_image -%}
+    {% render 'image-component' with
+      image: image_object,
+      classes: 'objFit',
+      sizes: '(min-width: 45em) 50vw, 100vw',
+    %}
+  </div>
+  <div class="list-collection__content rte">
+    <h2 class="list-collection__content-title">{{ collection.title }}</h2>
+    {% if collection.description != blank %}
+      <p class="list-collection__content-description">{{ collection.description | strip_html }}</p>
+    {% endif %}
+    {% render 'button', classes: 'list-collection__content-button', url: collection.url, text: collection.title, style: 'tertiary' %}
+  </div>
+</div>

@@ -1,0 +1,67 @@
+<section class="contact-form animate-on-scroll">
+  {%- assign formId = 'contact_form' -%}
+  {% form 'contact', class: 'form contact-form__form'  %}
+
+    {% render 'form-status', form: form, form_id: formId %}
+
+    <header class="form-header form-header--left">
+      <div class="form-header__title">{{ 'contact.form.title' | t }}</div>
+    </header>
+
+    <div class="form__row form-row">
+      <input type="text"
+        name="contact[name]"
+        id="{{ formId }}_name"
+        required
+        value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}">
+      <label for="{{ formId }}_name">{{ 'contact.form.name.label' | t }}</label>
+    </div>
+
+    <div class="form__row form-row {% if form.errors contains 'email' %} form-row--error{% endif %}">
+      <input type="email"
+        name="contact[email]"
+        id="{{ formId }}_email"
+        value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+        spellcheck="false"
+        autocomplete="off"
+        autocapitalize="off"
+        aria-required="true"
+        required
+        {%- if form.errors contains 'email' -%}
+          aria-invalid="true"
+          aria-describedby="{{ formId }}-email-error"
+          data-error="{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}."
+        {%- endif -%}>
+      <label for="{{ formId }}_email">{{ 'contact.form.email.label' | t }}</label>
+    </div>
+
+    {%- comment -%}
+      <div class="form__row form-row">
+        <input type="tel"
+          name="contact[phone]"
+          id="{{ formId }}_phone"
+          pattern="[0-9\-]*"
+          value="{% if form[phone] %}{{ form[phone] }}{% elsif customer %}{{ customer.phone }}{% endif %}">
+        <label for="{{ formId }}_phone">{{ 'contact.form.phone.label' | t }}</label>
+      </div>
+    {%- endcomment -%}
+
+    <div class="form__row form-row">
+      <textarea rows="6"
+        name="contact[body]"
+        required
+        id="{{ formId }}_message">
+        {%- if form.body -%}
+          {{- form.body -}}
+        {%- endif -%}
+      </textarea>
+      <label for="{{ formId }}_message">{{ 'contact.form.message.label' | t }}</label>
+    </div>
+
+    <div class="form__row form-row form-row--submit-right">
+      {% capture buttonText %}{{ 'contact.form.submit' | t }}{% endcapture %}
+      {% render 'button', type: 'submit', style: 'tertiary', text: buttonText %}
+    </div>
+
+  {% endform %}
+</section>

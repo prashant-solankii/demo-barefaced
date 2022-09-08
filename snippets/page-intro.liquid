@@ -1,0 +1,13 @@
+<section class="page-intro animate-on-scroll">
+  <div class="page-intro__inner">
+    {% if section.settings.subtitle != blank %}
+      <h6 class="page-intro__subtitle">{{ section.settings.subtitle }}</h6>
+    {% endif %}
+    {% if section.settings.title != blank %}
+      <h2 class="page-intro__title">{{ section.settings.title }}</h2>
+    {% endif %}
+    {% if section.settings.intro != blank %}
+      <div class="page-intro__intro rte">{{ section.settings.intro }}</div>
+    {% endif %}
+  </div>
+</section>

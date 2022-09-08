@@ -1,0 +1,35 @@
+{% if classes == blank %}
+  {% assign classes = '' %}
+{% endif %}
+
+{% if sizes == blank %}
+  {% assign sizes = '100vw' %}
+{% endif %}
+
+{% if noFilter == blank %}
+  {% assign noFilter = false %}
+{% endif %}
+
+<div class="video {{ classes | join: ' ' }}">
+  <div class="video__wrapper">
+    <video data-lazy-load-src="{{ video_url }}" frameborder="0" class="video__video" controls></video>
+    {% if image != blank %}
+      {% render 'image-component' with
+        image: image,
+        nofilter: noFilter,
+        sizes: sizes,
+        classes: 'video__image objFit'
+      %}
+    {% endif %}
+    <button class="video__button">
+      <div class="video__button-icon">
+        <span>{{ 'general.video.play' | t }}</span>
+      </div>
+    </button>
+  </div>
+  {% if caption %}
+    <div class="video__caption">
+      {% render 'icon-asterix' %} {{ caption }}
+    </div>
+  {% endif %}
+</div>

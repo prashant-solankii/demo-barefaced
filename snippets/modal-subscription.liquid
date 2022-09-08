@@ -1,0 +1,958 @@
+{%- comment -%} main subcription model {%- endcomment -%}
+
+<modal-dialog id="subscriptionModal" class="subscriptionModal">
+    <div class="modalRecharge common-box" data-common-box>
+        <div class="modal-dialog modal-dialog-centered" data-modal-dialog>
+        
+            <!-- Manage Subscription -->
+            <div class="modal-content d-none" data-manage-subscription-modal data-modal="manage-subscription">
+                <div class="modal-head position-relative">
+                    <h5 class="mb-0 text-capitalize text-center">Edit Your Subscription</h5>
+                    <button class="close-quickshop" id="ModalClose-subscriptionModal" type="button" aria-label="Close subscriptionModal Modal" data-close-modal>
+                        <i class="close-icon"></i>
+                    </button>
+                </div>
+                <div class="mobile-scroll">
+                    <div class="modal-body">
+                        <div class="row mx-n2">
+                            <div class="col-6 col-md-4 mb-md-0 mb-3 px-2">
+                                <div class="individual-option d-flex flex-column text-center h-100 change-product-size-div" data-modal-btn data-change-product-size-div>
+                                    <img src="https://cdn.shopify.com/s/files/1/0567/1868/8418/files/change-frequency.svg?v=1655790437" alt="change-frequency" class="mw-100">
+                                    <p class="fw-bold text-capitalize lh-base ls-0 mb-0">Change Product Size/Quantity</p>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-4 mb-md-0 mb-3 px-2">
+                                <div class="individual-option d-flex flex-column text-center h-100 change-delivery-frequency-div" data-modal-btn data-change-delivery-frequency-div>
+                                    <img src="https://cdn.shopify.com/s/files/1/0567/1868/8418/files/change-delivery.svg?v=1655790437" alt="change-delivery" class="mw-100">
+                                    <p class="fw-bold text-capitalize lh-base ls-0 mb-0">Change Delivery Frequency</p>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4 mb-md-0 mb-3 px-2">
+                                <div class="individual-option d-flex flex-column text-center h-100 skip-change-order-date-div" data-modal-btn data-skip-change-order-date-div>
+                                    <img src="https://cdn.shopify.com/s/files/1/0567/1868/8418/files/change-date.svg?v=1655790437" alt="change-date" class="mw-100">
+                                    <p class="fw-bold text-capitalize lh-base ls-0 mb-0">Skip or Change Order Date</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 text-center d-md-none d-block mt-3">
+                            <a href="#" class="text-capitalize font-size-sm fw-medium" data-modal-btn data-cancle-subscription-btn>Cancel Subscription</a>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="d-md-flex align-items-center w-100 m-0">
+                            <div class="col-12 col-md-6 text-center text-md-start need_help mt-2 mt-md-0">
+                                <div class="d-flex align-items-center font-size-md text-nowrap">
+                                    <p class="fw-normal lh-base mb-0"><span class="text-shell_coral fw-bold lh-base pe-1">Need Help?</span>Email us at<a href="mailto:hello@barefaced.com" title="mailto:hello@barefaced.com" class="text-decoration-underline lh-base fw-normal ps-1">hello@barefaced.com</a></p>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 text-center text-md-end cancel-note d-md-block d-none">
+                                <a href="#" class="text-capitalize font-size-sm fw-medium" data-modal-btn data-cancle-subscription-btn>Cancel Subscription</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Change Product Size/Quantity -->
+            <div class="modal-content change-product-size d-none" data-change-product-size-modal>
+                <div class="modal-head position-relative">
+                    <div class="d-flex align-items-center mx-0">
+                        <div class="back-arrow position-absolute">
+                            <button class="modal__back-button bg-transparent border-0" data-back_button="data-first_step" id="modalBack-button" type="button" aria-label="back" data-back-modal>
+                                {% render 'icon-arrow' %}
+                            </button>
+                        </div>
+                        <div class="col-12 text-center">
+                            <h5 class="mb-0 text-capitalize">Change Product Size/Quantity</h5>
+                        </div>
+                        <div class="close-quickshop">
+                            <a href="#" id="ModalClose-subscriptionModal" tabindex="0" data-close-modal><i class="close-icon"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-scroll">
+                    <div class="modal-body">
+                        <div class="subscription-product d-md-flex align-items-center">
+                            <div class="product-img mb-md-0 mb-4">
+                                <img src="" data-subscription-product-img>
+                            </div>
+                            <div class="w-100 pe-2">
+                                <p class="font-size-xl fw-bold mb-md-5 mb-5 lh-sm" data-subscription-product-title></p>
+                                <div data-subscription-product-variants-div></div>
+                                <div class="product-content-form__quantity product-quantity m-0">
+                                    <div class="quantity-incrementor">
+                                    <label for="Quantity" class="quantity-incrementor__label font-size-md">Quantity:</label>
+                                    <button class="quantity-incrementor__minus" type="button" data-subscription-product-qty-btn data-subscription-qty-minus-btn><span class="screenreader-text">{{ 'incrementor.minus' | t }}</span></button>
+                                    <input class="quantity-incrementor__input" type="number" id="Quantity" name="quantity" value="1" min="1" data-subscription-product-qty>
+                                    <button class="quantity-incrementor__plus" type="button" data-subscription-product-qty-btn><span class="screenreader-text">{{ 'incrementor.plus' | t }}</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 d-md-none d-block pt-4">
+                            <div class="col-12">
+                                <a href="#" class="btn btn-fill btn-block d-none" data-update-subscription-btn>
+                                    <span class="add-text">Update Subscription</span>
+                                    <span class="spinner"></span>
+                                </a>
+                            </div>
+                            <div class="col-12 pt-4 text-center">
+                                <a href="#" class="text-capitalize fw-bold d-none" data-close-modal data-update-subscription-cancel-btn>Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="d-flex align-items-center flex-md-row flex-column w-100 m-0">
+                            <div class="col-md-6 text-center text-md-start need_help mt-2 mt-md-0 order-2 order-md-0">
+                                <div class="d-flex align-items-center font-size-md text-nowrap">
+                                    <p class="fw-normal lh-base mb-0"><span class="text-shell_coral lh-base fw-bold pe-1">Need Help?</span>Email us at<a href="mailto:hello@barefaced.com" title="mailto:hello@barefaced.com" class="text-decoration-underline fw-normal lh-base ps-1">hello@barefaced.com</a></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 d-md-flex align-items-center justify-content-end order-1 order-md-0 d-none">
+                                <div class="text-md-end text-center">
+                                    <a href="javascript:void(0)" class="text-capitalize fw-bold pe-4 d-none" data-close-modal data-update-subscription-cancel-btn>Cancel</a>
+                                </div>
+                                <div class="text-end">
+                                    <a href="#" class="btn btn-fill d-none" data-update-subscription-btn>
+                                        <span class="add-text">Update Subscription</span>
+                                        <span class="spinner"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Change Delivery Frequency -->
+            <div class="modal-content d-none" data-change-delivery-frequency-modal>
+                <div class="modal-head position-relative">
+                    <div class="d-flex align-items-center mx-0">
+                        <div class="back-arrow position-absolute">
+                            <button class="modal__back-button bg-transparent border-0" data-back_button="data-first_step" id="modalBack-button" type="button" aria-label="back" data-back-modal>
+                                {% render 'icon-arrow' %}
+                            </button>
+                        </div>
+                        <div class="col-12 text-center">
+                            <h5 class="mb-0 text-capitalize">Change Delivery Frequency</h5>
+                        </div>
+                        <div class="close-quickshop">
+                            <a href="#" id="ModalClose-subscriptionModal" tabindex="0" data-close-modal><i class="close-icon"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-scroll">
+                    <div class="modal-body">
+                        <div class="text-center mt-md-3">
+                            <p class="fw-medium font-size-xl d-md-block d-none mb-4 pb-1">How often would you like to receive your product?</p>
+                        </div>
+                        <div class="row mx-n2">
+                            <div class="col-12 col-md-6 mb-3 px-2">
+                                <div class="change-frequency position-relative" data-charge-interval-frequency="1" data-order-interval-frequency="1" data-order-interval-unit="month" data-delivery-frequency>
+                                    <input type="radio" id="1_month" name="frequency1" data-frequency-input>
+                                    <label for="1_month">
+                                        <span class="checkbox-sub"></span>
+                                        <p class="fw-bold mb-0 lh-base">Every 1 Month</p>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 mb-3 px-2">
+                                <div class="change-frequency position-relative skip-option" data-charge-interval-frequency="2" data-order-interval-frequency="2" data-order-interval-unit="month" data-delivery-frequency>
+                                    <input type="radio" id="2_month" name="frequency1" data-frequency-input>
+                                    <label for="2_month">
+                                        <span class="checkbox-sub"></span>
+                                        <p class="fw-bold mb-0 lh-base">Every 2 months</p>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 mb-3 px-2">
+                                <div class="change-frequency position-relative skip-option" data-charge-interval-frequency="3" data-order-interval-frequency="3" data-order-interval-unit="month" data-delivery-frequency>
+                                    <input type="radio" id="3_month" name="frequency1" data-frequency-input>
+                                    <label for="3_month">
+                                        <span class="checkbox-sub"></span>
+                                        <p class="fw-bold mb-0 lh-base">Every 3 Months</p>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 mb-3 px-2">
+                                <div class="change-frequency position-relative skip-option" data-charge-interval-frequency="4" data-order-interval-frequency="4" data-order-interval-unit="month" data-delivery-frequency>
+                                    <input type="radio" id="4_month" name="frequency1" data-frequency-input>
+                                    <label for="4_month">
+                                        <span class="checkbox-sub"></span>
+                                        <p class="fw-bold mb-0 lh-base">Every 4 months</p>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 d-md-none d-block pt-md-4">
+                            <div class="col-12">
+                                <a href="#" class="btn btn-fill btn-block d-none" data-update-frequency-btn>
+                                    <span class="add-text">Update Frequency</span>
+                                    <span class="spinner"></span>
+                                </a>
+                            </div>
+                            <div class="col-12 pt-4 text-center">
+                                <a href="#" class="text-capitalize fw-bold d-none" data-close-modal data-update-frequency-cancel-btn>Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="d-flex align-items-center flex-md-row flex-column w-100 m-0">
+                            <div class="col-md-6 text-center text-md-start need_help mt-2 mt-md-0 order-2 order-md-0">
+                                <div class="d-flex align-items-center font-size-md text-nowrap">
+                                    <p class="fw-normal lh-base mb-0"><span class="text-shell_coral lh-base fw-bold pe-1">Need Help?</span>Email us at<a href="mailto:hello@barefaced.com" title="mailto:hello@barefaced.com" class="text-decoration-underline lh-base fw-normal ps-1">hello@barefaced.com</a></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 d-md-flex align-items-center justify-content-end order-1 order-md-0 d-none">
+                                <div class="text-md-end text-center">
+                                    <a href="#" class="text-capitalize fw-bold pe-3 d-none" data-close-modal data-update-frequency-cancel-btn>Cancel</a>
+                                </div>
+                                <div class="text-end">
+                                    <a href="#" class="btn btn-fill d-none" data-update-frequency-btn>
+                                        <span class="add-text">Update Frequency</span>
+                                        <span class="spinner"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skip or Change Order Date -->
+             <div class="modal-content skip-change-order d-none" data-skip-change-order-date-modal>
+                <div class="modal-head position-relative">
+                    <div class="d-flex align-items-center mx-0">
+                        <div class="back-arrow position-absolute">
+                            <button class="modal__back-button bg-transparent border-0" data-back_button="data-first_step" id="modalBack-button" type="button" aria-label="back" data-back-modal>
+                                {% render 'icon-arrow' %}
+                            </button>
+                        </div>
+                        <div class="col-12 text-center">
+                            <h5 class="mb-0 text-capitalize">Skip or Change Order Date</h5>
+                        </div>
+                        <div class="close-quickshop">
+                            <a href="#" id="ModalClose-subscriptionModal" tabindex="0" data-close-modal><i class="close-icon"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-scroll">
+                    <div class="modal-body">                    
+                        <div class="row mx-n2">
+                            <div class="col-12 col-md-6 mb-md-0 mb-3 px-2">
+                                <div class="hold-box position-relative skip-option" data-skip-next-order-div>
+                                    <div class="select-border">
+                                        <img src="https://cdn.shopify.com/s/files/1/0567/1868/8418/files/skip-order.svg?v=1655877622" alt="change-frequency">
+                                        <p class="fw-bold lh-base mb-0">Skip Next Order</p>
+                                        <div class="order-date d-none" data-skip-next-order-details-div>
+                                            <p class="font-size-sm fw-normal my-4 lh-base" data-upcoming-order-date></p>
+                                            <p class="font-size-sm fw-normal mb-0 lh-base" data-upcoming-next-order-date></p>
+                                        </div>
+                                    </div>
+                            </div>
+                            </div>
+                            <div class="col-12 col-md-6 mb-md-0 mb-3 px-2">
+                                
+                                <div class="hold-box position-relative skip-option" >
+                                    <div class="select-border">
+                                        <div data-change-next-order-div>
+                                            <img src="https://cdn.shopify.com/s/files/1/0567/1868/8418/files/change-order.svg?v=1655877622" alt="change-frequency">
+                                            <p class="fw-bold lh-base mb-0">Change Next Order Date</p>
+                                        </div>
+                                        
+                                        <div class="order-date d-none" data-change-next-order-details-div>
+                                            <p class="font-size-sm fw-normal lh-base mb-2 mt-4">Your next order date will be on:</p>
+                                            <!-- <p>Select date</p> -->
+                                            <input type="text" id="changeNextOrderDate" class="lh-base p-3" placeholder="Select date" data-input data-change-next-order-date>
+                                        </div>
+                                    </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="col-12 d-md-none d-block pt-1">
+                            <div class="col-12">
+                                <a href="#" class="btn btn-fill btn-block d-none" data-skip-next-order-btn>
+                                    <span class="add-text">Skip Next Order</span>
+                                    <span class="spinner"></span>
+                                </a>
+                                <a href="#" class="btn btn-fill btn-block d-none btn-disabled" data-change-next-order-btn>
+                                    <span class="add-text">Change Next Order Date</span>
+                                    <span class="spinner"></span>
+                                </a>
+                            </div>
+                            <div class="col-12 pt-4 text-center">
+                                <a href="#" class="text-capitalize fw-bold d-none" data-close-modal data-skip-change-cancel-btn>Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="d-flex align-items-center flex-md-row flex-column w-100 m-0">
+                            <div class="col-md-6 text-center text-md-start need_help mt-2 mt-md-0 order-2 order-md-0">
+                                <div class="d-flex align-items-center font-size-md text-nowrap">
+                                    <p class="fw-normal lh-base mb-0"><span class="text-shell_coral lh-base fw-bold pe-1">Need Help?</span>Email us at<a href="mailto:hello@barefaced.com" title="mailto:hello@barefaced.com" class="text-decoration-underline lh-base fw-normal ps-1">hello@barefaced.com</a></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 d-md-flex align-items-center justify-content-end order-1 order-md-0 d-none">
+                                <div class="text-md-end text-center">
+                                    <a href="#" class="text-capitalize fw-bold pe-4 d-none" data-close-modal data-skip-change-cancel-btn>Cancel</a>
+                                </div>
+                                <div class="">
+                                    <a href="#" class="btn btn-fill d-none" data-skip-next-order-btn>
+                                        <span class="add-text">Skip Next Order</span>
+                                        <span class="spinner"></span>
+                                    </a>
+                                    <a href="#" class="btn btn-fill d-none btn-disabled" data-change-next-order-btn>
+                                        <span class="add-text">Change Next Order Date</span>
+                                        <span class="spinner"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cancel Subscription -->            
+            <div class="modal-content d-none" data-cancel-subscription-modal>
+                <div class="modal-head position-relative">
+                    <div class="d-flex align-items-center mx-0">
+                        <div class="back-arrow position-absolute">
+                            <button class="modal__back-button bg-transparent border-0" id="modalBack-button" type="button" aria-label="back" data-back-modal>
+                                {% render 'icon-arrow' %}
+                            </button>
+                        </div>
+                        <div class="col-12 text-center">
+                            <h5 class="mb-0 text-capitalize" data-modal-btn data-cancle-my-subscription-btn>Cancel My Subscription</h5>
+                        </div>
+                        <div class="close-quickshop">
+                            <a href="#" id="ModalClose-subscriptionModal" tabindex="0" data-close-modal><i class="close-icon"></i></a>
+                        </div>            
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center h6 fw-bold lh-sm mb-2 pb-1 mt-3">We’re sorry to see you go.</p>
+                    <div class="row px-md-4 cancel-subscription">
+                        <div class="col-12">
+                            <p class="text-center fw-normal lh-base mb-5">To help us improve, please let us know why you are cancelling your subscription.</p>
+                            <select name="reason" aria-label="reason" id="reason" class="form-control mb-3" placeholder="Select a reason" required data-cancel-subscription-reason-select>
+                                <option value="null">Select a reason</option>
+                                <option value="This is too expensive">This is too expensive</option>
+                                <option value="This was created by accident">This was created by accident</option>
+                                <option value="I already have more than I need">I already have more than I need</option>                                
+                                <option value="I no longer use this product">I no longer use this product</option>                                
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <textarea name="Feedback" placeholder="Type your feedback here…" aria-label="Feedback" id="feedBack" class="disabled form-control opacity" required rows="4" data-cancel-subscription-reason-text></textarea>
+                        </div>
+                        <div class="text-center mb-md-0 mb-sm-7">
+                            <a href="#" class="btn btn-fill d-none" data-modal-btn data-cancle-my-subscription-btn>Cancel My Subscription</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Before you go… -->
+            <div class="modal-content d-none" data-before-you-go-modal>
+                <div class="modal-head position-relative">
+                    <div class="d-flex align-items-center mx-0">
+                        <div class="back-arrow position-absolute">
+                            <button class="modal__back-button bg-transparent border-0" data-back_button="data-first_step" id="modalBack-button" type="button" aria-label="back" data-back-cancle-modal>
+                                {% render 'icon-arrow' %}
+                            </button>
+                        </div>
+                        <div class="col-12 text-center">
+                            <h5 class="mb-0 text-capitalize" style="opacity: 0;">Before you go…</h5>
+                        </div>
+                        <div class="close-quickshop">
+                            <a href="#" id="ModalClose-subscriptionModal" tabindex="0" data-close-modal><i class="close-icon"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body d-flex align-items-center pb-md-12 pb-13 mb-md-0 mb-1">
+                    <div class="col-12 text-center">
+                        <h3 class="confirmed-title ls-n1 text-capitalize mb-3">Before you go…</h3>
+                        <p class="fw-normal mb-4 pb-1">We’d love to make things right. Keep your subscription and get 10% off your next order.</p>
+                        <div class="mb-6">
+                            <a class="btn btn-fill" data-keep-subscription-btn>
+                                <span class="add-text">Keep My Subscription & Save 10%</span>
+                                <span class="spinner"></span>
+                            </a>
+                        </div>
+                        <a href="#" class="text-link link-button btn px-0 pt-0 pb-1" data-cancle-subscription-link>
+                            <span class="add-text">No Thanks, Cancel My Subscription</span>
+                            <span class="spinner"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Edit Shipping addresss  -->
+            <div class="modal-content d-none" data-edit-shipping-address-modal>
+                <div class="modal-head pb-md-4 position-relative">
+                    <h5 class="mb-0 text-capitalize text-center">Edit Shipping Address</h5>
+                    <button class="close-quickshop" id="ModalClose-subscriptionModal" type="button" aria-label="Close subscriptionModal Modal" data-close-modal>
+                        <i class="close-icon"></i>
+                    </button>
+                </div>
+                <div class="mobile-scroll">
+                    <div class="modal-body" shipping-address-validate>
+                        <div class="text-center error-parent d-none" data-error-div>
+                            <p class="text-danger fw-medium" data-error-msg></p>
+                        </div>
+                        <div class="row mx-n2">
+                            <div class="edit-form col-md-6 px-2">
+                                <div class="form-row">
+                                    <input type="text" id="first_name" data-first-name name="first_name">
+                                    <label for="first_name">Name</label>
+                                </div>
+                            </div>
+                            <div class="edit-form col-md-6 px-2">
+                                <div class="form-row">
+                                    <input type="text" id="last_name" data-last-name name="last_name">
+                                    <label for="last_name">Last Name</label>
+                                </div>
+                            </div>
+                            <div class="edit-form col-12 px-2">
+                                <div class="form-row">
+                                    <input id="addresss1" type="text" data-add1 name="addresss1">
+                                    <label for="addresss1">Address Line 1</label>
+                                </div>
+                            </div>
+                            <div class="edit-form col-12 px-2">
+                                <div class="form-row">
+                                    <input id="address2" type="text" data-add2 name="address2">
+                                    <label for="address2">Address Line 2</label>
+                                </div>
+                            </div>
+                            <div class="edit-form col-md-6 col-12 px-2">
+                                <div class="form-row">
+                                    <input type="text" id="city" data-city name="city">
+                                    <label for="city">City</label>
+                                </div>
+                            </div>
+                            <div class="edit-form col-md-4 col-8 px-2" id="AddressProvinceContainer" >
+                                <div class="form-row">
+                                    <select data-state
+                                        id="address_province"
+                                        name="address[province]" data-default="{{ form.province }}">
+                                    </select>
+                                    <label for="address_province">State</label>
+                                </div>
+                            </div>
+                            <div class="edit-form col-md-2 col-4 px-2">
+                                <div class="form-row">
+                                    <input type="text" id="zip_code" data-zip-code name="zip_code">
+                                    <label for="zip_code">Zipcode</label>
+                                </div>
+                            </div>
+                            <div class="edit-form col-12 col-md-6 px-2 mb-md-0">
+                                <div class="form-row">
+                                    <select data-country
+                                        id="AddressCountryNew1" name="address[country]"
+                                        data-default="United States" data-form-id="{{ form.id }}"
+                                        data-address-country-select>
+                                        {{ all_country_option_tags }}
+                                    </select>
+                                    <label for="AddressCountryNew1">Country</label>
+                                </div>
+                            </div>
+                            <div class="edit-form col-12 col-md-6 px-2 mb-md-0">
+                                <div class="form-row">
+                                    <input id="phone_number" type="text" data-phone-number name="phone_number">
+                                    <label for="phone_number">Phone Number</label>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="col-12 d-md-none d-block pt-1">
+                            <div class="col-12">
+                                <a href="#" class="btn btn-fill d-block d-none" data-update-shipping-address-btn>
+                                    <span class="add-text">Save</span>
+                                    <span class="spinner"></span>
+                                </a>
+                            </div>
+                            <div class="col-12 pt-4 text-center">
+                                <a href="#" class="text-capitalize fw-bold d-none" data-cancel-shipping-address-btn data-close-modal>Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer pt-4" style="min-height: 0;">
+                        <div class="d-flex align-items-center flex-md-row flex-column w-100 m-0">
+                            <div class="col-md-6 text-center text-md-start need_help mt-2 mt-md-0 order-2 order-md-0">
+                                <div class="d-flex align-items-center font-size-md text-nowrap">
+                                    <p class="fw-normal lh-base mb-0">
+                                        <span class="text-shell_coral lh-base fw-bold pe-1">Need Help?</span>Email us at<a href="mailto:hello@barefaced.com" title="mailto:hello@barefaced.com" class="text-decoration-underline lh-base fw-normal ps-1">hello@barefaced.com</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 d-md-flex align-items-center order-1 order-md-0 d-none">
+                                <div class="col-8 text-md-end text-center">
+                                    <a href="#" class="text-capitalize fw-bold d-none" data-cancel-shipping-address-btn data-close-modal>Cancel</a>
+                                </div>
+                                <div class="col-4 text-end">
+                                    <a href="#" class="btn btn-fill px-4 d-none" data-update-shipping-address-btn>
+                                        <span class="add-text">Save</span>
+                                        <span class="spinner"></span>
+                                    </a>
+                                    {% comment %} <div class="error-parent d-none" data-error-div>
+                                        <p data-error-msg></p>
+                                    </div> {% endcomment %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Edit Billing addresss  -->
+            <div class="modal-content d-none" data-data-edit-billing-address-modal>
+                <div class="modal-head pb-md-4 position-relative">
+                    <h5 class="mb-0 text-capitalize text-center">Edit Billing Address</h5>
+                    <button class="close-quickshop" id="ModalClose-subscriptionModal" type="button" aria-label="Close subscriptionModal Modal" data-close-modal>
+                        <i class="close-icon"></i>
+                    </button>
+                </div>
+                <div class="mobile-scroll">
+                    <div class="modal-body" billing-address-validate>
+                        <div class="row mx-n2">
+                            <div class="edit-form col-md-6 px-2">
+                                <div class="form-row">
+                                    <input type="text" id="billing_first_name" data-billing-first-name name="billing_first_name">
+                                    <label for="billing_first_name">Name</label>
+                                </div>
+                            </div>
+                            <div class="edit-form col-md-6 px-2">
+                                <div class="form-row">
+                                    <input type="text" id="billing_last_name" data-billing-last-name name="billing_last_name">
+                                    <label for="billing_last_name">Last Name</label>
+                                </div>
+                            </div>
+                            <div class="edit-form col-12 px-2">
+                                <div class="form-row">
+                                    <input id="billing_address1" type="text" data-billing-add1 name="billing_address1">
+                                    <label for="billing_address1">Address Line 1</label>
+                                </div>
+                            </div>
+                            <div class="edit-form col-12 px-2">
+                                <div class="form-row">
+                                    <input id="billing_address2" type="text" data-billing-add2 name="billing_address2">
+                                    <label for="billing_address2">Address Line 2</label>
+                                </div>
+                            </div>
+                            <div class="edit-form col-md-6 col-12 px-2">
+                                <div class="form-row">
+                                    <input type="text" id="billing_city" data-billing-city name="billing_city">
+                                    <label for="billing_city">City</label>
+                                </div>
+                            </div>
+                            <div class="edit-form col-md-2 col-5 px-2" id="BillingAddressProvinceContainer">
+                                <div class="form-row">
+                                    <select data-billing-state
+                                        id="billing_address_Province" name="address[province]"
+                                        data-default="{{ form.province }}">
+                                    </select>
+                                    <label for="billing_address_Province">State</label>
+                                </div>
+                            </div>
+                            <div class="edit-form col-md-4 col-7 px-2">
+                                <div class="form-row">
+                                    <input type="text" id="billing_zip_code" data-billing-zip-code name="billing_zip_code">
+                                    <label for="billing_zip_code">Zipcode</label>
+                                </div>
+                            </div>
+                            <div class="edit-form col-12 col-md-6 px-2 mb-md-0">
+                                <div class="form-row">
+                                    <select data-billing-country
+                                        id="BillingAddressCountryNew1" name="address[country]"
+                                        data-default="{{ form.country }}" data-form-id="{{ form.id }}"
+                                        data-address-country-select>
+                                        {{ all_country_option_tags }}
+                                    </select>
+                                    <label for="BillingAddressCountryNew1">Country</label>
+                                </div>
+                            </div>
+                            <div class="edit-form col-12 col-md-6 px-2 mb-md-0">
+                                <div class="form-row">
+                                    <input id="billing_phone_number" type="text" data-billing-phone-number name="billing_phone_number">
+                                    <label for="billing_phone_number">Phone Number</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 d-md-none d-block pt-1">
+                            <div class="col-12">
+                                <a href="#" class="btn btn-fill d-block" data-update-billing-address-btn>
+                                    <span class="add-text">Save</span>
+                                    <span class="spinner"></span>
+                                </a>
+                            </div>
+                            <div class="col-12 pt-4 text-center">
+                                <a href="#" class="text-capitalize fw-bold" data-close-modal>Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer pt-4" style="min-height: 0;">
+                        <div class="d-flex align-items-center flex-md-row flex-column w-100 m-0">
+                            <div class="col-md-6 text-center text-md-start need_help mt-2 mt-md-0 order-2 order-md-0">
+                                <div class="d-flex align-items-center font-size-md text-nowrap">
+                                    <p class="fw-normal lh-base mb-0">
+                                        <span class="text-shell_coral lh-base fw-bold pe-1">Need Help?</span>Email us at<a href="mailto:hello@barefaced.com" title="mailto:hello@barefaced.com" class="text-decoration-underline lh-base fw-normal ps-1">hello@barefaced.com</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 d-md-flex align-items-center order-1 order-md-0 d-none">
+                                <div class="col-8 text-md-end text-center">
+                                    <a href="#" class="text-capitalize fw-bold" data-close-modal>Cancel</a>
+                                </div>
+                                <div class="col-4 text-end">
+                                    <a href="#" class="btn btn-fill px-4" data-update-billing-address-btn>
+                                        <span class="add-text">Save</span>
+                                        <span class="spinner"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+  
+            <!-- Confirmed popup -->
+            <div class="modal-content d-none" data-confirmed-popup-modal>
+                <div class="modal-head confirmed-popup position-relative">
+                    <button class="close-quickshop" id="ModalClose-subscriptionModal" type="button" aria-label="Close subscriptionModal Modal" data-close-modal>
+                        <i class="close-icon"></i>
+                    </button>
+                </div>
+                <div tabindex="0" class="modal-body d-flex align-items-center justify-content-center">
+                    <div class="col-12 text-center">
+                        
+                        <!-- Frequency change Confirmation -->
+                        <div class="mb-5 d-none" data-success-modal data-common-confirm>
+                            <div class="pop_up_img mb-4 mx-auto">
+                                <img src="https://cdn.shopify.com/s/files/1/0567/1868/8418/files/confirmed.svg?v=1655905560" alt="confirmed icon">
+                            </div>
+                            <h3 class="confirmed-title text-capitalize mb-3">Confirmed!</h3>
+                            <p class="fw-normal mb-0 lh-base">
+                                <span class="fw-bold">IMPORTANT: </span>
+                                This change will take effect on your next subscription process date. You may already have an order in transit. Please check your 
+                                <a href="/pages/order-history" class="text-decoration-underline">order history</a> for details.
+                            </p>
+                        </div>
+                        
+                        <!-- Skip Next Date Confirmation -->
+                        <div class="mb-5 d-none" data-success-modal data-skip-next-date-confirm>
+                            <div class="pop_up_img mb-4 mx-auto">
+                                <img src="https://cdn.shopify.com/s/files/1/0567/1868/8418/files/confirmed.svg?v=1655905560" alt="confirmed icon">
+                            </div>
+                            <h3 class="confirmed-title text-capitalize mb-3">Skip Confirmed!</h3>
+                            <p class="fw-normal mb-0 lh-base">Your next order will be processed on 
+                                <span class="fw-bold" data-new-next-order-date></span>
+                            </p>
+                        </div>
+
+                        <!-- Change Next Date Confirmation -->
+                        <div class="mb-5 d-none" data-success-modal data-change-next-date-confirm>
+                            <div class="pop_up_img mb-4 mx-auto">
+                                <img src="https://cdn.shopify.com/s/files/1/0567/1868/8418/files/confirmed.svg?v=1655905560" alt="confirmed icon">
+                            </div>
+                            <h3 class="confirmed-title text-capitalize mb-3">Confirmed!</h3>
+                            <p class="fw-normal mb-0 px-md-0 px-2 lh-base">Your subscription date has been updated.<br>Your next order will be processed on
+                                <span class="fw-bold" data-new-next-order-date></span>
+                            </p>
+                        </div>
+
+                        <!--  Thanks for sticking around! Confirmation  -->
+                        <div class="mb-4 d-none" data-success-modal data-keep-subscription-confirm>
+                            <h3 class="confirmed-title ls-n1 text-capitalize mb-3">Thanks for sticking around!</h3>
+                            <p class="fw-normal mb-0">10% off will automatically be applied to your next order.</p>
+                        </div>
+
+                         <!--  Subscription Cancelled Confirmation  -->
+                        <div class="mb-4 d-none" data-success-modal data-cancel-subscription-confirm>
+                            <h3 class="confirmed-title ls-n1 text-capitalize mb-3">Subscription Cancelled.</h3>
+                            <p class="fw-normal mb-0">Your subscription has been successfully cancelled.</p>
+                        </div>
+
+                        <button class="btn btn-fill" data-close-modal>Return To My Account</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more products -->
+            <div class="modal-content d-none product-list-modal full-popup" data-addon-products-modal>
+                <div class="modal-head position-relative">
+                    <div class="close-quickshop">
+                        <a href="#" id="ModalClose-subscriptionModal" tabindex="0"  data-close-modal><i class="close-icon"></i></a>
+                    </div>
+                </div>
+                <div class="modal-body px-md-5 py-md-5 py-0" data-success_msg="current_date_subscription">
+                    <search-modal>
+                        <div class="container px-md-3 px-0" data-search-form>
+                            <div class="row mt-md-7 mb-md-6 mb-5 sticky-header">
+                                <div class="col-md-6 col-12 text-md-start text-center mb-md-0 mb-5">
+                                    <h4 class="fw-bold mb-3">Add More To Your Subscription</h4>
+                                    <p class="fw-normal lh-base mb-0">Add on another subscription item or one-time purchase to your upcoming order!</p>
+                                </div>
+                                <div class="col-md-6 col-12 subscription-search">
+                                    <form action="{{ routes.search_url }}" method="get" role="search">
+                                        <div class="form__row form-row form-row--search">
+                                            <input type="search" name="q" id="searchAddonProduct" value="{{ search.terms | escape }}" data-search-value>
+                                            <input type="hidden" name="type" value="product" class="" data-search-hidden>
+                                            <label for="Search">Search for a product to add</label>
+
+                                            {%- capture buttonText -%}{{ 'search.submit' | t }}{%- endcapture -%}
+                                            {%- capture icon -%}{% render 'icon-search' %}{%- endcapture -%}
+                                            {% render 'button', type: 'submit', label_a11y: buttonText, icon: icon  %}
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div data-add-product class="position-relative">
+                                <div class="addOn-div">
+                                    <div class="d-flex mx-lg-n3 mx-n2" data-product-list-div>
+                                        <ul class="collection__list add-more-subscription">
+                                            {% for addonProduct in settings.addon_products_collection.products %}
+                                                {%- comment %}<locksmith:ed12>{% endcomment -%}
+                                                  {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: addonProduct, subject_parent: settings.addon_products_collection, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                                                {%- comment %}</locksmith:ed12>{% endcomment -%}
+                                                <li class="collection__list-item">
+                                                    {% render 'addon-collection-product' with classes: 'collection__list-link',product: addonProduct %}
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                    <div class="mx-lg-n3 mx-n2 d-none" data-predictive-search-product-list-div>
+                                        <ul class="collection__list add-more-subscription" data-predictive-search-product-list></ul>
+                                    </div>
+                                </div>
+                                <div data-search-noresult-div></div>
+                            </div>
+                        </div>
+                    </search-modal>
+                </div>
+            </div>
+
+            <!-- Add To My Subscription  -->
+            <div class="modal-content d-none" data-add-mysubscription-modal>
+                <div class="modal-head position-relative">
+                    <div class="d-flex align-items-center mx-0">
+                        <!-- <div class="back-arrow position-absolute">
+                            <button class="modal__back-button bg-transparent border-0" data-back_button="data-first_step" id="modalBack-button" type="button" aria-label="back" data-back-addon-modal>
+                                {% render 'icon-arrow' %}
+                            </button>
+                        </div> -->
+                        <div class="col-12 text-center">
+                            <h5 class="mb-0 text-capitalize">Add To My Subscription</h5>
+                        </div>
+                        <div class="close-quickshop">
+                            <a href="#" id="ModalClose-subscriptionModal" tabindex="0" data-back-addon-modal><i class="close-icon"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-scroll">
+                    <div class="modal-body">
+                        <div class="add-subscription d-md-flex align-items-center">
+                            <div class="subscription-img mb-md-0 mb-5">
+                                <img src="" data-addon-product-img>
+                            </div>
+                            <div class="w-100 ps-md-6 pb-md-6">
+                                <form>
+                                    <p class="subscription-title lh-sm fw-bold" data-addon-product-title></p>
+                                    <div data-addon-product-variants-div></div>
+                                    <div class="product-content-form__quantity product-quantity">
+                                        <div class="quantity-incrementor">
+                                            <label for="Quantity" class="quantity-incrementor__label">Quantity:</label>
+                                            <button class="quantity-incrementor__minus" data-addon-qty-btn data-addon-qty-minus-btn type="button"><span class="screenreader-text">{{ 'incrementor.minus' | t }}</span></button>
+                                            <input class="quantity-incrementor__input" type="number" id="Quantity" name="quantity" value="1" min="1" data-addon-product-qty>
+                                            <button class="quantity-incrementor__plus" data-addon-qty-btn type="button"><span class="screenreader-text">{{ 'incrementor.plus' | t }}</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="template_legacy-radio">
+                                        <div class="option_onetime d-none" data-onetime-div>
+                                            <div class="option_selector">
+                                                <input id="onetime" type="radio" name="addon_type" class="radio-input" checked data-addon-onetime-input>
+                                                <label for="onetime" class="radio-label">
+                                                    <span class="option-text">One-time purchase</span>
+                                                    <span class="option-text ps-2" data-addon-onetime-price></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="option_onetime d-none" data-subscription-div>
+                                            <div class="option_selector">
+                                                <input id="subscription" type="radio" name="addon_type" class="radio-input" data-addon-subscription-input>
+                                                <label for="subscription" class="radio-label d-flex justify-content-between">
+                                                    <div>
+                                                        <span class="option-text" data-addon-subscription-discount></span>
+                                                        <!-- <span class="option-text" data-addon-subscription-discount>Subscribe & Save 10%</span> -->
+                                                        <span class="option-text ps-1" data-addon-subscription-price></span>
+                                                    </div>
+                                                    <div>
+                                                        <img src="https://cdn.shopify.com/s/files/1/0567/1868/8418/files/subscribe-icon.svg?v=1655971041" alt="ReCharge Subscription services icon" style="width: 15px;">
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            <div class="option_plans d-none" data-addon-subscription-frequencys-div>
+                                                <label class="selling-plans_label visually-hidden" for="selling_plan">Delivery</label>
+                                                <select id="selling_plan" class="selling-plans_dropdown" name="selling_plan" data-addon-subscription-frequency>
+                                                    <!-- <option value="1">Delivery every 1 Month</option>
+                                                    <option value="2">Delivery every 2 Months</option>
+                                                    <option value="3">Delivery every 3 Months</option> -->
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="btn btn-fill product-form-btn d-flex align-items-center justify-content-between" data-product-type="onetime" data-add-onetime-product-btn>
+                                            <span class="add-text">Add To My Subscription</span>
+                                            <span data-addon-onetime-price></span>
+                                        </a>
+                                        <a href="#" class="btn btn-fill product-form-btn d-flex align-items-center justify-content-between d-none" data-product-type="subscription" data-add-subscription-product-btn>
+                                            <span class="add-text">Add To My Subscription</span>
+                                            <span data-addon-subscription-price></span>
+                                        </a>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add To Product Subscription  -->
+            <div class="modal-content d-none" data-add-product-subscription-modal>
+                <div class="modal-head position-relative">
+                    <div class="d-flex align-items-center mx-0">
+                        <div class="back-arrow position-absolute">
+                            <!-- <a href="#" class="modal__back-button bg-transparent border-0" data-back_button="data-first_step" id="modalBack-button" type="button" aria-label="back" data-back-product-page>
+                                {% render 'icon-arrow' %}
+                            </a> -->
+                        </div>
+                        <div class="col-12 text-center">
+                            <h5 class="mb-0 text-capitalize" data-add-modal-btn>Add To My Subscription</h5>
+                        </div>
+                        <div class="close-quickshop">
+                            <a href="javascript:void(0)" id="ModalClose-subscriptionModal" tabindex="0" data-close-modal><i class="close-icon"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-scroll">
+                    <div class="modal-body">
+                        <div class="add-subscription d-md-flex align-items-center">
+                            <div class="subscription-img mb-md-0 mb-5">
+                                <img src="" data-product-img>
+                            </div>
+                            <div class="w-100 ps-md-6 pb-5">
+                                <form method="post" action="/cart/add" accept-charset="UTF-8" enctype="multipart/form-data" novalidate="novalidate" data-product-form data-enable-history-state="true" novalidate="novalidate">
+                                    <input type="hidden" name="form_type" value="product" class="field--filled">
+                                    <input type="hidden" name="utf8" value="✓" class="field--filled">
+                                    <input type="hidden" name="id" value="" data-product-variant-id />
+
+                                    <p class="subscription-title lh-sm fw-bold" data-product-title></p>
+                                    <div data-product-variants-div></div>
+                                    <div class="product-content-form__quantity product-quantity">
+                                        <div class="quantity-incrementor">
+                                            <label for="Quantity" class="quantity-incrementor__label">Quantity:</label>
+                                            <button class="quantity-incrementor__minus" data-product-qty-btn data-product-qty-minus-btn type="button"><span class="screenreader-text">{{ 'incrementor.minus' | t }}</span></button>
+                                            <input class="quantity-incrementor__input" type="number" id="Quantity" name="quantity" value="1" min="1" data-product-qty>
+                                            <button class="quantity-incrementor__plus" data-product-qty-btn type="button"><span class="screenreader-text">{{ 'incrementor.plus' | t }}</span></button>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex align-items-center mb-md-4 mb-3 pb-2 d-none" data-address-list-select-div>
+                                        <p class="font-size-md fw-medium mb-0 pe-3 w-auto">Address:</p>
+                                        <select aria-label="address_list" id="address_list" name="address_list" class="form-control" data-address-list-select></select>
+                                    </div>
+
+                                    <div class="d-flex align-items-center mb-md-4 mb-3 pb-2 d-none" data-next-charge-select-div>
+                                        <p class="font-size-md fw-medium mb-0 text-nowrap pe-3 w-auto">Next charge:</p>
+                                        <select aria-label="next_charge" id="next_charge" name="next_charge" class="form-control" data-next-charge-select></select>
+                                    </div>
+                                    
+                                    <div class="template_legacy-radio">
+                                        <div class="option_onetime" data-product-subscription-div>
+                                            <div class="option_selector">
+                                                <!-- <input id="subscription" type="radio" name="addon_type" class="radio-input d-none" data-addon-subscription-input> -->
+                                                <label for="subscription" class="radio-label d-flex justify-content-between ps-0">
+                                                    <div>
+                                                        <span class="option-text ps-0" data-product-subscription-discount></span>
+                                                        <!-- <span class="option-text ps-0">Subscribe & Save 10%</span> -->
+                                                        <span class="option-text ps-1" data-product-subscription-price></span>
+                                                    </div>
+                                                    <div><img src="https://cdn.shopify.com/s/files/1/0567/1868/8418/files/subscribe-icon.svg?v=1655971041" alt="ReCharge Subscription services icon" style="width: 15px;"></div>
+                                                </label>
+                                            </div>
+                                            <div class="option_plans d-none" data-delivery-select-div>
+                                                <label class="selling-plans_label d-none" for="delivery_plan">Delivery</label>
+                                                <select id="delivery_plan" class="selling-plans_dropdown" name="delivery_plan" data-delivery-select>
+                                                    <!-- <option value="1">Delivery every 1 Month</option>
+                                                    <option value="2">Delivery every 2 Months</option>
+                                                    <option value="3">Delivery every 3 Months</option> -->
+                                                </select>
+                                            </div>
+                                            <div class="option_plans d-none" data-product-selling-plans-div>
+                                                <label class="selling-plans_label d-none" for="selling_plan">Delivery</label>
+                                                <select id="selling_plan" class="selling-plans_dropdown" name="selling_plan" data-product-selling-plans></select>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="d-none btn btn-fill product-form-btn d-flex align-items-center justify-content-between" data-product-type="product-subscription" data-add-product-btn>
+                                            <span class="add-text">Add To My Subscription</span>
+                                            <span data-product-subscription-price></span>
+                                        </a>
+                                        <button class="d-none btn btn-fill btn-block product-form-btn d-flex align-items-center justify-content-between" type="submit" data-submit-button data-add-checkout-btn>
+                                            <span class="" data-submit-button-text>Add to Cart</span>
+                                            <span data-product-subscription-price></span>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</modal-dialog>
+
+<div class="discount-drawer" data-apply-reward-drawer>
+    <div class="section-header position-relative d-flex justify-content-between">
+        <h5 class="mb-0 text-capitalize text-center mb-0" data-discount-heading>Add discount</h5>
+        <button class="close-quickshop" type="button" aria-label="Close subscriptionModal Modal">
+            <i class="close-icon" data-close-drawer></i>
+        </button>
+    </div>
+    <div class="section-min-height discount-warnings h-100 text-center p-4">
+        {% comment %} <form id=""> {% endcomment %}
+            <div class="d-none" data-apply-div>
+                <div class="bg-color mb-3">
+                    <p class="ls-0 mb-0">This discount will apply to all products at the address
+                        <span class="fw-bold font-size-md" data-reward-address-text></span>.
+                    </p>
+                </div>
+                <div>
+                    <label for="" class="text-start font-size-xl fw-medium mb-2 d-block">Discount code</label>
+                    <input type="text" name="discount_code" class="p-3" data-reward-discount-code>
+                </div>
+                <div class="text-center error-parent d-none" data-reward-error-div>
+                    <p class="text-danger fw-medium mt-2 mb-0" data-reward-error-msg></p>
+                </div>
+                <div class="mt-4 text-center">
+                    <a href="#" class="btn btn-fill w-100 btn-disabled" data-reward-apply-discount-btn>
+                        <span class="add-text">Apply discount</span>
+                        <span class="spinner"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="d-none" data-applied-div>
+                <p class="fw-medium mb-1">This discount code has been applied</p>
+                <p class="fw-bold font-size-xl" data-reward-discount-code-value></p>
+                <div class="mt-4 text-center">
+                    <a href="#" class="btn btn-outline w-100" data-reward-remove-discount-btn>
+                        <span class="add-text">Remove discount</span>
+                        <span class="spinner"></span>
+                    </a>
+                </div>
+            </div>
+        {% comment %} </form> {% endcomment %}
+    </div>
+</div>

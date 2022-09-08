@@ -1,0 +1,99 @@
+{% capture productsSize %}{{ collection.products.size }}{% endcapture %}
+{% paginate collection.products by 1000 %}
+
+  {% render 'banner', image: collection.image, title: collection.title, intro: collection.description %}
+
+  {% render 'collection-filter', collection: collection, size: productsSize, currentTags: current_tags %}
+
+
+  {% if collection.products != blank %}
+    {% assign image_widths = '200,400,600,800,1000,1200,1400,1600,1800,2000,2200,2400,2600,2800,3000' | split: ',' %}
+    {%- capture productsJson -%}
+      {
+        "products": [
+        {%- comment %}<locksmith:710f>{% endcomment -%}
+          {%- assign locksmith_d480_forloop__size = 0 %}{% for product in collection.products %}{% capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, subject_parent: collection, variable: 'transparent' %}{% endcapture %}{% if var == 'true' %}{% assign locksmith_d480_forloop__size = locksmith_d480_forloop__size | plus: 1 %}{% endif %}{% endfor %}{% assign locksmith_d480_forloop__index = nil -%}
+        {%- comment %}</locksmith:710f>{% endcomment -%}
+        {% for product in collection.products %}
+          {%- comment %}<locksmith:d7bb>{% endcomment -%}
+            {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, subject_parent: collection, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% if locksmith_d480_forloop__index == nil %}{% assign locksmith_d480_forloop__index = 1 %}{% assign locksmith_d480_forloop__index0 = 0 %}{% else %}{% assign locksmith_d480_forloop__index = locksmith_d480_forloop__index | plus: 1 %}{% assign locksmith_d480_forloop__index0 = locksmith_d480_forloop__index0 | plus: 1 %}{% endif %}{% if locksmith_d480_forloop__index == 1 %}{% assign locksmith_d480_forloop__first = true %}{% else %}{% assign locksmith_d480_forloop__first = false %}{% endif %}{% if locksmith_d480_forloop__index == locksmith_d480_forloop__size %}{% assign locksmith_d480_forloop__last = true %}{% else %}{% assign locksmith_d480_forloop__last = false %}{% endif %}{% assign locksmith_d480_forloop__rindex = locksmith_d480_forloop__size | minus: locksmith_d480_forloop__index | minus: 1 %}{% assign locksmith_d480_forloop__rindex0 = locksmith_d480_forloop__size | minus: locksmith_d480_forloop__index0 | minus: 1 %}{% else %}{% continue %}{% endif -%}
+          {%- comment %}</locksmith:d7bb>{% endcomment -%}
+          {% capture featuredImageSources %}
+            {% assign srcset = '' | split: '' %}
+            {% for width in image_widths %}
+              {% assign imgWidth = width | append: 'x' %}
+              {% assign imgWidthSrc = width | append: 'w' %}
+              {% capture newImgUrl %}
+                {{ product.featured_image | img_url: imgWidth }} {{ imgWidthSrc}}{% unless forloop.last %}, {% endunless %}
+              {% endcapture %}
+              {% assign newSrcSet = newImgUrl | split: '' %}
+              {% assign srcset = srcset | concat: newSrcSet %}
+            {% endfor %}
+            src="{{ product.featured_image | img_url: '25x' }}"
+            data-lazy-load-src="{{ product.featured_image | img_url: '1200x' }}"
+            data-lazy-load-srcset="{{ srcset }}"
+          {% endcapture %}
+          {% if product.images.size >= 2 %}
+            {% capture secondaryImageSources %}
+              {% assign srcset = '' | split: '' %}
+              {% for width in image_widths %}
+                {% assign imgWidth = width | append: 'x' %}
+                {% assign imgWidthSrc = width | append: 'w' %}
+                {% capture newImgUrl %}
+                  {{ product.images[1] | img_url: imgWidth }} {{ imgWidthSrc}}{% unless forloop.last %}, {% endunless %}
+                {% endcapture %}
+                {% assign newSrcSet = newImgUrl | split: '' %}
+                {% assign srcset = srcset | concat: newSrcSet %}
+              {% endfor %}
+              src="{{ product.images[1] | img_url: '25x' }}"
+              data-lazy-load-src="{{ product.images[1] | img_url: '1200x' }}"
+              data-lazy-load-srcset="{{ srcset }}"
+            {% endcapture %}
+            {% assign secondaryImageAlt = product.images[1].alt %}
+          {% endif %}
+
+          {%- capture productPrice -%}
+            {% render 'product-price', product: product, classes: 'collection-product-content__price' %}
+          {%- endcapture -%}
+          {
+            "title": {{ product.title | escape | json }},
+            "handle": "{{ product.handle }}",
+            "url": {{ product.url | within: collection | json }},
+            "featuredImageSources": {{ featuredImageSources | json  }},
+            "featuredImageAlt": {{ product.featured_image.alt | json  }},
+            "secondaryImageSources":  {{ secondaryImageSources | json  }},
+            "secondaryImageAlt": {{ secondaryImageAlt | json}},
+            "tags": {{ product.tags | json }},
+            "showProductForm": {% if product.variants.first.inventory_quantity > 0 %}true{% else %}false{% endif %},
+            "firstVariantId": {{ product.variants.first.id | json }},
+            "buttonText": {{ 'collection.product.add_to_cart' | t | json }},
+            "summary": {{ product.metafields.global.summary | json }},
+            "productPrice": {{ productPrice | json }}
+          }{% unless locksmith_d480_forloop__last %},{% endunless %}
+        {% endfor %}
+        ]
+      }
+    {%- endcapture -%}
+  {% endif %}
+
+  <section class="collection">
+    {% if collection.products != blank and productsJson != blank %}
+      <div class="collection__products-json hide">
+        {{ productsJson | strip | strip_newlines }}
+      </div>
+      <ul class="collection__list">
+      </ul>
+    {% else %}
+      <div class="collection__empty">
+        <h4>{{ 'collection.general.no_matches' | t }}</h4>
+      </div>
+    {% endif %}
+  </section>
+
+  {% if paginate.pages > 1 %}
+    {% render 'pagination', paginate: paginate %}
+  {% endif %}
+
+  {% section 'social-slider' %}
+
+{% endpaginate %}

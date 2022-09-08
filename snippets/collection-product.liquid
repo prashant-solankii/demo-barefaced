@@ -1,0 +1,62 @@
+{%- comment -%}IMPORTANT - If updating this file, please reflect these updates in collection.js{%- endcomment -%}
+
+{% if classes == blank %}
+  {% assign classes = '' %}
+{% endif %}
+
+<a href="{{ product.url | within: collection }}" title="{{ product.title }}" class="collection-product {% if product.images.size >= 2 %}collection-product--image-hover{% endif %} {{ classes | join: ' ' }}" itemscope itemtype="http://schema.org/Product">
+  <div class="collection-product__images">
+    {% render 'image-component',
+      image: product.featured_image,
+      sizes: '(min-width: 45em) 33vw, 50vw',
+      classes: 'collection-product__image objFit'
+    %}
+    {% if product.images.size >= 2 %}
+      {% render 'image-component',
+        image: product.images[1],
+        sizes: '(min-width: 45em) 33vw, 50vw',
+        classes: 'collection-product__image objFit'
+      %}
+    {% endif %}
+
+    {% unless hideForm == true %}
+      {% if product.variants.first.inventory_quantity > 0 %}
+      
+        <div class="collection-product__add">
+          <button class="button button--primary collection-product__add-button" data-handle="{{product.handle}}" data-quick-button="">
+            <span class="button__label">Add to Cart</span>
+            <span class="button__label" aria-hidden="true">Add to Cart</span>
+          </button>
+        </div>  
+
+      {% endif %}
+    {% endunless %}
+
+    <div class="collection-product__tags collection-product-tags">
+      {% for tag in product.tags %}
+        {% if tag contains 'sticker' %}
+          {% assign tagTitle = tag | remove: 'sticker_' %}
+          <div class="collection-product-tags__tag">
+            <span class="collection-product-tags__tag-label">
+              {{ tagTitle }}
+            </span>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+  </div>
+  <div class="collection-product__content collection-product-content">
+    <div class="collection-product-content__info">
+      <div class="collection-product-content__info-title" itemprop="name">
+        {{ product.title }}
+      </div>
+      {% if product.metafields.global.summary != blank %}
+        <div class="collection-product-content__info-summary">
+          {{ product.metafields.global.summary }}
+        </div>
+      {% endif %}
+    </div>
+    {% render 'product-price', product: product, classes: 'collection-product-content__price' %}
+  </div>
+</a>

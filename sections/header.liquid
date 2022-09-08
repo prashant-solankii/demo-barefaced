@@ -1,0 +1,31 @@
+<header class="main-header" role="banner">
+
+  <div class="main-header__menu main-header-menu">
+    <button class="main-header-menu__burger burger">
+      <span class="screenreader-text">{{ 'general.accessibility.open_menu' | t }}</span>
+      <div></div>
+      <div></div>
+      <div></div>
+    </button>
+  </div>
+
+  {% render 'main-header-nav' with
+    classes: 'main-header__nav',
+    menu: 'main-menu'
+  %}
+
+  {% render 'logo' with
+    classes: 'main-header__logo',
+    link: routes.root_url,
+    name: shop.name
+  %}
+
+  {% render 'main-header-actions' with
+    classes: 'main-header__actions'
+  %}
+
+  {% render 'main-header-search' with
+    classes: 'main-header__search'
+  %}
+
+</header>

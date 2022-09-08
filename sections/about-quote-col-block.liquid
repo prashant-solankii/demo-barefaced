@@ -1,0 +1,44 @@
+{% if section.settings.image != blank or section.settings.title != blank or section.settings.content != blank %}
+  {% render 'quote-col-block', classes: '', image: section.settings.image, quote: section.settings.quote, cite: section.settings.cite, citeRole: section.settings.cite_role, linkUrl: section.settings.link_url, linkText: section.settings.link_text  %}
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Quote Col Block",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "textarea",
+        "id": "quote",
+        "label": "Quote"
+      },
+      {
+        "type": "text",
+        "id": "cite",
+        "label": "Cite",
+        "default": "Jordan Harper"
+      },
+      {
+        "type": "text",
+        "id": "cite_role",
+        "label": "Cite role",
+        "default": "Founder & Family Nurse Practitioner"
+      },
+      {
+        "type": "text",
+        "id": "link_text",
+        "label": "Link text",
+        "default": "Find out more"
+      },
+      {
+        "type": "url",
+        "id": "link_url",
+        "label": "Link url"
+      }
+    ]
+  }
+{% endschema %}

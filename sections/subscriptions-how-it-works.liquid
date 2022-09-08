@@ -1,0 +1,44 @@
+{% render 'how-it-works', title: section.settings.title, points: section.blocks %}
+
+{% schema %}
+  {
+    "name": "How It Works",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "How it works"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "point",
+        "name": "Point",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "textarea",
+            "id": "content",
+            "label": "Content"
+          },
+          {
+            "type": "select",
+            "id": "icon",
+            "label": "Icon",
+            "options": [
+              { "value": "tub", "label": "Tub"},
+              { "value": "calendar", "label": "Calendar"},
+              { "value": "savings", "label": "Savings"}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+

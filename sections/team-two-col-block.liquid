@@ -1,0 +1,50 @@
+{% if section.settings.image != blank or section.settings.title != blank or section.settings.content != blank %}
+  {% render 'two-col-block', classes: '', align: section.settings.align, image: section.settings.image, subtitle: section.settings.subtitle, title: section.settings.title, content: section.settings.content, linkUrl: section.settings.link_url, linkText: section.settings.link_text %}
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Two Col Block",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "radio",
+        "id": "align",
+        "options": [
+            { "value": "left", "label": "Left"},
+            { "value": "right", "label": "Right"}
+        ],
+        "label": "Align image"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "richtext",
+        "id": "content",
+        "label": "Content"
+      },
+      {
+        "type": "text",
+        "id": "link_text",
+        "label": "Link text"
+      },
+      {
+        "type": "url",
+        "id": "link_url",
+        "label": "Link url"
+      }
+    ]
+  }
+{% endschema %}

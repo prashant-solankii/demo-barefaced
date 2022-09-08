@@ -1,0 +1,19 @@
+{% layout none %}
+[
+{%- if search.performed -%}
+{%- if search.types contains 'product' -%}
+{%- comment %}<locksmith:6b05>{% endcomment -%}
+  {%- assign locksmith_0f1c_forloop__size = 0 %}{%- for product in search.results -%}{% capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, subject_parent: search, variable: 'transparent' %}{% endcapture %}{% if var == 'true' %}{% assign locksmith_0f1c_forloop__size = locksmith_0f1c_forloop__size | plus: 1 %}{% endif %}{% endfor %}{% assign locksmith_0f1c_forloop__index = nil -%}
+{%- comment %}</locksmith:6b05>{% endcomment -%}
+{%- for product in search.results -%}
+    {%- comment %}<locksmith:f2ed>{% endcomment -%}
+      {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, subject_parent: search, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% if locksmith_0f1c_forloop__index == nil %}{% assign locksmith_0f1c_forloop__index = 1 %}{% assign locksmith_0f1c_forloop__index0 = 0 %}{% else %}{% assign locksmith_0f1c_forloop__index = locksmith_0f1c_forloop__index | plus: 1 %}{% assign locksmith_0f1c_forloop__index0 = locksmith_0f1c_forloop__index0 | plus: 1 %}{% endif %}{% if locksmith_0f1c_forloop__index == 1 %}{% assign locksmith_0f1c_forloop__first = true %}{% else %}{% assign locksmith_0f1c_forloop__first = false %}{% endif %}{% if locksmith_0f1c_forloop__index == locksmith_0f1c_forloop__size %}{% assign locksmith_0f1c_forloop__last = true %}{% else %}{% assign locksmith_0f1c_forloop__last = false %}{% endif %}{% assign locksmith_0f1c_forloop__rindex = locksmith_0f1c_forloop__size | minus: locksmith_0f1c_forloop__index | minus: 1 %}{% assign locksmith_0f1c_forloop__rindex0 = locksmith_0f1c_forloop__size | minus: locksmith_0f1c_forloop__index0 | minus: 1 %}{% else %}{% continue %}{% endif -%}
+    {%- comment %}</locksmith:f2ed>{% endcomment -%}
+    {
+        "product" : {{ product | json }},        
+        "product_summary" : {{ product.metafields.global.summary | json }}
+    }{% unless locksmith_0f1c_forloop__last %},{% endunless %}
+{%- endfor -%}
+{%- endif -%}
+{%- endif -%}
+]

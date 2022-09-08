@@ -1,0 +1,44 @@
+{% if section.blocks != blank %}
+  {% render 'featured-products', classes: '', subtitle: section.settings.subtitle, title: section.settings.title, linkUrl: section.settings.link_url, linkText: section.settings.link_text, products: section.blocks %}
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Featured products",
+    "settings": [
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "link_text",
+        "label": "Link text"
+      },
+      {
+        "type": "url",
+        "id": "link_url",
+        "label": "Link url"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "product",
+        "name": "Product",
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Product"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
